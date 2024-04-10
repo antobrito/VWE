@@ -1,53 +1,48 @@
 .fill-space {
     flex: 1 1 auto;
   }
+
+
+
+
+  @media screen and (max-width: 480px) {
+   
+  }
   
   @media (max-width: 600px) {
     .fill-space {
       display: none;
     }
+    .fixed-top {
+      position: static;
+      transition: .5s;
+     }
   }
-
-  .nav-item.active .nav-link {
-    color: red; /* Change this to your desired color */
-}
 
 .navbar {
     width: 100%;
-    background-color: #030303;
+    max-height: 500px;
+    background-color: #0b0b0b;
     overflow: auto;
   }
   
 
   .navbar a {
     float: left;
-    padding: 12px;
+    padding: 20px;
     color: white;
     text-decoration: none;
     font-size: 20px;
+ 
+    
   }
-  
+
+
   .navbar a:hover {
-    color: #2f71d4;
+    background-color: #081426 50%;
+    color: #7ba9ed;
+    transition: 0.8s all;
   } 
 
-.nav-link:hover
-{
-  position:relative;
-}
-.nav-link::hover::after {
- opacity: 1;
-}
 
-.nav-link::after {
- content:"";
- opacity: 0;
- transition: all 0.2s;
- height:2px;
- width: 100%;
- background-color: greenyellow;
- position:absolute;
- bottom:0;
- left:0;
-}
-
+ 
