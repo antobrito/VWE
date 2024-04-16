@@ -11,8 +11,9 @@
         <div *ngFor="let card of cards; let i = index" class="carousel-item" [class.active]="i === 0">
 
         <div class="row">
-            <div class="card mx-auto " style="width: 19rem;">               
+            <div class="card mx-auto sombra " style="width: 19rem;">               
                 <iframe 
+                sombra
                     width="100%" 
                     height="250px" 
                     [src]="card[0].imgUrl | safeUrl" 
@@ -24,10 +25,10 @@
                 <!-- <img [src]="card[0].imgUrl" class="card-img-top" alt="Card image">  -->
            
              </div>
-            <div class="card mx-auto" style="width: 19rem;">
+            <div class="card mx-auto sombra" style="width: 19rem;">
               
                 <!-- <img [src]="card[1].imgUrl" class="card-img-top" alt="Card image"> -->
-                <iframe 
+                <iframe  
                 width="100%" 
                 height="250px" 
                 [src]="card[1].imgUrl | safeUrl" 
@@ -36,7 +37,7 @@
             </iframe>
             </div>
 
-            <div class="card mx-auto" style="width: 19rem;">
+            <div class="card mx-auto sombra" style="width: 19rem;">
                 <iframe 
                 width="100%" 
                 height="250px" 
@@ -47,7 +48,7 @@
                 <!-- <img [src]="card[2].imgUrl" class="card-img-top" alt="Card image"> -->
             </div>
          
-            <div class="card mx-auto" style="width: 19rem;">
+            <div class="card mx-auto sombra" style="width: 19rem;">
                 <iframe 
                 width="100%" 
                 height="250px" 
@@ -68,14 +69,15 @@
             </div> -->
         </div>
     </div>
-    <hr>
-    <!-- <button class="carousel-control-prev border" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon border" aria-hidden="true"></span>
+  
+
+  <button type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon fontIcon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <button class="" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon fontIcon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-    </button> -->
+    </button> 
 </div>
 </div>

@@ -1,1 +1,36 @@
 .card {display:inline-block;}
+
+
+.carousel-control-prev-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+   
+}
+.sombra
+{
+    box-shadow: 5px 5px 12px black, -5px -5px 12px black ;
+}
+
+.fontIcon{
+    height: 50px;
+    width: 50px;
+    background-color:black;
+
+    border-radius: 10px;
+    border-color: red;
+    border-style: solid;
+    box-shadow: 2px 2px 8px black, -2px -2px 8px black ;
+}
+
+.carousel-control-next-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+.carousel-control::before {
+    color: black;
+}
