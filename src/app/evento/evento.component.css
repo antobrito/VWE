@@ -1,103 +1,87 @@
-:root {
-    --primary: #32C36C;
-    --light: #F6F7F8;
-    --dark: #1A2A36;
+.container-fluid p {
+    width: 100%;
+    text-align: justify;
+    
+    
 }
 
-.fw-medium {
-    font-weight: 500 !important;
+.accordion
+{
+    width: 100%;
+    background: transparent;
+
+
+
 }
 
-.fw-bold {
-    font-weight: 700 !important;
+.accordion-item
+{
+
+background:rgb(193, 193, 198);
+border:none;
+box-shadow: 2px 2px 8px black, -2px -2px 8px black ;
+color: rgb(243, 239, 239);
+
+}
+.accordion-body{
+    background: rgb(12, 12, 12);
+    /* justifica el texto del acordeon  */
+    text-align: justify;
 }
 
-.fw-black {
-    font-weight: 900 !important;
+.accordion-buttom
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 0.1rem;
+    background: transparent;
+
+  
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
+#containerAccor  {
+    display:flex;
+    flex-direction:row;
+   
+  }
+  
+
+  .accordion-button::after{
+    background-image: none;
+    content:"\f0d7";
+    font-family: fontawesome;
+    width: auto;
+    height: auto;
 }
 
-
-/*** Navbar ***/
-.navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+.accordion-button:not(.collapsed){
+  background: rgba(0,0,0,0.1);
+  color: black;
+  box-shadow: none;
 }
 
-.navbar .navbar-brand,
-.navbar a.btn {
-    height: 75px;
-}
-
-.navbar .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: var(--dark);
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
+.accordion-button:not(.collapsed)::after{
+  background-image: none;
 }
 
 
 
-.navbar-toggler-icon {
+  #left-column {
+    width: 30%;
+    height: auto;
+    background-color: blue;
+    
+  }
+  
+  #right-column {
+    background-color: red;
+    width: 70%;
+  }
 
-background-color:rgb(216, 224, 227);
-height: 40px;
-  width: 40px;
-  margin: 10px 0;
- 
+  
 
-}
+  .imagen
+  {
+    border:none;
+    /* box-shadow: 2px 2px 8px rgb(220, 216, 216), -2px -2px 8px rgb(231, 223, 223) ; */
+
+  }

@@ -1,104 +1,81 @@
-<div class="container-sm">
-   <!-- card area start -->
-   <div class="card_wrapper">
-    <div class="container">
+<div class="container-fluid mb-5">
+<h1 class="text-center" >WHAT WE DO</h1>
+<h1 class="text-center" > Our Training</h1>
+<div class="container-fluid py-10">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque 
+        repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+</div>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" >
+    <div class="carousel-inner">
+        <div *ngFor="let card of cards; let i = index" class="carousel-item" [class.active]="i === 0">
+
         <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="head_text">Featured profiles</h2>
-                <p class="head_para">Aenean at ligula massa. Donec ipsum elit, placenta sed duierrut<br> dapibus semper turpin Fusce nec premium nuns.</p>
+            <div class="card mx-auto " style="width: 19rem;">               
+                <iframe 
+                    width="100%" 
+                    height="250px" 
+                    [src]="card[0].imgUrl | safeUrl" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+                <!-- <iframe class="embed-responsive-item rounded" width="100%" height="100%"   [src]="card[0].imgUrl"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <!-- <iframe [src]="card[0].imgUrl" class="embed-responsive-item rounded" width="150" height="150"   alt="Card image" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <!-- <img [src]="card[0].imgUrl" class="card-img-top" alt="Card image">  -->
+           
+             </div>
+            <div class="card mx-auto" style="width: 19rem;">
+              
+                <!-- <img [src]="card[1].imgUrl" class="card-img-top" alt="Card image"> -->
+                <iframe 
+                width="100%" 
+                height="250px" 
+                [src]="card[1].imgUrl | safeUrl" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
             </div>
-            <div class="col-12">
-                <div class="owl-carousel slider_carousel">
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-01.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-03.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-04.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-05.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-01.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-03.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-04.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
-                    <div class="card_box">
-                        <img class="img-fluid w-100" src="assets/img/slider-05.png" alt="">
-                        <div class="card_text">
-                            <h4>Profile ID: 23456</h4>
-                            <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                        </div>
-                    </div>
+
+            <div class="card mx-auto" style="width: 19rem;">
+                <iframe 
+                width="100%" 
+                height="250px" 
+                [src]="card[2].imgUrl | safeUrl" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+                <!-- <img [src]="card[2].imgUrl" class="card-img-top" alt="Card image"> -->
+            </div>
+         
+            <div class="card mx-auto" style="width: 19rem;">
+                <iframe 
+                width="100%" 
+                height="250px" 
+                [src]="card[3].imgUrl | safeUrl" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+                <!-- <img [src]="card[3].imgUrl" class="card-img-top" alt="Card image"> -->
+       
+            </div> 
+
+            <!-- <div class="card mx-auto" style="width: 18rem;">
+                <img [src]="card[4].imgUrl" class="card-img-top" alt="Card image">
+                <div class="card-body">
+                    <h5 class="card-title">{{card[4].title}}</h5>
+                    <p class="card-text">{{card[4].description}}</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
+    <hr>
+    <!-- <button class="carousel-control-prev border" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon border" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button> -->
 </div>
-
 </div>
-<!-- card area end -->
-<script>
-        
-    function slider_carouselInit() {
-        $('.owl-carousel.slider_carousel').owlCarousel({
-            dots: false,
-            loop: true,
-            margin: 30,
-            stagePadding: 2,
-            autoplay: false,
-            nav: true,
-            navText: ["<i class='far fa-arrow-alt-circle-left'></i>","<i class='far fa-arrow-alt-circle-right'></i>"],
-            autoplayTimeout: 1500,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2,
-                },
-                992: {
-                    items: 5
-                }
-            }
-        });
-    }
-    slider_carouselInit();
-
-</script>
