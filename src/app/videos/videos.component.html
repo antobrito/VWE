@@ -6,78 +6,42 @@
         repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
 </div>
 
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" >
-    <div class="carousel-inner">
-        <div *ngFor="let card of cards; let i = index" class="carousel-item" [class.active]="i === 0">
-
-        <div class="row">
-            <div class="card mx-auto sombra " style="width: 19rem;">               
-                <iframe 
-                sombra
-                    width="100%" 
-                    height="250px" 
-                    [src]="card[0].imgUrl | safeUrl" 
-                    frameborder="0" 
-                    allowfullscreen>
-                </iframe>
-                <!-- <iframe class="embed-responsive-item rounded" width="100%" height="100%"   [src]="card[0].imgUrl"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                <!-- <iframe [src]="card[0].imgUrl" class="embed-responsive-item rounded" width="150" height="150"   alt="Card image" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                <!-- <img [src]="card[0].imgUrl" class="card-img-top" alt="Card image">  -->
-           
-             </div>
-            <div class="card mx-auto sombra" style="width: 19rem;">
-              
-                <!-- <img [src]="card[1].imgUrl" class="card-img-top" alt="Card image"> -->
-                <iframe  
-                width="100%" 
-                height="250px" 
-                [src]="card[1].imgUrl | safeUrl" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
-            </div>
-
-            <div class="card mx-auto sombra" style="width: 19rem;">
-                <iframe 
-                width="100%" 
-                height="250px" 
-                [src]="card[2].imgUrl | safeUrl" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
-                <!-- <img [src]="card[2].imgUrl" class="card-img-top" alt="Card image"> -->
-            </div>
-         
-            <div class="card mx-auto sombra" style="width: 19rem;">
-                <iframe 
-                width="100%" 
-                height="250px" 
-                [src]="card[3].imgUrl | safeUrl" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
-                <!-- <img [src]="card[3].imgUrl" class="card-img-top" alt="Card image"> -->
-       
-            </div> 
-
-            <!-- <div class="card mx-auto" style="width: 18rem;">
-                <img [src]="card[4].imgUrl" class="card-img-top" alt="Card image">
-                <div class="card-body">
-                    <h5 class="card-title">{{card[4].title}}</h5>
-                    <p class="card-text">{{card[4].description}}</p>
-                </div>
-            </div> -->
+<<div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'>
+            <img src='https://images.pexels.com/photos/1456268/pexels-photo-1456268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'>
+        </div>
+        <div class="content">
+            <h2>Card One</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
         </div>
     </div>
-  
-
-  <button type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon fontIcon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon fontIcon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button> 
-</div>
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'>
+            <img src='https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'>
+        </div>
+        <div class="content">
+            <h2>Card Two</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'>
+            <img src='https://images.pexels.com/photos/847483/pexels-photo-847483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'>
+        </div>
+        <div class="content">
+            <h2>Card Three</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'>
+            <img src='https://images.pexels.com/photos/847483/pexels-photo-847483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'>
+        </div>
+        <div class="content">
+            <h2>Card Three</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+    
 </div>
