@@ -1,0 +1,27 @@
+#title{
+    text-align:center;
+    font-size:2em;
+  }
+  
+  div:first-child{
+    margin-top:25px;
+  }
+  div{
+    text-align:center;
+    padding:30px 0;
+    margin:0 05%;
+    box-shadow: 0 1em 1em -1em rgba(0, 0, 0, .25);
+  }
+  
+  a{
+    font-family:'Courier New', monospace;
+    display:block;
+    text-align:center;
+    margin:25px 0 0 0;
+    color:#085C56;
+  }
+  
+  a:hover,
+  a:active{
+    color:#7000D9;
+  }

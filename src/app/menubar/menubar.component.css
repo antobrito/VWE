@@ -1,64 +1,9 @@
-:root {
-  --primary: #32C36C;
-  --light: #F6F7F8;
-  --dark: #1A2A36;
-}
-
-.fw-medium {
-  font-weight: 500 !important;
-}
-
-.fw-bold {
-  font-weight: 700 !important;
-}
-
-.fw-black {
-  font-weight: 900 !important;
-}
-
-.back-to-top {
-  position: fixed;
-  display: none;
-  right: 45px;
-  bottom: 45px;
-  z-index: 99;
+body{
+  padding-top: 70px;
 }
 
 
-/*** Navbar ***/
-.navbar.sticky-top {
-  top: -100px;
-  transition: .5s;
-}
 
-.navbar .navbar-brand,
-.navbar a.btn {
-  height: 75px;
-}
-
-.navbar .navbar-nav .nav-link {
-  margin-right: 30px;
-  padding: 25px 0;
-  color: var(--dark);
-  font-size: 15px;
-  font-weight: 500;
-  text-transform: uppercase;
-  outline: none;
-}
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-  color:deepskyblue
-}
-
-.navbar .dropdown-toggle::after {
-  border: none;
-  content: "\f107";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  vertical-align: middle;
-  margin-left: 8px;
-}
 
 @media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-link  {
@@ -86,18 +31,10 @@
       top: 100%;
       visibility: visible;
       transition: .5s;
-      opacity: 1;
+      opacity: 1; 
   }
 }
-
-
-
-.navbar-toggler-icon {
-
-background-color:rgb(216, 224, 227);
-height: 40px;
-width: 40px;
-margin: 10px 0;
-
-
+.navbar.sticky-top {
+  top: -100px;
+  transition: .5s;
 }

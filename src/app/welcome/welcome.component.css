@@ -1,12 +1,31 @@
-.container-fluid {
-    width: 100%;
-    text-align: justify;
-}
+
 
 
 .tamano
 {
-   width:300px; 
+   min-width:300px; 
+   width: 20%;
    height:auto;
+   float:left;
+   margin-right: 1%;;
+}
+
+.wrapper
+{
+ 
+    padding:0;
+ 
+    margin: 150px auto;
+    width: 900%;
+   
+
+
+}
+
+.text-box
+{
+    margin-right: 3%;
+    text-align:justify;
+    
 
 }
