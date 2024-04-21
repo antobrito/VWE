@@ -1,42 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+    
     font-family: 'Poppins', sans-serif
 }
-body
+
+
+.container .iframe
 {
-    min-width: 100vw;
-    min-height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background: #16384c;
+    position: relative;
+    width:290px;
+    height:200px;
+  
+    left:10px;
+    z-index: 1;
+ 
 }
+
 
 .container .card
 {
     max-width: 300px;
     height: 215px;
-    margin: 30px 10px;
-    padding: 20px 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    margin: 30px 10px 70px;
+    box-shadow: 0 35px 20px rgba(0, 0, 0, 0.5);
     transition: 0.3s ease-in-out;
+ 
 }
 .container .card:hover
 {
-    height: 450px;
+    height: 400px;
 }
 .container .card .imgContainer
 {
     position: relative;
-    width:250px;
-    height:250px;
-    top:-50px;
+    width:290px;
+    height:200px;
+  
     left:10px;
     z-index: 1;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
 }
 .container .card .imgContainer img
 {
@@ -68,3 +71,13 @@ body
         left: -2px;
     }
 }
+
+
+
+
+.iframeMain {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    height: 350px;
+ }

@@ -12,12 +12,13 @@ import { FooterComponent } from './footer/footer.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { SafeUrlPipe } from './safe-url.pipe';
+import { ClasesComponent } from './clases/clases.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,MenubarComponent,HomeComponent,CarruselComponent,VideosComponent,TeamComponent,
-           WelcomeComponent,EventoComponent,FooterComponent],
+           WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
