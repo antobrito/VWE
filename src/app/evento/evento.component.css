@@ -3,12 +3,16 @@
     text-align: justify;
     
     
+    
 }
+
 
 .accordion
 {
     width: 100%;
-    background: transparent;
+    
+background:rgb(232, 150, 27);
+    /* background: transparent; */
 
 
 
@@ -17,8 +21,9 @@
 .accordion-item
 {
 
-background:rgb(193, 193, 198);
+background:rgb(232, 150, 27);
 border:none;
+
 box-shadow: 2px 2px 8px black, -2px -2px 8px black ;
 color: rgb(243, 239, 239);
 
@@ -31,9 +36,13 @@ color: rgb(243, 239, 239);
 
 .accordion-buttom
 {
+  
     font-family: "Poppins", sans-serif;
     font-size: 0.1rem;
-    background: transparent;
+    background-color:black !important;
+    /* background: transparent; */
+    padding: 0px !important;
+
 
   
 }
@@ -41,16 +50,19 @@ color: rgb(243, 239, 239);
 #containerAccor  {
     display:flex;
     flex-direction:row;
+    
    
   }
   
-
   .accordion-button::after{
     background-image: none;
     content:"\f0d7";
     font-family: fontawesome;
+    font-size:x-large;
     width: auto;
     height: auto;
+    
+/* background:rgb(232, 150, 27); */
 }
 
 .accordion-button:not(.collapsed){
@@ -61,6 +73,8 @@ color: rgb(243, 239, 239);
 
 .accordion-button:not(.collapsed)::after{
   background-image: none;
+  background: rgba(0,0,0,0.1);
+  
 }
 
 
@@ -86,6 +100,29 @@ color: rgb(243, 239, 239);
     /* box-shadow: 2px 2px 8px rgb(15, 69, 29), -2px -2px 8px rgb(231, 223, 223) ;  */
 
   }
+ 
 
-
+  a:link {
+    color: rgb(128, 15, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(245, 72, 101);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
   

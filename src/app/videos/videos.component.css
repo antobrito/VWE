@@ -5,6 +5,13 @@
     font-family: 'Poppins', sans-serif
 }
 
+.text-justificado
+{
+    margin-right: 3%;
+    text-align:justify;
+    
+
+}
 
 .container .iframe
 {
@@ -39,12 +46,20 @@
   
     left:10px;
     z-index: 1;
+    margin-top: 0;
 
 }
 .container .card .imgContainer img
 {
     max-width: 100%;
     border-radius: 4px;
+   
+}
+
+.block
+{
+
+    margin-top:1.3% !important;
 }
 .container .card .content
 {
