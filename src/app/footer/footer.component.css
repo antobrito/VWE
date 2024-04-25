@@ -146,7 +146,7 @@ ul {
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-      color: #7e7e7e;
+   
   line-height: 28px;
 }
 .footer-social-icon span {
@@ -201,7 +201,7 @@ ul {
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover{
-  color: #ff5e14;
+  color: #58a084;
 }
 .footer-widget ul li a {
   color: #878787;
