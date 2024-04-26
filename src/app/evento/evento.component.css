@@ -103,19 +103,19 @@ color: rgb(243, 239, 239);
  
 
   a:link {
-    color: rgb(128, 15, 0);
+    color: rgb(234, 150, 102);
     background-color: transparent;
     text-decoration: none;
   }
   
   a:visited {
-    color: rgb(245, 72, 101);
+    color: rgb(234, 150, 102);
     background-color: transparent;
     text-decoration: none;
   }
   
   a:hover {
-    color: red;
+    color: rgb(214, 219, 80);
     background-color: transparent;
     text-decoration: underline;
   }
