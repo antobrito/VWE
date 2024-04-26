@@ -1,8 +1,8 @@
 
 .titulo
 {
- font-size: 8vh;
-  font-family: "Audiowide", sans-serif;
+ /* font-size: 8vh; */
+  /* font-family: "Audiowide", sans-serif; */
 }
 
 /* Container holding the image and the text */
@@ -13,7 +13,7 @@
     text-align: left;
     color: white;
     max-width: 100%;
-    font-family: "Audiowide", sans-serif;
+    /* font-family: "Audiowide", sans-serif; */
     /* font-family: sans-serif; */
   }
   .container2
