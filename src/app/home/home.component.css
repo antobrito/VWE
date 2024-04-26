@@ -1,3 +1,10 @@
+
+.titulo
+{
+ font-size: 8vh;
+  font-family: "Audiowide", sans-serif;
+}
+
 /* Container holding the image and the text */
 .container-fluid {
    background-color:black; 

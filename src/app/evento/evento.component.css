@@ -1,3 +1,38 @@
+.titulo
+{
+ font-size: 8vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo2
+{
+ font-size: 5vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo3
+{
+ font-size: 3vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo4
+{
+ font-size: 2vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.texto_lectura
+{
+
+  font-size: 2vh;
+  font-family: "Poppins", sans-serif;
+  
+
+}
+
+
+
 .container-fluid p {
     width: 100%;
     text-align: justify;
@@ -5,6 +40,7 @@
     
     
 }
+
 
 
 .accordion

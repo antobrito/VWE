@@ -1,5 +1,38 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+.titulo
+{
+ font-size: 8vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo2
+{
+ font-size: 5vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo3
+{
+ font-size: 3.8vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.titulo4
+{
+ font-size: 2vh;
+  font-family: "Audiowide", sans-serif;
+}
+
+.texto_lectura
+{
+
+  font-size: 2vh;
+  font-family: "Poppins", sans-serif;
+  
+
+}
 
 .tamano
 {
