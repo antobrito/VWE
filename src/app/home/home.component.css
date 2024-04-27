@@ -1,9 +1,77 @@
+@media (max-width: 435px) {
+  .top-right1 {
+    position: absolute;
+    top:15%;
+    right: 5%;
+    font-size: 5.6vw;
+    text-shadow: 3px 2px 0px #767673;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+  }
 
-.titulo
-{
+  .top-right2 {
+    position: absolute;
+    top: 35%;
+    right: 3%;
+    font-size: 3.3vw;
+
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+  }
+  .top-right21 {
+    position: absolute;
+    top: 45%;
+    right: 4%;
+    font-size: 3vw;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+ 
+  }
+}
+
+
+@media not (max-width: 435px) {
+  .top-right1 {
+    position: absolute;
+    top:20%;
+    right: 5%;
+    font-size: 3.2vw;
+    text-shadow: 2px 2px 0px #888888;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+  }
+
+
+  .top-right2 {
+    position: absolute;
+    top: 44%;
+    right: 12%;
+    font-size: 2.4vw;
+
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+  }
+  .top-right21 {
+    position: absolute;
+    top: 59%;
+    right: 10%;
+    font-size: 2.7vw;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+ 
+  }
+
+  }
+
+
+
+
+/* .titulo
+{ */
  /* font-size: 8vh; */
   /* font-family: "Audiowide", sans-serif; */
-}
+/* } */
+
 
 /* Container holding the image and the text */
 .container-fluid {
@@ -51,34 +119,9 @@
   }
   
   /* Top right text */
-  .top-right1 {
-    position: absolute;
-    top:20%;
-    right: 5%;
-    font-size: 3.2vw;
-    text-shadow: 4px 4px 0px #888888;
-    mix-blend-mode: screen;
-    animation: fadeIn 2.5s linear forwards;
-  }
-  
-  .top-right2 {
-    position: absolute;
-    top: 44%;
-    right: 12%;
-    font-size: 2.4vw;
 
-    mix-blend-mode: screen;
-    animation: fadeIn 2.5s linear forwards;
-  }
-  .top-right21 {
-    position: absolute;
-    top: 59%;
-    right: 10%;
-    font-size: 2.7vw;
-    mix-blend-mode: screen;
-    animation: fadeIn 2.5s linear forwards;
- 
-  }
+  
+
 
   .top-right3 {
     position: absolute;
