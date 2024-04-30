@@ -164,8 +164,12 @@
 /* responsive */
 @media only screen and (min-width: 320px) and (max-width: 500px) {
     .main{
-        flex-direction: column;
+        /* flex-direction: column; */
+        flex-direction: row;
     }
+
+
+    
 }
 
 
