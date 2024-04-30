@@ -77,6 +77,12 @@
 
 /********************************************/
 
+.nomargin
+{
+margin-top: 0px;
+padding-top: 0px;;
+
+}
 
 .container-fluid p {
     width: 100%;
