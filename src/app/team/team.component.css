@@ -178,3 +178,30 @@ a {
     text-decoration: none;
     color: black;
   }
+
+
+
+
+  #countdown {
+    width: 100%;
+  }
+  label {
+    clear: both;
+    display: block;
+  }
+  #countdown span {
+    background: rgba(0,0,0,0);
+    color: #000;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+    width: 25%;
+    display: block;
+    float: left;
+    border-right: 1px solid #FFF;
+  }
+  #countdown span:last-child {
+    border-right: 1px solid #313233;
+  }
+
+  
