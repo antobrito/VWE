@@ -76,6 +76,21 @@
 }  */
 
 /********************************************/
+.blink {
+  animation: blink 5s steps(10, end) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .nomargin
 {
