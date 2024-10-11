@@ -1,9 +1,10 @@
-<div class="music-player">
-    <h2>Simple Music Player</h2>
-    <div class="controls">
-      <button (click)="play()">Play</button>
-      <button (click)="pause()">Pause</button>
-      <button (click)="stop()">Stop</button>
-      <button (click)="yourMethod()">Click Me</button>
-    </div>
+<div class="container-fluid text-center nomargin text-white bg-black music-player">
+  <div class="row">
+   
+      <audio controls autoplay >
+        <source src="assets/music/WVE.mp3" type="audio/mp3"/>
+        Your browser does not support the audio element.
+      </audio>
+
   </div>
+</div>
