@@ -1,0 +1,40 @@
+
+.tamano
+{
+   min-width:350px; 
+   width: 30%;
+   height:auto;
+   float:right;
+   margin-right: 1%;
+   margin-left: 3%;
+}
+hr.rounded {
+    border-top: 6px solid #bbb;
+    border-radius: 10px;
+   
+  }
+
+  hr.solid {
+    border-top: 3px solid #bbb;
+  }
+
+  
+.wrapper
+{
+ 
+    padding:0;
+ 
+    margin: 150px auto;
+    width: 900%;
+   
+
+
+}
+
+.text-box
+{
+    margin-right: 3%;
+    text-align:justify;
+    
+
+}

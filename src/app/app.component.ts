@@ -13,11 +13,14 @@ import { SafeUrlPipe } from './safe-url.pipe';
 import { ClasesComponent } from './clases/clases.component';
 import { DividerComponent } from './divider/divider.component';
 import { PlayerComponent } from './player/player.component';
+import { SomeClassesComponent } from './some-classes/some-classes.component';
+import { BenefitsComponent } from './benefits/benefits.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,MenubarComponent,HomeComponent,CarruselComponent,VideosComponent,TeamComponent,
-           WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent,DividerComponent,PlayerComponent],
+           WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent,DividerComponent,PlayerComponent,
+          SomeClassesComponent,BenefitsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
