@@ -43,18 +43,19 @@
     padding: 2.5em 0.5em 0.5em;
     border-radius: 2em;
     text-align: center;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 30px 10px rgba(9, 9, 9, 0.2);
     border-bottom-right-radius: 4em;
   border-top-left-radius: 4em;
   box-shadow: 9px 9px 10px #e1e1e1;
-  background: linear-gradient(to left, rgb(241, 241, 239) 50%, #999a9b 50%);
+  background: linear-gradient(to left, rgb(9, 9, 9) 50%, #999a9b 50%);
   background-size: 200%;
   background-position: right;
   transition: background-position 0.5s ease-out;
+  color : white;
   
   }
   .card img {
-    width: 70%;
+    width: 40%;
     border-radius: 50%;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -62,7 +63,7 @@
 
   }
   .card .card-title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5em;
   }
   .card .btn {
