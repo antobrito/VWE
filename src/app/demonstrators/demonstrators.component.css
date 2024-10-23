@@ -21,6 +21,10 @@
     margin-top: 100px
 }
 
+.ml-100 {
+    margin-left:  100px
+}
+
 .profile img {
     width: 70%;
     height: 70%;
