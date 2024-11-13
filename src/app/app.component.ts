@@ -16,12 +16,16 @@ import { PlayerComponent } from './player/player.component';
 import { SomeClassesComponent } from './some-classes/some-classes.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { DemonstratorsComponent } from './demonstrators/demonstrators.component';
+import { EventTabComponent
+
+
+ } from './event-tab/event-tab.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,MenubarComponent,HomeComponent,CarruselComponent,VideosComponent,TeamComponent,
            WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent,DividerComponent,PlayerComponent,
-          SomeClassesComponent,BenefitsComponent, DemonstratorsComponent],
+          SomeClassesComponent,BenefitsComponent, DemonstratorsComponent, EventTabComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
