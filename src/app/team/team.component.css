@@ -41,6 +41,8 @@ hr.rounded {
  
 }
 
+@media  (min-width: 900px) {
+
 .card {
     margin-top: 1em;
     margin-left: 15em;
@@ -95,13 +97,13 @@ hr.rounded {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
 
 }
 
-
-
 /* responsive */
-@media only screen and (min-width: 320px) and (max-width: 500px) {
+@media  (max-width: 900px) {
     .main{
         /* flex-direction: column; */
         flex-direction: row;
@@ -123,7 +125,7 @@ hr.rounded {
     background-size: 200%;
     background-position: right;
     transition: background-position 0.5s ease-out;
-    color : rgb(11, 11, 11);
+    color : rgb(173, 46, 46);
     
     }
     .card img {

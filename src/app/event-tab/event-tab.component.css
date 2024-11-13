@@ -1,0 +1,300 @@
+/* @media (max-width: 435px) {
+
+  .titulo
+{
+ font-size: 4vh;
+  font-family: "Crete Round", sans-serif;
+  font-weight: 400;
+}
+
+.titulo2
+{
+ font-size: 3.2vh;
+  font-family: "Crete Round", sans-serif;
+  font-weight: 400;
+}
+
+.titulo3
+{
+ font-size: 3vh;
+  font-family: "Crete Round", sans-serif;
+}
+
+.titulo4
+{
+ font-size: 2vh;
+  font-family: "Crete Round", sans-serif;
+}
+
+.texto_lectura
+{
+
+  font-size: 2vh;
+  font-family: "Crete Round", sans-serif;
+  
+
+} 
+
+
+}
+
+
+@media not (max-width: 435px) {
+  .titulo
+{
+ font-size: 8vh;
+  font-family:"Crete Round", sans-serif;
+  font-weight: 400;
+}
+
+.titulo2
+{
+ font-size: 6vh;
+  font-family: "Crete Round", sans-serif;
+  font-weight: 400;
+}
+
+.titulo3
+{
+ font-size: 4vh;
+  font-family: "Crete Round", sans-serif;
+}
+
+.titulo4
+{
+ font-size: 2.6vh;
+  font-family: "Crete Round", sans-serif;
+}
+
+.texto_lectura
+{
+
+  font-size: 2.3vh;
+  font-family: "Crete Round", sans-serif;
+  
+
+}  */
+
+body {
+    background-color: black;
+    
+    margin: 0; /* Optional: Remove default margin */
+    padding: 0; /* Optional: Remove default padding */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #eff2f6;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    color: #f2f3f5;
+    font-size: 1.2em;
+  }
+  
+  ul {
+    list-style-type: disc; /* Adds bullet points */
+    padding-left: 20px; /* Adds some space before the list items */
+    text-align: left; /* Aligns the list items to the left */
+  }
+  
+  .link {
+    color: #2980b9;
+    text-decoration: none;
+  }
+  /********************************************/
+  
+  .whatsapp
+  {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .whatsapp:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+  
+  
+  
+  hr.rounded {
+    border-top: 10px solid #bbb;
+    border-radius: 10px;
+   
+  }
+  
+  
+  .blink {
+    animation: blink 5s steps(10, end) infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .nomargin
+  {
+  margin-top: 0px;
+  padding-top: 0px;;
+  
+  }
+  
+  .container-fluid p {
+      width: 100%;
+      text-align: justify;
+      
+      
+      
+  }
+  
+  
+  
+  .accordion
+  {
+      width: 100%;
+      
+  background:rgb(232, 150, 27);
+      /* background: transparent; */
+  
+  
+  
+  }
+  
+  .accordion-item
+  {
+  
+  background:rgb(232, 150, 27);
+  border:none;
+  
+  box-shadow: 2px 2px 8px black, -2px -2px 8px black ;
+  color: rgb(243, 239, 239);
+  
+  }
+  .accordion-body{
+      background: rgb(12, 12, 12);
+      /* justifica el texto del acordeon  */
+      text-align: justify;
+  }
+  
+  .accordion-buttom
+  {
+    
+      font-family: "Poppins", sans-serif;
+      font-size: 0.1rem;
+      background-color:black !important;
+      /* background: transparent; */
+      padding: 0px !important;
+  
+  
+    
+  }
+  
+  #containerAccor  {
+      display:flex;
+      flex-direction:row;
+      
+     
+    }
+    
+    .accordion-button::after{
+      background-image: none;
+      content:"\f0d7";
+      font-family: fontawesome;
+      font-size:x-large;
+      width: auto;
+      height: auto;
+      
+  /* background:rgb(232, 150, 27); */
+  }
+  
+  .accordion-button:not(.collapsed){
+    background: rgba(0,0,0,0.1);
+    color: black;
+    box-shadow: none;
+  }
+  
+  .accordion-button:not(.collapsed)::after{
+    background-image: none;
+    background: rgba(0,0,0,0.1);
+    
+  }
+  
+  
+  
+    #left-column {
+      width: 30%;
+      height: auto;
+      background-color: blue;
+      
+    }
+    
+    #right-column {
+      background-color: red;
+      width: 70%;
+    }
+  
+    
+  
+    .imagen
+    {
+      border:none;
+      box-shadow: 0 0 10px 35px rgba(113, 111, 111, 0.1);
+      /* box-shadow: 2px 2px 8px rgb(15, 69, 29), -2px -2px 8px rgb(231, 223, 223) ;  */
+  
+    }
+   
+  
+    a:link {
+      color: rgb(234, 150, 102);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:visited {
+      color: rgb(234, 150, 102);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: rgb(214, 219, 80);
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    
+    a:active {
+      color: yellow;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    
