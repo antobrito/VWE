@@ -117,6 +117,7 @@ ul {
   animation-iteration-count: infinite;
 }
 
+
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -132,6 +133,18 @@ ul {
 }
 
 
+@media (max-width: 600px)
+{
+  .whatsapp
+  {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
 
 hr.rounded {
   border-top: 10px solid #bbb;
