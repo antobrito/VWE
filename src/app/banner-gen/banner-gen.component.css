@@ -1,0 +1,47 @@
+
+  /* Container for the banner */
+.banner-container {
+    width: 100%;
+     background-color: #4CAF50; /* You can change the background color */
+     overflow: hidden;
+     position: relative;
+     padding: 10px 0; /* Add padding to adjust vertical spacing */
+     background-color: rgb(7, 7, 7);
+     margin-bottom: 10px;;
+   }
+   
+   /* Styling for the moving text */
+   .banner-text {
+     font-size: 21px;
+     font-weight: bold;
+     color: rgb(218, 37, 37);
+     text-align: center;
+     white-space: nowrap;
+   
+     animation: scroll-left 25s linear infinite; /* Este con trola la velocidad */
+   }
+   
+   /* Style for "Please reserve your seat..." text */
+   .reservation-text {
+     margin-left: 20px; /* Add space between the two parts */
+   }
+   
+   /* Add space between icons and text */
+   .banner-text i {
+     margin: 0 10px; /* Adjust the space between icons and text */
+   }
+   
+   
+   /* Animation for moving text */
+   @keyframes scroll-left {
+     from {
+       transform: translateX(100%);
+     }
+     to {
+       transform: translateX(-100%);
+     }
+   }
+   
+   
+   
+   /**********************/
