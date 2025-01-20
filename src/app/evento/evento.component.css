@@ -1,80 +1,52 @@
-/* @media (max-width: 435px) {
 
-  .titulo
-{
- font-size: 4vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
+/* my-component.component.css */
+
+/* Container for the banner */
+.banner-container {
+ width: 100%;
+  background-color: #4CAF50; /* You can change the background color */
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0; /* Add padding to adjust vertical spacing */
+  background-color: red;
+  margin-bottom: 10px;;
 }
 
-.titulo2
-{
- font-size: 3.2vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
+/* Styling for the moving text */
+.banner-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+
+  animation: scroll-left 10s linear infinite; /* You can adjust the duration of scrolling */
 }
 
-.titulo3
-{
- font-size: 3vh;
-  font-family: "Crete Round", sans-serif;
+/* Style for "Please reserve your seat..." text */
+.reservation-text {
+  margin-left: 20px; /* Add space between the two parts */
 }
 
-.titulo4
-{
- font-size: 2vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.texto_lectura
-{
-
-  font-size: 2vh;
-  font-family: "Crete Round", sans-serif;
-  
-
-} 
-
-
+/* Add space between icons and text */
+.banner-text i {
+  margin: 0 10px; /* Adjust the space between icons and text */
 }
 
 
-@media not (max-width: 435px) {
-  .titulo
-{
- font-size: 8vh;
-  font-family:"Crete Round", sans-serif;
-  font-weight: 400;
+/* Animation for moving text */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-.titulo2
-{
- font-size: 6vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
-}
 
-.titulo3
-{
- font-size: 4vh;
-  font-family: "Crete Round", sans-serif;
-}
 
-.titulo4
-{
- font-size: 2.6vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.texto_lectura
-{
-
-  font-size: 2.3vh;
-  font-family: "Crete Round", sans-serif;
-  
-
-}  */
-
+/**********************/
 
 h1, h2 {
   text-align: center;

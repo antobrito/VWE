@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenubarComponent } from './menubar/menubar.component';
 import { HomeComponent } from './home/home.component';
-import { CarruselComponent } from './carrusel/carrusel.component';
 import { VideosComponent } from './videos/videos.component';
 import { TeamComponent } from './team/team.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -23,7 +22,7 @@ import { EventTabComponent
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MenubarComponent,HomeComponent,CarruselComponent,VideosComponent,TeamComponent,
+  imports: [RouterOutlet,MenubarComponent,HomeComponent,VideosComponent,TeamComponent,
            WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent,DividerComponent,PlayerComponent,
           SomeClassesComponent,BenefitsComponent, DemonstratorsComponent, EventTabComponent],
   templateUrl: './app.component.html',

@@ -1,27 +1,64 @@
-#title{
-    text-align:center;
-    font-size:2em;
-  }
+.container {
   
-  div:first-child{
-    margin-top:25px;
-  }
-  div{
-    text-align:center;
-    padding:30px 0;
-    margin:0 05%;
-    box-shadow: 0 1em 1em -1em rgba(0, 0, 0, .25);
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 4px;
+  padding: 1px;
+  width: 100vw; /* Hace que el contenedor ocupe todo el ancho de la ventana */
+  height: 100vh; /* Hace que el contenedor ocupe todo el alto de la ventana */
+  background-color: rgb(52, 51, 51); /* Color de fondo rojo */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  margin:0vw;
+  max-width: 100%;
+}
+
+/* Nueva fila que abarca las tres columnas */
+.full-width-row {
+  grid-column: span 3; /* Hace que esta fila ocupe las tres columnas */
+  text-align: center;
+  padding: 2px,0,0,0;
+  background-color: red;
   
-  a{
-    font-family:'Courier New', monospace;
-    display:block;
-    text-align:center;
-    margin:25px 0 0 0;
-    color:#085C56;
+}
+
+.full-width-row h1 {
+  font-size: 2.5em;
+  color: white; /* Título en blanco */
+  margin: 0;
+}
+
+.box {
+  padding: 15px;
+  background-color: #0a0a0a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #f9f5f5;
+}
+
+p {
+  font-size: 1em;
+  color: #f4efef;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  a:hover,
-  a:active{
-    color:#7000D9;
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
   }
+}
