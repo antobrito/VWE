@@ -18,7 +18,8 @@ export class BannerGenComponent {
     const filler = ' - '.repeat(2); // Espacios en blanco para crear distancia
    
     this.longText = (message + filler).repeat(1); // Repite el mensaje 10 veces para que sea largo
-    this.reserve = 'Details very soon!   VWE'
+    // this.reserve = 'Details very soon!   VWE'
+    this.reserve = 'Details in the "Upcoming Event" section.'
   }
 }
 

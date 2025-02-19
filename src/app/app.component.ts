@@ -19,6 +19,7 @@ import { DemonstratorsComponent } from './demonstrators/demonstrators.component'
 
 import { EventTabComponent} from './event-tab/event-tab.component';
 import { BannerGenComponent } from './banner-gen/banner-gen.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,

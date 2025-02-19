@@ -298,3 +298,231 @@ h1, h2 {
       text-decoration: underline;
     }
     
+
+
+    .container {
+      max-width: 800px;
+      rgb(234, 150, 102);
+      margin: auto;
+    
+      font-family: Arial, sans-serif;
+    }
+    .announcement {
+      
+      padding: 15px;
+      margin: 5px 0;
+      border-left: 5px solid rgb(232, 150, 27);
+      border-radius: 5px;
+    }
+    h2 {
+      color: rgb(232, 150, 27);
+    }
+
+
+    .accommodation-info {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #0b5027;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .location-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .accommodation-info p, .accommodation-info ul {
+    font-size: 1rem;
+  }
+
+  .apartment-features ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .apartment-features li {
+    margin-bottom: 10px;
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+
+  .accommodation-options .option {
+    margin-bottom: 15px;
+  }
+
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #008000;
+  }
+
+  .extra-night {
+    font-size: 1rem;
+    color: #ff8c00;
+  }
+
+  .note {
+    font-style: italic;
+    color: #712323;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+
+
+  /* accommodation-info */
+  .accommodation-info {
+    font-family: 'Arial', sans-serif;
+    padding: 30px;
+    background-color: #211f1f;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #dcdcdc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .divider {
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(to right,  rgb(232, 150, 27), #e9e9ea);
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  
+  .location-header {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(232, 150, 27);
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #f3ebeb;
+    margin: 5px 0;
+  }
+  
+  .apartment-features ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .apartment-features li {
+    margin: 8px 0;
+    font-size: 1rem;
+    background: #161616;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .stay-duration {
+    padding: 15px;
+    background: #131212;
+    border-radius: 10px;
+  }
+  
+  .accommodation-options {
+    text-align: center;
+  }
+  
+  .option-card {
+    background: #0f0f0f;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 12px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+  
+  .option-card h4 {
+    font-size: 1.2rem;
+    color: rgb(232, 150, 27);
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e5c259;
+  }
+  
+  .extra-night {
+    font-size: 1rem;
+    color: #ff8c00;
+  }
+  
+  .note2 {
+    font-style: italic;
+    color: #1c0f61;
+    padding: 15px;
+    background: #0a0a0a;
+    border-left: 5px solid rgb(232, 150, 27);
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+
+
+ /* COST */
+
+ .container-fluid {
+  width: 100%;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(39, 38, 38, 0.1);
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+.text-danger {
+  font-size: 2rem;
+}
+
+.text-warning {
+  font-weight: bold;
+}
+
+
+/* how to book */
+
+.blinking-text {
+  background-color: black; /* Black background */
+  color: white; /* White text for contrast */
+  padding: 10px; /* Add some padding for better visibility */
+  animation: blink-animation 3s steps(100, start) infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
