@@ -1,36 +1,97 @@
-
-.tamano
-{
-   min-width:350px; 
-   width: 30%;
-   height:auto;
-   float:right;
-   margin-right: 1%;
-   margin-left: 3%;
+/* src/app/blindfold-practice/blindfold-practice.component.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
 }
 
+.body{
+   background-color: blue;
 
-  hr.solid {
-    border-top: 3px solid #bbb;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  color:white;
+ 
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  
+}
+
+.title {
+
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.blindfold-img {
+  width: 50%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.benefits {
+  width: 100%;
+}
+
+.benefits ul {
+  list-style-type: none;
+}
+
+.benefits li {
+  margin-bottom: 30px;
+}
+
+.benefits h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.benefits p {
+  
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2em;
   }
 
-  
-.wrapper
-{
- 
-    padding:0;
- 
-    margin: 150px auto;
-    width: 900%;
-   
+  .blindfold-img {
+    max-width: 100%;
+  }
 
+  .images {
+    flex-direction: column;
+  }
 
-}
+  .benefits h2 {
+    font-size: 1.5em;
+  }
 
-.text-box
-{
-    margin-right: 3%;
-    text-align:justify;
-    
-
+  .benefits p {
+    font-size: 1em;
+  }
 }

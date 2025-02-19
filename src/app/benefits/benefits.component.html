@@ -1,28 +1,18 @@
-
-<div class="container-fluid d-flex  p-3  bg-black text-white  " >
-
-    <div class="wrapper  " style="margin: 0px; padding-left:3%; padding-top: 2% !important; ">
-      <hr class="rounded" />
-       <img src="/assets/img/blindblackboard.png" class="img-fluid rounded  tamano " alt="© Meta AI">
-      
-       <div class="text-center">
-        <h1 > Benefits of Practicing Blindfolded. </h1>
-          <h2>Improving Spatial Memory.</h2>
-          <p>Practicing without sight helps improve spatial memory and the ability to remember locations and objects without relying on vision. This is critical for people with vision loss, who may need to rely on mental maps of their surroundings.
-          </p>
-          <h2 >Increasing Confidence in Mobility.</h2>
-            <p>Participating in blindfolded activities can help individuals build confidence in their ability to move without seeing. This is helpful for those learning to use canes or guide dogs to navigate independently.
-          </p>
-          <h2>Fostering Empathy and Awareness.</h2>
-            <p>
-                Practicing activities blindfolded can help sighted individuals develop greater understanding and empathy for the challenges faced by people with visual impairments. This fosters greater respect and adaptation in society.
-            </p> 
-            <div class="text-center "><h2>Strengthening Imagination and Creativity.</h2>
-            </div>
-            <p>
-                Engaging in creative activities like drawing or dancing without seeing can strengthen imagination and creativity, helping to develop new ways of problem-solving or self-expression.
-            </p>
-
-        </div>
-     
+<!-- src/app/blindfold-practice/blindfold-practice.component.html -->
+<hr class="rounded" />
+<div class="container">
+  <div class="content">
+    <h1 class="title">{{ pageTitle }}</h1>
+    <div class="images">
+      <img *ngFor="let image of imagePaths" [src]="image" alt="Blindfolded Practice" class="blindfold-img" />
+    </div>
+    <div class="benefits">
+      <ul>
+        <li *ngFor="let benefit of benefits">
+          <h2>{{ benefit.title }}</h2>
+          <p>{{ benefit.description }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
+</div>
