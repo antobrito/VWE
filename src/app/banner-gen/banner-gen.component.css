@@ -12,7 +12,7 @@
    
    /* Styling for the moving text */
    .banner-text {
-     font-size: 15px;
+     font-size: 18px;
      font-weight: bold;
      color: rgb(218, 37, 37);
      text-align: center;
@@ -23,7 +23,7 @@
    
    /* Style for "Please reserve your seat..." text */
    .reservation-text {
-     margin-left: 20px; /* Add space between the two parts */
+     margin-left: 10px; /* Add space between the two parts */
    }
    
    /* Add space between icons and text */

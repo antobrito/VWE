@@ -11,15 +11,22 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 })
 export class BenefitsComponent implements OnInit  {
 
-  pageTitle: string = '';
-  benefits: any[] = [];
-  imagePaths: string[] = [];
 
+ 
+  pageTitle: string = "Blindfolded Practice";
+  
+  imagePath: string = 'assets/img/learning.gif'; // Single centered image
+
+  benefits = [
+    { title: "Enhance Focus", description: "Train your mind to stay sharp and focused in any situation." },
+    { title: "Improve Intuition", description: "Develop a deeper connection with your inner self." },
+    { title: "Strengthen Perception", description: "Expand your ability to perceive beyond the ordinary senses." }
+  ];
   constructor(private benefitService: BenefitsService) {}
 
   ngOnInit(): void {
     this.pageTitle = this.benefitService.getPageTitle();
     this.benefits = this.benefitService.getBenefits();
-    this.imagePaths = this.benefitService.getImagePaths();
+   
   }
 }
