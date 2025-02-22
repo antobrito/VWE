@@ -15,7 +15,7 @@ export class BenefitsComponent implements OnInit  {
  
   pageTitle: string = "Blindfolded Practice";
   
-  imagePath: string = 'assets/img/learning.gif'; // Single centered image
+  imagePath: string = ""; // Single centered image
 
   benefits = [
     { title: "Enhance Focus", description: "Train your mind to stay sharp and focused in any situation." },
