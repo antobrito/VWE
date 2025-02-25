@@ -1,11 +1,16 @@
+
+
 .container {
     background-color: rgb(4, 4, 4);
     color: white;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-    margin-bottom: 50px
+    margin-bottom: 0px;
+   
 }
+
+
 
 .title {
     font-size: 25px;
@@ -18,7 +23,7 @@
 }
 
 .mt-100 {
-    margin-top: 100px
+    margin-top: 50px;
 }
 
 .ml-100 {

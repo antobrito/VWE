@@ -1,0 +1,76 @@
+
+<div class="container-fluid bg-black text-white py-5">
+    <!-- se uso el container fluid y se tomo todo el espacio y no dejo nada en blanco -->
+      <!-- Separador 3D con sombra -->
+<div class="custom-separator-3d"></div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>What <b>our participants</b> are saying</h2>
+      </div>
+    </div>
+  
+    <!-- Carousel -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li *ngFor="let testimonial of testimonials; let i = index"
+            [attr.data-bs-target]="'#testimonialCarousel'"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0"></li>
+      </ol>
+  
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <div *ngFor="let testimonial of testimonials; let i = index"
+             class="carousel-item"
+             [class.active]="i === 0">
+          <div class="row justify-content-center text-center">
+            <div *ngFor="let item of testimonial.items" class="col-md-6">
+              <div class="media testimonial-card d-flex align-items-center">
+                <img [src]="item.image" class="testimonial-img me-3" alt="Customer Image" />
+                <div class="testimonial-content text-start">
+                  <p class="overview"><b>{{ item.name }}</b>, {{ item.role }}</p>
+                  <p>{{ item.text }}</p>
+                  <button *ngIf="item.extraInfo"
+                          type="button"
+                          class="btn btn-secondary mt-1 mb-4"
+                          data-bs-toggle="modal"
+                          data-bs-target="#letterModal"
+                          (click)="openModal(item)">
+                    Read More
+                  </button>
+                </div>
+              </div>
+  
+              <!-- Línea separadora solo en Mobile -->
+              <hr class="d-md-none separator-mobile">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  <!-- Separador 3D con sombra -->
+<div class="custom-separator-3d"></div>
+    <!-- Letter Modal -->
+    <div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h2 class="modal-title elegant-title">See what our alumni experienced</h2>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img [src]="selectedItem?.image" class="testimonial-modal-img mb-3" alt="Customer Image">
+            <div class="card bg-secondary text-white p-3">
+              <p>{{ selectedItem?.longComment }}</p>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center border-0">
+            <img src="assets/img/png_trns_blindfoldy.png" class="company-logo" alt="Company Logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

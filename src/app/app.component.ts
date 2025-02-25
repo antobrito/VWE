@@ -19,13 +19,15 @@ import { DemonstratorsComponent } from './demonstrators/demonstrators.component'
 
 import { EventTabComponent} from './event-tab/event-tab.component';
 import { BannerGenComponent } from './banner-gen/banner-gen.component';
+import { TestimonialComponent } from "./testimonial/testimonial.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MenubarComponent,HomeComponent,VideosComponent,TeamComponent,
-           WelcomeComponent,EventoComponent,FooterComponent,ClasesComponent,DividerComponent,PlayerComponent,
-          SomeClassesComponent,BenefitsComponent, DemonstratorsComponent, EventTabComponent,BannerGenComponent],
+  imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
+    WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,
+    SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

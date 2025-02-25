@@ -1,79 +1,3 @@
-/* @media (max-width: 435px) {
-
-  .titulo
-{
- font-size: 4vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
-}
-
-.titulo2
-{
- font-size: 3.2vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
-}
-
-.titulo3
-{
- font-size: 3vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.titulo4
-{
- font-size: 2vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.texto_lectura
-{
-
-  font-size: 2vh;
-  font-family: "Crete Round", sans-serif;
-  
-
-} 
-
-
-}
-
-
-@media not (max-width: 435px) {
-  .titulo
-{
- font-size: 8vh;
-  font-family:"Crete Round", sans-serif;
-  font-weight: 400;
-}
-
-.titulo2
-{
- font-size: 6vh;
-  font-family: "Crete Round", sans-serif;
-  font-weight: 400;
-}
-
-.titulo3
-{
- font-size: 4vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.titulo4
-{
- font-size: 2.6vh;
-  font-family: "Crete Round", sans-serif;
-}
-
-.texto_lectura
-{
-
-  font-size: 2.3vh;
-  font-family: "Crete Round", sans-serif;
-  
-
-}  */
 
 body {
     background-color: black;
@@ -302,7 +226,7 @@ h1, h2 {
 
     .container {
       max-width: 800px;
-      rgb(234, 150, 102);
+    
       margin: auto;
     
       font-family: Arial, sans-serif;

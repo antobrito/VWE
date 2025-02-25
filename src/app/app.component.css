@@ -1,4 +1,9 @@
-  /* fonts */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+}
+
+/* fonts */
   .subtitle {
  
     font-weight: 600;
@@ -7,4 +12,3 @@
     font-family: "Audiowide", sans-serif;
   }
 
-  
