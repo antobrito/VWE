@@ -72,3 +72,13 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
+.elegant-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+

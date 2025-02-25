@@ -1,12 +1,13 @@
-<section class="titulo bg-black ">
-  <div class="container " style="width: 100%; height: 30% bg-black">
+<meta name="robots" content="index, follow">
+
+<section class="titulo bg-black">
+  <div class="container" style="width: 100%; height: 30% bg-black; padding-bottom: 20px;;">
     <div class="col bg-black">
-      <div
-        class="container pb-1 align-items-center justify-content-center bg-black"
-      >
+      <div class="container p-0 align-items-center justify-content-center bg-black">
         <h1 class="titulo3">Event Information</h1>
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- Accordion Item 1 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button
@@ -16,9 +17,9 @@
                 data-bs-target="#flush-collapseOne"
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
+                (click)="onTabClick('flush-collapseOne')"
               >
-                <i class="fa-regular fa-calendar-days px-2"></i>
-                Date/Time
+                <i class="fa-regular fa-calendar-days px-2"></i> Date/Time
               </button>
             </h2>
             <div
@@ -27,77 +28,84 @@
               aria-labelledby="flush-headingOne"
               data-bs-parent="#accordionFlushExample"
             >
-              <div class="accordion-body">
-                <div class="container">
-                  <!-- Seeing Without Eyes Seminar -->
-                  <div class="announcement">
-                    <h2>
-                      👁️ SEEING WITHOUT EYES - 6-Day Intensive Mindsight Seminar
-                    </h2>
-                    <p>
-                      <strong>📅 Dates:</strong> Sunday, May 4 - Friday, May 9,
-                      2025
-                    </p>
-                    <p>
-                      <strong>⏰ Time:</strong> 10:00 AM - 5:00 PM (Includes 1-hour lunch, two 15-minute breaks, Mindsight book, training kit, hoodie, snacks and refreshments.)
-                    </p>
-                    <p>
-                      <strong>📍 Location:</strong> Avalon Estate, northeast of
-                      London, ON, Canada
-                    </p>
-                    <p>
-                      Embark on a transformative journey to develop your inner
-                      vision and expand your perception beyond the ordinary.
-                    </p>
-                  </div>
 
-                  <!-- Free Mindsight Preparation Class -->
-                  <div class="announcement">
-                    <h2>
-                      💡 Prepare for Success – Free Mindsight Preparation Class!
-                      (Day Before the seminar)
-                    </h2>
-                    <p><strong>📆 Date:</strong> Saturday, May 3</p>
-                    <p><strong>⏰ Time:</strong> 4:00 PM - 9:00 PM</p>
-                    <p>
-                      <strong
-                        >🍽️ Includes a light meal from 6:00 PM - 7:00 PM</strong
-                      >
-                    </p>
-                    <p>
-                      Get a head start on your journey with this exclusive free
-                      session. Connect with fellow participants, optimize your
-                      experience, and enter the seminar feeling confident and
-                      ready! 🚀
-                    </p>
-                  </div>
+            <!--empieza aqui -->
 
-                  <!-- Telekinesis Course -->
-                  <div class="announcement">
-                    <h2>
-                      🔮 Optional (Extra Cost): Alex Stefan’s 8-Hour Telekinesis
-                      Course (2 days before the seminar)
-                    </h2>
-                    <p>
-                      <strong>💫 Mastering Psychokinesis with Hypnosis</strong>
-                    </p>
-                    <p><strong>📅 Dates & Times:</strong></p>
-                    <ul>
-                      <li>🔹 Friday, May 2: 6:00 PM - 9:00 PM</li>
-                      <li>
-                        🔹 Saturday, May 3: 9:00 AM - 3:00 PM (with breaks)
-                      </li>
-                    </ul>
-                    <p>
-                      Unlock your psychokinetic abilities with hands-on training
-                      in hypnosis, NLP, and proven PK techniques. Take your
-                      skills to the next level!
-                    </p>
-                  </div>
+            <div class="accordion-body">
+              <div class="container">
+                <!-- Seeing Without Eyes Seminar -->
+                <div class="announcement">
+                  <h2>
+                    👁️ SEEING WITHOUT EYES - 6-Day Intensive Mindsight Seminar
+                  </h2>
+                  <p>
+                    <strong>📅 Dates:</strong> Sunday, May 4 - Friday, May 9,
+                    2025
+                  </p>
+                  <p>
+                    <strong>⏰ Time:</strong> 10:00 AM - 5:00 PM (Includes 1-hour lunch, two 15-minute breaks, Mindsight book, training kit, hoodie, snacks and refreshments.)
+                  </p>
+                  <p>
+                    <strong>📍 Location:</strong> Avalon Estate, northeast of
+                    London, ON, Canada
+                  </p>
+                  <p>
+                    Embark on a transformative journey to develop your inner
+                    vision and expand your perception beyond the ordinary.
+                  </p>
+                </div>
+
+                <!-- Free Mindsight Preparation Class -->
+                <div class="announcement">
+                  <h2>
+                    💡 Prepare for Success – Free Mindsight Preparation Class!
+                    (Day Before the seminar)
+                  </h2>
+                  <p><strong>📆 Date:</strong> Saturday, May 3</p>
+                  <p><strong>⏰ Time:</strong> 4:00 PM - 9:00 PM</p>
+                  <p>
+                    <strong
+                      >🍽️ Includes a light meal from 6:00 PM - 7:00 PM</strong
+                    >
+                  </p>
+                  <p>
+                    Get a head start on your journey with this exclusive free
+                    session. Connect with fellow participants, optimize your
+                    experience, and enter the seminar feeling confident and
+                    ready! 🚀
+                  </p>
+                </div>
+
+                <!-- Telekinesis Course -->
+                <div class="announcement">
+                  <h2>
+                    🔮 Optional (Extra Cost): Alex Stefan’s 8-Hour Telekinesis
+                    Course (2 days before the seminar)
+                  </h2>
+                  <p>
+                    <strong>💫 Mastering Psychokinesis with Hypnosis</strong>
+                  </p>
+                  <p><strong>📅 Dates & Times:</strong></p>
+                  <ul>
+                    <li>🔹 Friday, May 2: 6:00 PM - 9:00 PM</li>
+                    <li>
+                      🔹 Saturday, May 3: 9:00 AM - 3:00 PM (with lunch and breaks)
+                    </li>
+                  </ul>
+                  <p>
+                    Unlock your psychokinetic abilities with hands-on training
+                    in hypnosis, NLP, and proven PK techniques. Take your
+                    skills to the next level!
+                  </p>
                 </div>
               </div>
             </div>
+          
+  <!--termina aqui -->
+            </div>
+
           </div>
+          <!-- Accordion Item 2 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingTwo">
               <button
@@ -107,9 +115,9 @@
                 data-bs-target="#flush-collapseTwo"
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
+                (click)="onTabClick('flush-collapseTwo')"
               >
-                <i class="fa-solid fa-bed px-2"></i>
-                Accomodation
+                <i class="fa-solid fa-bed px-2"></i> Accomodation
               </button>
             </h2>
             <div
@@ -119,7 +127,10 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                <!-- aqui va la acomodation      -->
+
+<!--Inicia aqui -->
+
+             <!-- aqui va la acomodation      -->
 
                 <!-- Accommodation Information Section -->
                 <div class="accommodation-info">
@@ -196,11 +207,11 @@
                     <h3>🗓 Stay Duration</h3>
                     <p>
                       <span class="icon">🛎</span> Check-in: Saturday, May 3
-                      (afternoon)
+                      (3pm)
                     </p>
                     <p>
                       <span class="icon">🏁</span> Check-out: Saturday, May 10
-                      (morning)
+                      (11am)
                     </p>
                   </div>
 
@@ -246,9 +257,18 @@
                     </p>
                   </div>
                 </div>
+        
+          
+
+<!--termina aqui -->
+
+
+
+
               </div>
             </div>
           </div>
+          <!-- Accordion Item 3 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
               <button
@@ -258,9 +278,9 @@
                 data-bs-target="#flush-collapseThree"
                 aria-expanded="false"
                 aria-controls="flush-collapseThree"
+                (click)="onTabClick('flush-collapseThree')"
               >
-                <i class="fa-solid fa-hand-holding-dollar px-2"></i>
-                Cost
+                <i class="fa-solid fa-hand-holding-dollar px-2"></i> Cost
               </button>
             </h2>
             <div
@@ -270,196 +290,198 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                <!-- COST CODE -->
+                <!--Incia aqui -->
 
-                <div class="container-fluid mt-1">
-                  <!-- Seminar Details -->
-                  <div class="card bg-dark text-white p-1 mb-2">
-                    <h1 class="text-warning text-center text-white">
-                      Seeing Without Eyes - Mindsight Seminar
-                    </h1>
-                    <p class="text-center">
-                      📅 <strong>May 4 - May 9, 2025</strong>
-                    </p>
-                    <p class="text-center">
-                      ⏰ <strong>10:00 AM - 5:00 PM</strong>(Includes 1-hour lunch, two 15-minute breaks, Mindsight book, training kit, hoodie, snacks and refreshments.)
-                    </p>
-                    <h2 class="text-danger text-center fw-bold display-4">
-                      $1,745 USD
-                    </h2>
-                  </div>
+<!-- COST CODE -->
 
-                  <!-- Free Preparation Session -->
-                  <div class="card bg-secondary text-white p-1 mb-2">
-                    <h2 class="text-center text-dark">
-                      💡 Free Mindsight Preparation Session
-                    </h2>
-                    <p class="text-center text-dark">
-                      📆 <strong>Saturday, May 3, 2025</strong> | ⏰ 4:00 PM -
-                      9:00 PM
-                    </p>
-                    <p class="text-center text-dark">
-                      🍽️ Includes a light meal from
-                      <strong>6:00 PM - 7:00 PM</strong>
-                    </p>
-                  </div>
+<div class="container-fluid mt-1">
+  <!-- Seminar Details -->
+  <div class="card bg-dark text-white p-1 mb-2">
+    <h1 class="text-warning text-center text-white">
+      Seeing Without Eyes - Mindsight Seminar
+    </h1>
+    <p class="text-center">
+      📅 <strong>May 4 - May 9, 2025</strong>
+    </p>
+    <p class="text-center">
+      ⏰ <strong>10:00 AM - 5:00 PM</strong>(Includes 1-hour lunch, two 15-minute breaks, Mindsight book, training kit, hoodie, snacks and refreshments.)
+    </p>
+    <h2 class="text-danger text-center fw-bold display-4">
+      $1,745 USD
+    </h2>
+  </div>
 
-                  <!-- Optional Course -->
-                  <div class="card bg-dark text-white p-1 mb-2">
-                    <h2 class="text-center">
-                      ✨ Optional: Telekinesis Course & Hypnosis
-                    </h2>
-                    <p class="text-center">📅 <strong>May 2-3, 2025</strong></p>
-                    <p class="text-center">
-                      🔹 <strong>Friday:</strong> 6:00 PM - 9:00 PM
-                    </p>
-                    <p class="text-center">
-                      🔹 <strong>Saturday:</strong> 9:00 AM - 3:00 PM
-                    </p>
-                    <h2 class="text-danger text-center fw-bold display-4">
-                      $299 USD
-                    </h2>
-                    <p class="text-warning text-center">
-                      (Extra night accomodation fee applies)
-                    </p>
-                  </div>
+  <!-- Free Preparation Session -->
+  <div class="card bg-secondary text-white p-1 mb-2">
+    <h2 class="text-center text-dark">
+      💡 Free Mindsight Preparation Session
+    </h2>
+    <p class="text-center text-dark">
+      📆 <strong>Saturday, May 3, 2025</strong> | ⏰ 4:00 PM -
+      9:00 PM
+    </p>
+    <p class="text-center text-dark">
+      🍽️ Includes a light meal from
+      <strong>6:00 PM - 7:00 PM</strong>
+    </p>
+  </div>
 
-                  <!-- Accommodation Options -->
-                  <div class="card bg-secondary text-white p-4 mb-5">
-                    <h2 class="text-center text-dark">
-                      🏡 Accommodation Options
-                    </h2>
+  <!-- Optional Course -->
+  <div class="card bg-dark text-white p-1 mb-2">
+    <h2 class="text-center">
+      ✨ Optional: Telekinesis Course & Hypnosis
+    </h2>
+    <p class="text-center">📅 <strong>May 2-3, 2025</strong></p>
+    <p class="text-center">
+      🔹 <strong>Friday:</strong> 6:00 PM - 9:00 PM
+    </p>
+    <p class="text-center">
+      🔹 <strong>Saturday:</strong> 9:00 AM - 3:00 PM
+    </p>
+    <h2 class="text-danger text-center fw-bold display-4">
+      $299 USD
+    </h2>
+    <p class="text-warning text-center">
+      (Extra night accomodation fee applies)
+    </p>
+  </div>
 
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <div class="card bg-dark text-white p-4">
-                          <h3 class="text-center">
-                            🔹 Shared 2-Bedroom Apartment (7 Nights)
-                          </h3>
-                          <h2 class="text-danger text-center fw-bold">
-                            $ 495 USD
-                          </h2>
-                          <p class="text-warning text-center">
-                            🕰 Extra night: + $71 USD
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card bg-dark text-white p-4">
-                          <h3 class="text-center">
-                            🔹 Private 1-Bedroom Apartment (7 Nights)
-                          </h3>
-                          <h2 class="text-danger text-center fw-bold">
-                            $745 USD
-                          </h2>
-                          <p class="text-warning text-center">
-                            🕰 Extra night: + $107 USD
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  <!-- Accommodation Options -->
+  <div class="card bg-secondary text-white p-4 mb-5">
+    <h2 class="text-center text-dark">
+      🏡 Accommodation Options
+    </h2>
 
-                  <!-- Total Cost Breakdown -->
-                  <div class="card bg-dark text-white p-4 mt-5">
-                    <h1 class="text-center">💰 Total Seminar Cost Breakdown</h1>
-
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <div class="card bg-black text-white p-4">
-                          <h2 class="text-center">
-                            ✔ 6-Day Seminar + 7 Nights Shared
-                          </h2>
-                          <h4 class="text-center">$1,745 USD + $495 USD =</h4>
-                          <h2 class="text-danger text-center fw-bold">
-                            $2,240 USD
-                          </h2>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card bg-black text-white p-4">
-                          <h2 class="text-center">
-                            ✔ 6-Day Seminar + 7 Nights Private
-                          </h2>
-                          <h4 class="text-center">$1,745 USD + $745 USD =</h4>
-                          <h2 class="text-danger text-center fw-bold">
-                            $2,490 USD
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h2 class="mt-4 text-center">
-                      ➕ Add the optional Telekinesis Course + Extra Night.(if desired):
-                    </h2>
-
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <div class="card bg-black text-white p-4">
-                          <p class="text-center">
-                            🔹 <strong>Shared Occupancy:</strong>
-                          </p>
-                          <h4 class="text-center">$299 USD+ $71 USD =</h4>
-                          <h2 class="text-danger text-center fw-bold">
-                            $370 USD
-                          </h2>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card bg-black text-white p-4">
-                          <p class="text-center">
-                            🔹 <strong>Private Occupancy:</strong>
-                          </p>
-                          <h4 class="text-center">$299 USD + $107 USD =</h4>
-                          <h3 class="text-danger text-center fw-bold">
-                            $406 USD
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Payment Details Card -->
-                  <div class="card bg-secondary text-white p-2 mt-1">
-                    <h2 class="text-center">💳 Payment Details</h2>
-
-                    <!-- Black Container Inside the Card with minimal top and bottom padding -->
-                    <div class="container bg-dark text-white pt-1 pb-1 mt-1">
-                      <ul class="mt-3">
-                        <li>
-                          💰
-                          <strong
-                            >Initial Payment (50% upon Registration):</strong
-                          >
-                          A 50% deposit of the total cost is required at the
-                          time of registration to secure your spot in the
-                          seminar.
-                        </li>
-                        <li>
-                          📅 <strong>Final Payment Deadline:</strong> The
-                          remaining balance must be paid by
-                          <strong>March 30, 2025</strong>.
-                        </li>
-                        <li>
-                          🔄 <strong>Refund Policy:</strong> Participants may
-                          cancel and receive a full refund until
-                          <strong>March 30, 2025</strong>. After this date, no
-                          refunds will be offered as spots may not be able to be
-                          filled in time before the seminar.
-                        </li>
-                      </ul>
-                    </div>
-
-
-    <!-- Cancellation Policy Section with minimal padding -->
-    <div class="container bg-dark text-white pt-1 pb-1 mt-4">
-      <p><strong>Cancellation Policy:</strong><br>
-      Participants may cancel and receive a full refund until <strong>March 30, 2025</strong>. After this date, no refunds will be offered as spots may not be able to be filled in time before the seminar.</p>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="card bg-dark text-white p-4">
+          <h3 class="text-center">
+            🔹 Shared 2-Bedroom Apartment (7 Nights)
+          </h3>
+          <h2 class="text-danger text-center fw-bold">
+            $ 495 USD
+          </h2>
+          <p class="text-warning text-center">
+            🕰 Extra night: + $71 USD
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card bg-dark text-white p-4">
+          <h3 class="text-center">
+            🔹 Private 1-Bedroom Apartment (7 Nights)
+          </h3>
+          <h2 class="text-danger text-center fw-bold">
+            $745 USD
+          </h2>
+          <p class="text-warning text-center">
+            🕰 Extra night: + $107 USD
+          </p>
+        </div>
+      </div>
     </div>
-                  </div>
-                </div>
+  </div>
+
+  <!-- Total Cost Breakdown -->
+  <div class="card bg-dark text-white p-4 mt-5">
+    <h1 class="text-center">💰 Total Seminar Cost Breakdown</h1>
+
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="card bg-black text-white p-4">
+          <h2 class="text-center">
+            ✔ 6-Day Seminar + 7 Nights Shared
+          </h2>
+          <h4 class="text-center">$1,745 USD + $495 USD =</h4>
+          <h2 class="text-danger text-center fw-bold">
+            $2,240 USD
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card bg-black text-white p-4">
+          <h2 class="text-center">
+            ✔ 6-Day Seminar + 7 Nights Private
+          </h2>
+          <h4 class="text-center">$1,745 USD + $745 USD =</h4>
+          <h2 class="text-danger text-center fw-bold">
+            $2,490 USD
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-4 text-center">
+      ➕ Add the optional Telekinesis Course + Extra Night.(if desired):
+    </h2>
+
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="card bg-black text-white p-4">
+          <p class="text-center">
+            🔹 <strong>Shared Occupancy:</strong>
+          </p>
+          <h4 class="text-center">$299 USD+ $71 USD =</h4>
+          <h2 class="text-danger text-center fw-bold">
+            $370 USD
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card bg-black text-white p-4">
+          <p class="text-center">
+            🔹 <strong>Private Occupancy:</strong>
+          </p>
+          <h4 class="text-center">$299 USD + $107 USD =</h4>
+          <h3 class="text-danger text-center fw-bold">
+            $406 USD
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Payment Details Card -->
+  <div class="card bg-secondary text-white p-2 mt-1">
+    <h2 class="text-center">💳 Payment Details</h2>
+
+    <!-- Black Container Inside the Card with minimal top and bottom padding -->
+    <div class="container bg-dark text-white pt-1 pb-1 mt-1">
+      <ul class="mt-3">
+        <li>
+          💰
+          <strong
+            >Initial Payment (50% upon Registration):</strong
+          >
+          A 50% deposit of the total cost is required at the
+          time of registration to secure your spot in the
+          seminar.
+        </li>
+        <li>
+          📅 <strong>Final Payment Deadline:</strong> The
+          remaining balance must be paid by
+          <strong>March 30, 2025</strong>.
+        </li>
+        
+      </ul>
+    </div>
+
+
+<!-- Cancellation Policy Section with minimal padding -->
+<div class="container bg-dark text-white pt-1 pb-1 mt-4">
+<p><strong>Cancellation Policy:</strong><br>
+Participants may cancel and receive a full refund until <strong>March 30, 2025</strong>. After this date, no refunds will be offered as spots may not be able to be filled in time before the seminar.</p>
+</div>
+  </div>
+</div>
+                <!--termina aqui -->
+
+
+
+
               </div>
             </div>
           </div>
+          <!-- Accordion Item 4 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-heading4">
               <button
@@ -469,9 +491,9 @@
                 data-bs-target="#flush-collapse4"
                 aria-expanded="false"
                 aria-controls="flush-collapse4"
+                (click)="onTabClick('flush-collapse4')"
               >
-                <i class="fa-regular fa-calendar-check px-2"></i>
-                How to book the seminar ?
+                <i class="fa-regular fa-calendar-check px-2"></i> How to Book the Seminar?
               </button>
             </h2>
             <div
@@ -481,38 +503,39 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-               
-                <div class="container-fluid mt-5">
-                  <!-- New Card for Seminar Registration with 100% width -->
-                  <div class="card bg-black  text-white  mt-4">
-                    <h2 class="text-center">📚 Seminar/Workshop Registration - London, Ontario, Canada</h2>
-                    <div class="card-body">
-                      <p>To reserve your spot for the London, Ontario - Canada seminar/workshop, please email
-                        <a href="mailto:robfreeman@look.ca" rel="noopener noreferrer">robfreeman&#64;look.ca</a> 
-                        with the following details:
-                      </p>
-                      
-                      <ul>
-                        <li>Your full name.</li>
-                        <li>Address.</li>
-                        <li>Cellphone number.</li>
-                        <li>Statement of interest in signing up for the London, ON, Canada seminar/workshop.</li>
-                        <li>If applicable, please include any vision issues so we can prioritize your registration.</li>
-                      </ul>
                 
-                      <p>Please note: Registration is first come, first served, and once spots are filled, a waiting list will be kept in case of cancellations or for future seminars.</p>
-                      
-                      <!-- Blinking Announcement with Black Background -->
-                      <p class="blinking-text text-warning"><strong>Registration closes on March 30, 2025, or earlier if spots are filled.</strong></p>
-                    </div>
+               <!-- *************************** Incia aqui  ************************************-->
+
+              <div class="container-fluid mt-5">
+                <!-- New Card for Seminar Registration with 100% width -->
+                <div class="card bg-black  text-white  mt-4">
+                  <h2 class="text-center">📚 Seminar/Workshop Registration - London, Ontario, Canada</h2>
+                  <div class="card-body">
+                    <p>To reserve your spot for the London, Ontario - Canada seminar/workshop, please email
+                      <a href="mailto:robfreeman@look.ca" rel="noopener noreferrer">robfreeman&#64;look.ca</a> 
+                      with the following details:
+                    </p>
+                    
+                    <ul>
+                      <li>Your full name.</li>
+                      <li>Address.</li>
+                      <li>Cellphone number.</li>
+                      <li>Statement of interest in signing up for the London, ON, Canada seminar/workshop.</li>
+                      <li>If applicable, please include any vision issues so we can prioritize your registration.</li>
+                    </ul>
+              
+                    <p>Please note: Registration is first come, first served, and once spots are filled, a waiting list will be kept in case of cancellations or for future seminars.</p>
+                    
+                    <!-- Blinking Announcement with Black Background -->
+                    <p class="blinking-text text-warning"><strong>Registration closes on March 30, 2025, or earlier if spots are filled.</strong></p>
                   </div>
                 </div>
-                
-      
+              </div>
               </div>
             </div>
           </div>
-
+         <!-- ************************* termina aqui  **********************************************-->
+          <!-- Accordion Item 5 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-heading5">
               <button
@@ -522,9 +545,9 @@
                 data-bs-target="#flush-collapse5"
                 aria-expanded="false"
                 aria-controls="flush-collapse5"
+                (click)="onTabClick('flush-collapse5')"
               >
-                <i class="fa-solid fa-hand-holding-dollar px-2"></i>
-                Seminar Overview and Important Information
+                <i class="fa-solid fa-hand-holding-dollar px-2"></i> Seminar Overview and Important Information
               </button>
             </h2>
             <div
@@ -533,7 +556,9 @@
               aria-labelledby="flush-heading5"
               data-bs-parent="#accordionFlushExample"
             >
-              <div class="accordion-body">
+              <div class="accordion-body">         
+                <!-- ************************* termina aqui  **********************************************-->
+
                 <div class="container mt-1">
                   <!-- Card que contiene todo el contenido -->
                   <div class="card" style="width: 100%;">
@@ -616,6 +641,9 @@
                   </div>
                 </div>
               
+
+         <!-- ************************* termina aqui  **********************************************-->
+
               </div>
             </div>
           </div>
