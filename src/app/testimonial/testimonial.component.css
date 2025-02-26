@@ -1,73 +1,64 @@
-body {
-    font-family: "Open Sans", sans-serif;
- 
+/* Make the image bigger on mobile */
+.carousel .media img {
+    width: 27%;
+    height: 27%;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 2%;
+    margin-left: 1%;
   }
   
-  container-xl
-  {
-    width: 10%;
-  }
-  h2 {
-    color: #f0eaea;
-    font-size: 26px;
-    font-weight: 300;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    margin: 30px 0 70px;
+  /* On smaller screens, make the image bigger */
+  @media (max-width: 768px) {
+    .carousel .media img {
+      width: 40%; /* Increase image size on mobile */
+      height: auto; /* Ensure aspect ratio is maintained */
+      margin-left: auto;
+      margin-right: auto;
+      display: block; /* Center the image */
+    }
+  
+    /* Center the testimonial cards */
+    .testimonial-card {
+      display: flex;
+      align-items: center;
+      text-align: center; /* Center the text */
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  
+    /* Optional: Make the modal image larger on mobile */
+    .testimonial-modal-img {
+      width: 60%; /* Adjust to an appropriate size */
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto 20px;
+    }
   }
   
-  h2::after {
-    content: "";
-    width: 100px;
-    position: absolute;
-    margin: 0 auto;
-    height: 4px;
-    border-radius: 1px;
-    background: #d9910b;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-  }
-  
+  /* General Carousel styles */
   .carousel .carousel-item {
     color: #eee8e8;
     overflow: hidden;
     min-height: 120px;
-    font-size: 18px;
+    font-size: 16px;
   }
   
-  .carousel .media img {
-    width: 23%;
-    height: 23%;
-    display: block;
-    border-radius: 50%;
-    margin-bottom: 2%;
-    margin-left: 15%;; 
-}
-  
-  .carousel .testimonial {
-    padding: 0 15px 0 60px;
-    position: relative;
+  /* Testimonial Content styles */
+  .testimonial-content {
+    color: white;
+    padding: 0 15px;
   }
   
-  .carousel .testimonial::before {
-    content: "\201C";
-    font-family: Arial, sans-serif;
-    color: #e2e2e2;
-    font-weight: bold;
-    font-size: 68px;
-    line-height: 54px;
-    position: absolute;
-    left: 15px;
-    top: 0;
-  }
-  
+  /* Carousel overview text */
   .carousel .overview b {
     text-transform: uppercase;
-    color:#d9910b;
+    color: #d9910b;
   }
   
+  /* Carousel indicators */
   .carousel .carousel-indicators {
     bottom: -40px;
   }
@@ -88,96 +79,22 @@ body {
   
   .carousel-indicators li.active {
     color: #fff;
-    background:#d9910b;
+    background: #d9910b;
     border: 5px double;
   }
   
-
- /* Aseguramos que el contenedor tenga posicionamiento relativo */
-.container-xl.position-relative {
-    position: relative;
+  /* Decorative 3D separator */
+  .custom-separator-3d {
+    width: 100%;
+    height: 5px;
+    background: #3a3939;
+    border-radius: 3px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
   }
   
-  /* Estilo de la imagen sobrepuesta */
-  .overlay-img {
-    width: 150px;  /* Ajusta el tamaño de la imagen */
-    height: auto;  /* Mantén la proporción de la imagen */
-    z-index: 10;   /* Asegúrate de que esté encima de otros elementos */
-  }
-  
-  /* Aseguramos que la imagen se ajuste correctamente al tamaño del contenedor */
-  img.img-fluid {
-    max-width: 100%;  /* Permite que la imagen se ajuste al contenedor */
-    height: auto;     /* Mantiene la relación de aspecto */
-  }
-  
-  /* Aseguramos que el contenedor tenga suficiente espacio para ver la imagen */
-  .container-xl {
-    padding-top: 50px;  /* Agrega algo de espacio en la parte superior si es necesario */
-    padding-right: 50px; /* Agrega algo de espacio a la derecha si es necesario */
-  }
-  
-  /* Posición absoluta para la imagen en la esquina superior derecha */
-  .position-absolute.top-0.end-0 {
-    position: absolute;
-    top:  0;
-    right: 0;
-  }
-  
-/* //esto es de la ventana pequena  */
-
-
-  
-  .testimonial-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  .testimonial-content {
-    color: white;
-  }
-  
-  .modal-dialog {
-    max-width: 500px; /* Reduce el ancho máximo de la modal */
-  }
-  
- 
-  
-  .small-text {
-    font-size: 14px; /* Reduce el tamaño del texto */
-  }
-  
-  .company-logo {
-    width: 120px; /* Ajuste menor del logo */
-  }
-
-  .modal-img {
-    width: 100%; /* Se adapta al ancho disponible */
-    max-width: 250px; /* Define un tamaño máximo */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Evita espacios extra */
-    margin: 0 auto 15px; /* Centra la imagen y agrega espacio abajo */
-    border-radius: 10px; /* Bordes redondeados para un look elegante */
-  }
-
-  /* Remove margin between title and image */
-.modal-header .modal-title {
-    margin-bottom: 0; /* Remove default bottom margin from the title */
-  }
-  
-
-  /* Optional: Adjust the modal's overall margin to make sure there's no excess space */
-  .modal-body {
-    padding-top: 10px; /* Adjust this to control the space between image and card */
-  }
-  
-
-
-
-.testimonial-card {
+  /* Testimonial Card */
+  .testimonial-card {
     display: flex;
     align-items: center;
     text-align: left;
@@ -187,62 +104,107 @@ body {
     margin-bottom: 20px;
   }
   
-  .testimonial-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
+  /* Testimonial Content */
   .testimonial-content {
     flex: 1;
   }
   
-  .overview {
-    font-weight: bold;
-    margin-bottom: 5px;
+  /* Modal styles */
+  .modal-dialog {
+    max-width: 500px; /* Limit the modal width */
+    max-height: 80vh; /* Ensure the modal is scrollable if content is too long */
+    overflow-y: auto; /* Enable vertical scrolling */
   }
   
-  /* Modal image size */
-  .testimonial-modal-img {
-    width: 70%; /* Adjust the width to make it bigger */
-    max-width: 500px; /* Set a maximum size to avoid making it too big */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Space below the image */
+  .modal-header .modal-title {
+    font-size: 24px;
+    font-weight: 600; /* Make title bolder */
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: rgb(247, 241, 241); /* Color of the modal title */
+  }
+  
+  .modal-body {
+    padding-top: 1px;
+    text-align: justify; /* Justifies the text */
+    overflow-y: auto; /* Allows scrolling if the content overflows */
+  }
+  
+  .modal-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 10px;
   }
   
   .company-logo {
     width: 150px;
   }
   
-  /* Asegura que no aparezcan números o texto en los indicadores */
-.carousel-indicators li {
-    list-style-type: none; /* Elimina cualquier estilo de lista como números o puntos */
+  /* Optional: Ensure the testimonial image in modal is sized properly */
+  .testimonial-modal-img {
+    width: 50%; /* Adjust the width to make it bigger */
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 20px; /* Space below the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-
-  /* Separador en Mobile */
-  @media (max-width: 768px) {
-    .testimonial-card {
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 15px;
-      margin-bottom: 15px;
-    }
   
-    .separator-mobile {
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+  /* Style the modal title */
+  .modal-header .modal-title {
+    margin-bottom: 0; /* Remove default margin below the title */
   }
-
-
-  /* Separador decorativo */
-/* Separador con efecto 3D */
-/* Separador con efecto 3D */
-.custom-separator-3d {
-    width: 100%; /* No ocupa toda la pantalla, se ve más elegante */
-    height: 5px; /* Grosor del separador */
-    background: #3a3939; /* Color gris claro */
-    border-radius: 3px; /* Bordes redondeados para suavizar el efecto */
-    margin: 40px auto; /* Espaciado arriba y abajo, centrado */
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2); /* Sombra blanca para efecto 3D */
+  
+  /* Ensure that images within testimonial content are responsive */
+  .carousel .media img {
+    max-width: 100%; /* Ensures that the image adapts to its container */
+    height: auto; /* Keeps aspect ratio */
+  }
+  
+  /* Ensuring images are centered */
+  .testimonial-card .media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Styling the title */
+  .title-with-line {
+    font-size: 30px; /* Set the font size */
+    font-weight: bold;
+    color: #f7f6f5; /* Dark gray color for text */
+    text-transform: uppercase;
+    position: relative; /* Required for positioning the line */
+    display: inline-block;
+  }
+  
+  /* Justify text in the scrolling area */
+  .modal-body p {
+    margin-bottom: 10px; /* Adjust the space between paragraphs */
+    color: black;
+  }
+  
+  /* Style the close button (X) */
+  .btn-close {
+    color: white !important; /* Always white */
+    opacity: 1;   /* Ensure it's visible */
+    border: 2; /* Remove default border */
+    font-size: 20px; /* Make it larger */
+    margin-right: 30px;
+   
+  }
+  
+  /* If you want to justify the text within the testimonial content or any other part of the modal */
+  .testimonial-content {
+    text-align: justify;
+  }
+  /* Hide numbers or text inside the carousel indicators */
+.carousel-indicators li {
+    list-style-type: none; /* Remove any default list marker */
+  }
+  
+  .carousel-indicators li::after {
+    content: none; /* Remove any generated content (such as numbers) */
   }
