@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AfterViewInit , ViewChild} from '@angular/core'; //esto es para manejar el tab
+import { Component, Inject, PLATFORM_ID, AfterViewInit, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-event-tab',
@@ -9,35 +9,46 @@ import { AfterViewInit , ViewChild} from '@angular/core'; //esto es para manejar
   styleUrl: './event-tab.component.css'
 })
 export class EventTabComponent implements AfterViewInit {
-  
-  constructor() {}
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {
-    const accordion = document.getElementById('accordionFlushExample');
-    if (accordion) {
-      // Convert HTMLCollection to an array to use the 'for...of' loop
-      const collapses = Array.from(accordion.getElementsByClassName('accordion-collapse'));
-      for (let collapse of collapses) {
-        collapse.addEventListener('shown.bs.collapse', (event: any) => {
-          this.scrollToTab(event.target);
-        });
+    if (isPlatformBrowser(this.platformId)) {
+      const accordion = document.getElementById('accordionFlushExample');
+      if (accordion) {
+        // Convert HTMLCollection to an array to use the 'for...of' loop
+        const collapses = Array.from(accordion.getElementsByClassName('accordion-collapse'));
+        for (let collapse of collapses) {
+          collapse.addEventListener('shown.bs.collapse', (event: any) => {
+            this.scrollToTab(event.target);
+          });
+        }
       }
     }
   }
 
   scrollToTab(target: HTMLElement): void {
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (isPlatformBrowser(this.platformId) && target) {
+      setTimeout(() => {
+        const rect = target.getBoundingClientRect();
+        const offset = 100; // Ajusta este valor según la altura del tab
+  
+        window.scrollTo({
+          top: window.scrollY + rect.top - offset,
+          behavior: 'smooth'
+        });
+      }, 300);
     }
   }
 
   onTabClick(tabId: string): void {
-    setTimeout(() => {
-      const tabElement = document.getElementById(tabId);
-      if (tabElement) {
-        this.scrollToTab(tabElement);
-      }
-    }, 300);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        const tabElement = document.getElementById(tabId);
+        if (tabElement) {
+          this.scrollToTab(tabElement);
+        }
+      }, 300);
+    }
   }
-
 }
