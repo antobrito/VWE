@@ -208,3 +208,24 @@
   .carousel-indicators li::after {
     content: none; /* Remove any generated content (such as numbers) */
   }
+
+  /* Add more margin to the modal header (title + close button) */
+.modal-header {
+    padding-top: 20px; /* Add space above the title */
+    padding-right: 20px; /* Add space to the right of the header */
+    padding-left: 20px; /* Add space to the left of the header */
+    padding-bottom: 10px; /* Optional, adjust the bottom margin as well */
+  }
+  
+  /* Increase the margin between the title and the modal content */
+  .modal-header .modal-title {
+    margin-bottom: 20px; /* Space below the title */
+    padding-top: 10px; /* Space above the title */
+  }
+  
+  /* Add margin to the close button to move it more to the right */
+  .modal-header .btn-close {
+    margin-top: 10px; /* Space from the top */
+    margin-right: 20px; /* Move the close button further right */
+  }
+  
