@@ -139,12 +139,12 @@
   }
   
   .company-logo {
-    width: 150px;
+    width: 120px;
   }
   
   /* Optional: Ensure the testimonial image in modal is sized properly */
   .testimonial-modal-img {
-    width: 50%; /* Adjust the width to make it bigger */
+    width: 40%; /* Adjust the width to make it bigger */
     max-width: 400px;
     height: auto;
     margin-bottom: 20px; /* Space below the image */
