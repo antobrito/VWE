@@ -54,28 +54,28 @@
     <div class="custom-separator-3d"></div>
   
     <!-- Letter Modal -->
-    <div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content bg-dark text-white">
-          <!-- Modal Header with Title and Close Button -->
-          <div class="modal-header">
-            <h2 class="modal-title elegant-title">{{ selectedItem?.name }}</h2>
-            <!-- Trigger Button -->
-            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close">Close</button>
-  
-          </div>
-  
-          <div class="text-center">
-            <img [src]="selectedItem?.image" class="testimonial-modal-img mb-3" alt="Customer Image">
-            <div class="modal-body bg-secondary text-white p-3">
-              <p>{{ selectedItem?.longComment }}</p>
-            </div>
-          </div>
-          <div class="modal-footer justify-content-center border-0">
-            <img src="assets/img/png_trns_blindfoldy.png" class="company-logo" alt="Company Logo">
-          </div>
+<div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <!-- Modal Header with Title and Close Button -->
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h2 class="modal-title elegant-title">{{ selectedItem?.name }}</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!-- Modal Body with Scrollable Text -->
+      <div class="modal-body text-center p-3">
+        <img [src]="selectedItem?.image" class="testimonial-modal-img mb-3" alt="Customer Image">
+        <h5 class="text-warning">{{ selectedItem?.role }}</h5>
+        <div class="scrollable-text bg-secondary p-3 rounded">
+          <p>{{ selectedItem?.longComment }}</p>
         </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer justify-content-center border-0">
+        <img src="assets/img/png_trns_blindfoldy.png" class="company-logo" alt="Company Logo">
       </div>
     </div>
   </div>
-  
+</div>
