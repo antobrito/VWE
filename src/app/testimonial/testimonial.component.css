@@ -229,3 +229,42 @@
     margin-right: 20px; /* Move the close button further right */
   }
   
+
+  /* Limit modal width and height */
+.modal-dialog {
+  max-width: 90%; /* Adjust width for better responsiveness */
+  max-height: 80vh;
+}
+
+/* Make modal content scrollable */
+.scrollable-text {
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: justify;
+  color: white;
+}
+
+/* Adjust close button */
+.btn-close {
+  filter: invert(1); /* Ensures button is visible on dark background */
+}
+
+/* Adjust image inside modal */
+.testimonial-modal-img {
+  width: 50%;
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 95%;
+  }
+  .testimonial-modal-img {
+    width: 70%;
+  }
+  .scrollable-text {
+    max-height: 200px;
+  }
+}
