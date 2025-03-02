@@ -180,7 +180,7 @@
     font-size: 24px;
     font-weight: 600; /* Make title bolder */
     margin-bottom: 10px; /* Add spacing below the title */
-    color: rgb(228, 109, 39); /* Color of the modal title */
+    color:#d9910b;/* Color of the modal title */
   }
   
   .modal-body {
@@ -288,4 +288,36 @@
   .scrollable-text {
     max-height: 200px;
   }
+
+
+  .card {
+    min-height: 250px; /* Ajusta según el tamaño que prefieras */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  
+}
+
+
+.card .btn {
+  margin-top: auto; /* Empuja el botón hacia abajo sin cambiar el tamaño */
+}
+
+
+.card i {
+  font-size: 2rem; /* Hace los iconos más grandes */
+}
+
+.footer-title {
+  font-size: 1.8rem; /* Hace los títulos más grandes */
+}
+
+.card {
+  min-height: 300px; /* Ajusta según el tamaño más grande necesario */
+  max-height: 300px; /* Evita que crezca más */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
