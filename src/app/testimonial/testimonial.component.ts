@@ -70,7 +70,7 @@ export class TestimonialComponent implements AfterViewInit {
           image: 'assets/img/victoriaVWE.png', 
           text: 'Attending VWE for the second time has been nothing short of transformative. The entire team goes above and beyond to create an event that is both immersive and filled with joy—it’s evident that this is truly a labor of love. My mindsight has opened even more, and I’ve gained priceless connections. Thank you, Rob and team, for yet another unforgettable experience!', 
           name: 'Victoria Makris', 
-          role: 'Minnesota - USA', 
+          role: 'Florida - USA', 
           extraInfo: false,
           longComment: ''
         }
