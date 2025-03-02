@@ -180,7 +180,7 @@
     font-size: 24px;
     font-weight: 600; /* Make title bolder */
     margin-bottom: 10px; /* Add spacing below the title */
-    color:#d9910b; /* Color of the modal title */
+    color: rgb(228, 109, 39); /* Color of the modal title */
   }
   
   .modal-body {
@@ -236,7 +236,7 @@
     filter: invert(1); /* Ensures button is visible on dark background */
   }
    
-  }
+  
 
 
 
