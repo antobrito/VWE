@@ -1,14 +1,14 @@
-/* Make the image bigger on mobile */
+/* Hacer que la imagen sea más grande en móviles */
 .carousel .media img {
-    width: 27%;
-    height: 27%;
-    display: block;
-    border-radius: 50%;
-    margin-bottom: 2%;
-    margin-left: 1%;
-  }
+  width: 27%;
+  height: 27%;
+  display: block;
+  border-radius: 50%;
+  margin-bottom: 2%;
+  margin-left: 1%;
+}
 
-/* General Carousel styles */
+/* Estilos generales para el carrusel */
 .carousel .carousel-item {
   color: #eee8e8;
   overflow: hidden;
@@ -16,306 +16,217 @@
   font-size: 16px;
 }
 
-  /* Carousel overview text */
-  .carousel .overview b {
-    text-transform: uppercase;
-    color: #d9910b;
-  }
-  
-  /* Carousel indicators */
-  .carousel .carousel-indicators {
-    bottom: -40px;
-  }
-  
-  .carousel-indicators li,
-  .carousel-indicators li.active {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 1px 3px;
-    box-sizing: border-box;
-  }
-  
-  .carousel-indicators li {
-    background: #e2e2e2;
-    border: 4px solid #fff;
-  }
-  
-  .carousel-indicators li.active {
-    color: #fff;
-    background: #d9910b;
-    border: 5px double;
-  }
-  
-  /* Decorative 3D separator */
-  .custom-separator-3d {
-    width: 100%;
-    height: 5px;
-    background: #3a3939;
-    border-radius: 3px;
-    margin: 40px auto;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-  }
-   /* Ensure that images within testimonial content are responsive */
-   .carousel .media img {
-    max-width: 100%; /* Ensures that the image adapts to its container */
-    height: auto; /* Keeps aspect ratio */
-  }
+/* Texto de resumen del carrusel */
+.carousel .overview b {
+  text-transform: uppercase;
+  color: #d9910b;
+}
 
-    /* Hide numbers or text inside the carousel indicators */
+/* Indicadores del carrusel */
+.carousel .carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 1px 3px;
+  box-sizing: border-box;
+}
+
 .carousel-indicators li {
-  list-style-type: none; /* Remove any default list marker */
+  background: #e2e2e2;
+  border: 4px solid #fff;
+}
+
+.carousel-indicators li.active {
+  color: #fff;
+  background: #d9910b;
+  border: 5px double;
+}
+
+/* Separador decorativo 3D */
+.custom-separator-3d {
+  width: 100%;
+  height: 5px;
+  background: #3a3939;
+  border-radius: 3px;
+  margin: 40px auto;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Asegurar que las imágenes dentro del contenido de los testimonios sean responsivas */
+.carousel .media img {
+  max-width: 100%; /* Asegura que la imagen se adapte a su contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+/* Ocultar números o texto dentro de los indicadores del carrusel */
+.carousel-indicators li {
+  list-style-type: none; /* Eliminar marcador de lista por defecto */
 }
 
 .carousel-indicators li::after {
-  content: none; /* Remove any generated content (such as numbers) */
+  content: none; /* Eliminar cualquier contenido generado (como números) */
 }
 
-
-
-
-
-
 /********************* mobile ********************/
-  @media (max-width: 768px) {
-    .carousel .media img {
-      width: 40%; /* Increase image size on mobile */
-      height: auto; /* Ensure aspect ratio is maintained */
-      margin-left: auto;
-      margin-right: auto;
-      display: block; /* Center the image */
-    }
-  
-    /* Center the testimonial cards */
-    .testimonial-card {
-      display: flex;
-      align-items: center;
-      text-align: center; /* Center the text */
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      width: 500px;;
-    }
-  
-    /* Optional: Make the modal image larger on mobile */
-    .testimonial-modal-img {
-      width: 60%; /* Adjust to an appropriate size */
-      max-width: 400px;
-      height: auto;
-      margin: 0 auto 20px;
-    }
+@media (max-width: 768px) {
+  /* Ajustes en imágenes para móvil */
+  .carousel .media img {
+    width: 35%; /* Reducir el tamaño de la imagen en móviles */
+    height: auto; /* Mantener la relación de aspecto */
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Centrar la imagen */
   }
 
-
-  
-  /******************** end mobile **************************/
-  
-
-  
-  /*********************   testimonial  *************************/
-
-  
-
-   /* If you want to justify the text within the testimonial content or any other part of the modal */
-   .testimonial-content {
-    text-align: justify;
+  /* Asegurarse de que el texto del testimonio ocupe más espacio */
+  .testimonial-content {
+    padding: 15px;
+    text-align: center; /* Centrar texto en móviles */
+    font-size: 14px; /* Reducir tamaño de la fuente */
   }
 
+  /* Asegurar que el contenedor de texto sea desplazable */
+  .scrollable-text {
+    max-height: 300px; /* Altura máxima para el texto con scroll */
+    overflow-y: auto; /* Permitir scroll vertical */
+  }
 
-  /* Ensuring images are centered */
+  /* Mejorar la apariencia de las tarjetas de testimonios */
+  .testimonial-card {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar todo en la tarjeta */
+  }
+
+  /* Imagen en modal ajustada para móviles */
+  .testimonial-modal-img {
+    width: 50%; /* Ajustar tamaño en el modal */
+    max-width: 250px;
+    margin: 0 auto; /* Centrar la imagen */
+    height: auto; /* Mantener la relación de aspecto */
+  }
+}
+
+/******************** end mobile **************************/
+
+/*********************   testimonial  *************************/
+
+/* Justificar el texto dentro del contenido del testimonio o cualquier otra parte del modal */
+.testimonial-content {
+  text-align: justify;
+}
+
+/* Asegurando que las imágenes estén centradas */
 .testimonial-card .media {
   display: flex;
   justify-content: center;
 }
-  
-  /* Testimonial Content styles */
-  .testimonial-content {
-    color: white;
-    padding: 0 15px;
-  }
-  
-  
-  /* Testimonial Card */
-  .testimonial-card {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Testimonial Content */
-  .testimonial-content {
-    flex: 1;
-  }
-  /* Optional: Ensure the testimonial image in modal is sized properly */
-  .testimonial-modal-img {
-    width: 40%; /* Adjust the width to make it bigger */
-    max-width: 400px;
-    height: auto;
-    margin-bottom: 20px; /* Space below the image */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  /* Adjust image inside modal */
+/* Estilos del contenido del testimonio */
+.testimonial-content {
+  color: white;
+  padding: 0 15px;
+}
+
+/* Estilo de la tarjeta de testimonio */
+.testimonial-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Contenido del testimonio */
+.testimonial-content {
+  flex: 1;
+}
+
+/* Ajustes de la imagen dentro del modal */
+.testimonial-modal-img {
+  width: 40%; /* Ajusta el tamaño para hacer la imagen más grande */
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajustar imagen dentro del modal */
 .testimonial-modal-img {
   width: 50%;
   max-width: 200px;
   border-radius: 50%;
 }
 
-  /*********************   modal  *************************/
-  /* Modal styles */
-  .modal-dialog {
-    max-width: 60%; /* Ajusta esto para que la modal sea más ancha */
-  max-height: 80vh; /* La altura se mantiene como está */
-    overflow-y: auto; /* Enable vertical scrolling */
-  }
-  
-  .modal-title {
-    font-size: 24px;
-    font-weight: 600; /* Make title bolder */
-    margin-bottom: 10px; /* Add spacing below the title */
-    color:#d9910b;/* Color of the modal title */
-  }
-  
-  .modal-body {
-    padding-top: 1px;
-    text-align: justify; /* Justifies the text */
-    overflow-y: auto; /* Allows scrolling if the content overflows */
-  }
-    /* Justify text in the scrolling area */
-    .modal-body p {
-      margin-bottom: 10px; /* Adjust the space between paragraphs */
-      color: rgb(237, 232, 232);
-    }
-  .modal-img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    border-radius: 10px;
-  }
-  
-  .company-logo {
-    width: 120px;
-  }
-  
-  
-  
-  
-  /* Styling the title */
-  .title-with-line {
-    font-size: 30px; /* Set the font size */
-    font-weight: bold;
-    color: #f7f6f5; /* Dark gray color for text */
-    text-transform: uppercase;
-    position: relative; /* Required for positioning the line */
-    display: inline-block;
-  }
-  
-
-  
-  /* Style the close button (X) */
-  .btn-close {
-    color: white !important; /* Always white */
-    opacity: 1;   /* Ensure it's visible */
-    border: 2; /* Remove default border */
-    font-size: 20px; /* Make it larger */
-    margin-right: 30px;
-    padding-top: 10px; /* Space above the title */
-    filter: invert(1); /* Ensures button is visible on dark background */
-  }
-   
-  
-
-
-
-  /* Add more margin to the modal header (title + close button) */
-.modal-header {
-    padding-right: 20px; /* Add space to the right of the header */
-    padding-left: 20px; /* Add space to the left of the header */
-    padding-bottom: 10px; /* Optional, adjust the bottom margin as well */
-    margin-bottom: 20px; /* Space below the title */
-    padding-top: 10px; /* Space above the title */
-    font-size: 24px;
-    font-weight: 600; /* Make title bolder */
-    color:#d9910b;/* Color of the modal title */
-    display: flex; /* Usamos flexbox para centrar el contenido */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-    
-  }
-  
-  /* Increase the margin between the title and the modal content */
-  .modal-title {
-    margin-bottom: 20px; /* Space below the title */
-    padding-top: 10px; /* Space above the title */
- 
-  }
-  
-
-  
-
-/* Make modal content scrollable */
-.scrollable-text {
-  max-height: 200px;
-  overflow-y: auto;
-  text-align: justify;
-  color: rgb(240, 238, 238);
+/*********************   modal  *************************/
+/* Estilos del modal */
+.modal-dialog {
+  max-width: 60%; /* Ajustar el tamaño del modal para hacerlo más ancho */
+  max-height: 80vh; /* Mantener la altura del modal como está */
+  overflow-y: auto; /* Habilitar el desplazamiento vertical */
 }
 
-
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .modal-dialog {
-    max-width: 95%;
-  }
-  .testimonial-modal-img {
-    width: 70%;
-  }
-  .scrollable-text {
-    max-height: 200px;
-  }
-
-
-  .card {
-    min-height: 250px; /* Ajusta según el tamaño que prefieras */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  
+.modal-title {
+  font-size: 24px;
+  font-weight: 600; /* Hacer el título más grueso */
+  margin-bottom: 10px; /* Agregar espacio debajo del título */
+  color:#d9910b;/* Color del título del modal */
 }
 
-
-.card .btn {
-  margin-top: auto; /* Empuja el botón hacia abajo sin cambiar el tamaño */
+.modal-body {
+  padding-top: 1px;
+  text-align: justify; /* Justificar el texto */
+  overflow-y: auto; /* Permite desplazamiento si el contenido se desborda */
 }
 
-
-.card i {
-  font-size: 2rem; /* Hace los iconos más grandes */
+/* Justificar el texto en el área desplazable */
+.modal-body p {
+  margin-bottom: 10px; /* Ajustar el espacio entre los párrafos */
+  color: rgb(237, 232, 232);
 }
 
-.footer-title {
-  font-size: 1.8rem; /* Hace los títulos más grandes */
+.modal-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 10px;
 }
 
-.card {
-  min-height: 300px; /* Ajusta según el tamaño más grande necesario */
-  max-height: 300px; /* Evita que crezca más */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.company-logo {
+  width: 120px;
 }
+
+/* Estilo del título */
+.title-with-line {
+  font-size: 30px; /* Establecer el tamaño de la fuente */
+  font-weight: bold;
+  color: #f7f6f5; /* Color oscuro para el texto */
+  text-transform: uppercase;
+  position: relative; /* Necesario para posicionar la línea */
+  display: inline-block;
+}
+
+/* Estilo para el botón de cierre (X) */
+.btn-close {
+  color: white !important; /* Siempre blanco */
+  opacity: 1;   /* Asegurar que sea visible */
+  border: 2; /* Eliminar el borde por defecto */
+  font-size: 20px; /* Hacerlo más grande */
+  margin-right: 30px;
+  padding-top: 10px; /* Espacio encima del título */
+  filter: invert(1); /* Asegura que el botón sea visible en el fondo oscuro */
+}
+
 
