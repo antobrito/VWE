@@ -60,19 +60,19 @@ export class TestimonialComponent implements AfterViewInit {
       items: [
         { 
           image: 'assets/img/logo testimonial.png', 
-          text: 'Alex Stefan (the Hypnotherapist) approach to meditation and hypnosis made it easier to shift out of my analytical mind and into a more open, intuitive space. Dalia took the time to understand each person’s strengths and challenges, making her guidance feel personal and impactful.', 
+          text: 'Alex Stefan (the Hypnotherapist) approach to meditation and hypnosis made it easier to shift out of my analytical mind and into a more open, intuitive space. ', 
           name: 'Chad ', 
           role: 'Minnesota - USA', 
           extraInfo: true,
-          longComment: 'I found the tonality and pacing of Alex during the meditations/hypnosis/journeying to be of the utmost help to getting into the mental frame work necessary to believe in something I have not experienced yet. Getting past mental blocks(out of the left brain) and into heart coherence and the right brain seem to be the door into which many great achievements into the unknown and supernatural are found. This seminar aimed directly at this and I can only imagine that it will get better with every new seminar as the insights and innovations of the trainers evolves. Dahlia demonstrated this effortlessly as she aimed to work with as many of us as she could on an individual basis throughout the week, each time using new ideas and insights tailored to our individual strengths and obstacles.'
+          longComment: 'I found the tonality and pacing of Alex during the meditations/hypnosis/journeying to be of the utmost help to getting into the mental frame work necessary to believe in something I have not experienced yet. Getting past mental blocks(out of the left brain) and into heart coherence and the right brain seem to be the door into which many great achievements into the unknown and supernatural are found. Dalia took the time to understand each person’s strengths and challenges, making her guidance feel personal and impactful.This seminar aimed directly at this and I can only imagine that it will get better with every new seminar as the insights and innovations of the trainers evolves. Dahlia demonstrated this effortlessly as she aimed to work with as many of us as she could on an individual basis throughout the week, each time using new ideas and insights tailored to our individual strengths and obstacles.'
         },
         { 
           image: 'assets/img/victoriaVWE.png', 
-          text: 'Attending VWE for the second time has been nothing short of transformative. The entire team goes above and beyond to create an event that is both immersive and filled with joy—it’s evident that this is truly a labor of love. My mindsight has opened even more, and I’ve gained priceless connections. Thank you, Rob and team, for yet another unforgettable experience!', 
+          text: 'Attending VWE for the second time has been nothing short of transformative. ', 
           name: 'Victoria Makris', 
           role: 'Florida - USA', 
-          extraInfo: false,
-          longComment: ''
+          extraInfo: true,
+          longComment: 'The entire team goes above and beyond to create an event that is both immersive and filled with joy—it’s evident that this is truly a labor of love. My mindsight has opened even more, and I’ve gained priceless connections. Thank you, Rob and team, for yet another unforgettable experience!'
         }
       ]
     }
