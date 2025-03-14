@@ -26,7 +26,7 @@ import { TestimonialComponent } from "./testimonial/testimonial.component";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
-    WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,
+    WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,DemonstratorsComponent,
     SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
