@@ -95,6 +95,7 @@
       padding: 15px;
       border-radius: 10px;
       margin-bottom: 20px;
+      width: 500px;;
     }
   
     /* Optional: Make the modal image larger on mobile */
@@ -264,7 +265,7 @@
 
 /* Make modal content scrollable */
 .scrollable-text {
-  max-height: 300px;
+  max-height: 200px;
   overflow-y: auto;
   text-align: justify;
   color: rgb(240, 238, 238);
@@ -317,3 +318,4 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
