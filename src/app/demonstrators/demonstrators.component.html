@@ -1,66 +1,31 @@
 <div class="container-fluid bg-black general pt-1">
-
-    <!-- //le puse pt-1 porque habia un hueco en blanco y se tapo -->
-<!-- <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;"><iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/VWE-ROB/mpft/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe></div> -->
-<div class='container  col-md-10 mt-100  '>
-    
-    <div class="header">
+    <div class='container col-md-10 mt-100'>
+      <div class="header">
         <div class="title">Our Guest Demonstrators / Facilitators</div>
-
-    </div>
-    <div class="row justify-content-center pb-5">
-
-             <!-- dalia -->
-             <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile"> <img src="assets/img/daly.JPG"> </div>
-                        <div class="card-title mt-4"> Dalia Burgoin<br /> <small>Guest Demonstrator</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> We don't need to try and gain the ability to see without eyes, because we already have it. We need only to expand our perception and belief about our ability </small> </p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <!-- Loop through each demonstrator and display their info -->
+        <div *ngFor="let demonstrator of demonstrators" class="card col-md-3 mt-100">
+          <div class="card-content">
+            <div class="card-body p-0">
+              <div class="profile">
+                <img [src]="demonstrator.imageUrl" [alt]="demonstrator.name">
+              </div>
+              <div class="card-title mt-4">
+                {{ demonstrator.name }}<br />
+                <small>{{ demonstrator.title }}</small>
+              </div>
+              <div class="card-subtitle">
+                <p>
+                  <small class="text-muted">
+                    {{ demonstrator.description }}
+                  </small>
+                </p>
+              </div>
             </div>
-          <!-- Alex -->
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile"> <img src="assets/img/alex.jpg"> </div>
-                        <div class="card-title mt-4"> Alex Stefan<br /> <small>Guest Certified Hypnotherapist</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> "Is this real? Or has this been happening inside my head?”  “Of course it is happening inside your head, but why on earth should that mean that it is not real?. </small> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-
-          <!-- dany -->
-          <div class="card col-md-3 mt-100">
-            <div class="card-content">
-                <div class="card-body p-0">
-                    <div class="profile"> <img src="assets/img/dany.jpeg"> </div>
-                    <div class="card-title mt-4"> Daniela Gonzalez Brito<br /> <small>Guest Demonstrator</small> </div>
-                    <div class="card-subtitle">
-                        <p> <small class="text-muted"> Seeing without eyes feels like navigating the world through intuition, where perception goes beyond sight and understanding comes from a deeper place within. </small> </p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-
-        
-        <!-- <div class="card col-md-3 mt-100">
-            <div class="card-content">
-                <div class="card-body p-0">
-                    <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"> </div>
-                    <div class="card-title mt-4"> David Gregory<br /> <small>Resident Dj at ibdc</small> </div>
-                    <div class="card-subtitle">
-                        <p> <small class="text-muted"> I always wanted cool videos of my concerts never knew whom to talk to but they are amazing! </small> </p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+      </div>
     </div>
-</div>                            
-</div>
+  </div>
+  
