@@ -17,5 +17,7 @@ export class DemonstratorsComponent implements OnInit {
   ngOnInit(): void {
     this.demonstrators = this.demonstratorsService.getDemonstrators();
   }
+
 }
+
 
