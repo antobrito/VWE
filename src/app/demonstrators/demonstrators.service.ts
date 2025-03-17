@@ -27,6 +27,12 @@ export class DemonstratorsService {
         description: 'Seeing without eyes feels like navigating the world through intuition, where perception goes beyond sight and understanding comes from a deeper place within.',
       },
       // Add more demonstrators as needed
+      {
+        name: 'Nikki Bee Williams ',
+        title: 'Guest Demonstrator',
+        imageUrl: 'assets/img/nikki.png',
+        description: 'Seeing without eyes is a superpower— one that opens the door to even greater abilities. When we expand our perception, we unlock the limitless potential of the mind.',
+      },
     ];
   }
 
