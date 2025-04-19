@@ -113,7 +113,7 @@
     height:30px; /* Mantener la relación de aspecto */
   }
   .modal-dialog {
-    max-width: 75%; /* Ajustar el tamaño del modal para hacerlo más ancho */
+    max-width: 99%; /* Ajustar el tamaño del modal para hacerlo más ancho */
     max-height: 80vh; /* Mantener la altura del modal como está */
     overflow-y: auto; /* Habilitar el desplazamiento vertical */
   }
