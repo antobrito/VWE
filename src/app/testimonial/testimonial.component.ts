@@ -56,6 +56,7 @@ export class TestimonialComponent implements AfterViewInit {
         }
       ]
     },
+
     {
       items: [
         { 
@@ -75,27 +76,48 @@ export class TestimonialComponent implements AfterViewInit {
           longComment: 'The entire team goes above and beyond to create an event that is both immersive and filled with joy—it’s evident that this is truly a labor of love. My mindsight has opened even more, and I’ve gained priceless connections. Thank you, Rob and team, for yet another unforgettable experience!'
         }
       ]
-    }
+    },
+
+    {
+      items: [
+        { 
+          image: 'assets/img/hakim.png', 
+          text: 'Rob Freemans Vision Without Eyes course was an inspiring and transformative experience can’t wait to go back for more. ', 
+          name: 'Hakim Isler ', 
+          role: 'North Carolina - USA ', 
+          extraInfo: true,
+          longComment: 'Taking the Vision Without Eyes course with Rob Freeman was a powerful and eye opening experience. Rob has a calm and grounded presence that immediately puts you at ease. He was incredibly patient, clear in his guidance, and genuinely passionate about helping each of us succeed. His ability to motivate while keeping the space light and focused made the learning process both fun and impactful. I walked away with real skills, a deeper understanding of Mindsight, and a strong desire to continue training. I highly recommend this course to anyone interested in exploring their inner potential in a supportive, well structured environment.'
+        }
+      ]
+    },
   ];
 
   ngAfterViewInit() {
     // Check if we're in a browser environment before accessing the DOM
     if (this.platform.isBrowser) {
+      // Select the carousel element from the DOM using its ID
       const carouselElement = document.querySelector('#testimonialCarousel');
+      
       if (carouselElement) {
+        // Initialize the Bootstrap Carousel if the element is found, with custom options
         this.carousel = new (window as any).bootstrap.Carousel(carouselElement, {
-          interval: 5000,
-          pause: false,
-          wrap: true
+          interval: 5000,  // Set the interval between slides to 5000ms (5 seconds)
+          pause: false,    // Carousel will not pause on hover
+          wrap: true       // Carousel will cycle continuously (wrap around to the first slide)
         });
-
+  
+        // Select the modal element by its ID
         const modalElement = document.getElementById('letterModal');
-
+  
+        // Add event listener for when the modal is shown
         modalElement?.addEventListener('show.bs.modal', () => {
+          // Pause the carousel when the modal is displayed
           this.carousel.pause();
         });
-
+  
+        // Add event listener for when the modal is hidden
         modalElement?.addEventListener('hidden.bs.modal', () => {
+          // Resume the carousel when the modal is hidden
           this.carousel.cycle();
         });
       }
