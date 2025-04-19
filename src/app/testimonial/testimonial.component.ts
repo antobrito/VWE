@@ -84,7 +84,7 @@ export class TestimonialComponent implements AfterViewInit {
           image: 'assets/img/hakim.png', 
           text: 'Rob Freemans Vision Without Eyes course was an inspiring and transformative experience can’t wait to go back for more. ', 
           name: 'Hakim Isler ', 
-          role: 'North Carolina - USA ', 
+          role: 'North Carolina - USA', 
           extraInfo: true,
           longComment: 'Taking the Vision Without Eyes course with Rob Freeman was a powerful and eye opening experience. Rob has a calm and grounded presence that immediately puts you at ease. He was incredibly patient, clear in his guidance, and genuinely passionate about helping each of us succeed. His ability to motivate while keeping the space light and focused made the learning process both fun and impactful. I walked away with real skills, a deeper understanding of Mindsight, and a strong desire to continue training. I highly recommend this course to anyone interested in exploring their inner potential in a supportive, well structured environment.'
         }
