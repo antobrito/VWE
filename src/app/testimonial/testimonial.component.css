@@ -92,7 +92,7 @@
 
   /* Asegurar que el contenedor de texto sea desplazable */
   .scrollable-text {
-    max-height: 300px; /* Altura máxima para el texto con scroll */
+    max-height: 200px; /* Altura máxima para el texto con scroll */
     overflow-y: auto; /* Permitir scroll vertical */
   }
 
@@ -112,11 +112,33 @@
     margin: 0 auto; /* Centrar la imagen */
     height:30px; /* Mantener la relación de aspecto */
   }
+
+
+  
+
   .modal-dialog {
-    max-width: 99%; /* Ajustar el tamaño del modal para hacerlo más ancho */
-    max-height: 80vh; /* Mantener la altura del modal como está */
-    overflow-y: auto; /* Habilitar el desplazamiento vertical */
+    max-width: 95vw;
+    margin: 1rem auto;
   }
+
+  .modal-content {
+    max-height: 85vh; /* Controls total modal height */
+    overflow-y: auto;  /* Allows scrolling inside modal */
+  }
+
+  .modal-body {
+    max-height: 65vh; /* Controls the body height specifically */
+    overflow-y: auto;
+  }
+
+  .testimonial-modal-img {
+    width: 50%;
+    max-width: 250px;
+    margin: 0 auto;
+    height: 30px; /* <- This is likely causing the image to look flat */
+  }
+
+
 
 }
 
