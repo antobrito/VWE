@@ -110,8 +110,14 @@
     width: 50%; /* Ajustar tamaño en el modal */
     max-width: 250px;
     margin: 0 auto; /* Centrar la imagen */
-    height: auto; /* Mantener la relación de aspecto */
+    height:30px; /* Mantener la relación de aspecto */
   }
+  .modal-dialog {
+    max-width: 75%; /* Ajustar el tamaño del modal para hacerlo más ancho */
+    max-height: 80vh; /* Mantener la altura del modal como está */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical */
+  }
+
 }
 
 /******************** end mobile **************************/
@@ -151,32 +157,38 @@
   flex: 1;
 }
 
+
 /* Ajustes de la imagen dentro del modal */
 .testimonial-modal-img {
-  width: 40%; /* Ajusta el tamaño para hacer la imagen más grande */
+  
   max-width: 400px;
   height: auto;
   margin-bottom: 20px; /* Espacio debajo de la imagen */
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Ajustar imagen dentro del modal */
-.testimonial-modal-img {
   width: 50%;
   max-width: 200px;
   border-radius: 50%;
 }
 
+
+
 /*********************   modal  *************************/
+
 /* Estilos del modal */
+
+/*===============================================
+  2) ESCRITORIO (≥ 1024px)
+===============================================*/
+@media (min-width: 1024px) {
 .modal-dialog {
-  max-width: 99%; /* Ajustar el tamaño del modal para hacerlo más ancho */
+  max-width: 50%; /* Ajustar el tamaño del modal para hacerlo más ancho */
   max-height: 80vh; /* Mantener la altura del modal como está */
   overflow-y: auto; /* Habilitar el desplazamiento vertical */
 }
 
+}
 .modal-title {
   font-size: 24px;
   font-weight: 600; /* Hacer el título más grueso */
