@@ -14,7 +14,7 @@ export class BannerGenComponent {
   reserve: string;
   
   constructor() {
-    const message = 'Join Us for the Upcoming Seminar in London, ON, Canada - 4 May to 9 May 2025. Secure Your Spot Today!';
+    const message = 'Dont miss this unique experience at Mount Shasta! 3 events in one. Join the Telekinesis Activaction seminar , the Mindsight training seminar and the captivating UFO Phenomena seminar including Sky Watch. 9th - 15th August 2025. Secure Your Spot Today!';
     const filler = ' - '.repeat(2); // Espacios en blanco para crear distancia
    
     this.longText = (message + filler).repeat(1); // Repite el mensaje 10 veces para que sea largo

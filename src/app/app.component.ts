@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+
+
+
 import { RouterOutlet } from '@angular/router';
 import { MenubarComponent } from './menubar/menubar.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +23,8 @@ import { DemonstratorsComponent } from './demonstrators/demonstrators.component'
 import { EventTabComponent} from './event-tab/event-tab.component';
 import { BannerGenComponent } from './banner-gen/banner-gen.component';
 import { TestimonialComponent } from "./testimonial/testimonial.component";
+import { NextEventsComponent } from './next-events/next-events.component'; // Asegurate de usar el path correcto
+
 
 
 @Component({
@@ -27,10 +32,20 @@ import { TestimonialComponent } from "./testimonial/testimonial.component";
   standalone: true,
   imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
     WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,DemonstratorsComponent,
-    SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent],
+    SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent,
+    NextEventsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'VWE';
+
+ 
+
+   
+ 
 }
+
+
+
+

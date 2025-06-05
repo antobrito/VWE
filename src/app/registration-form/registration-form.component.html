@@ -1,0 +1,71 @@
+<div class="form-popup">
+  <div class="form-scrollable-content">
+    <h3 class="form-title">
+      Registration for:
+      <span class="event-name">{{ selectedEvent?.event_name }}</span>
+    </h3>
+
+    <form #formRef="ngForm" (ngSubmit)="submitForm($event)">
+      <input type="hidden" [(ngModel)]="formData.event_name" name="event_name" />
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" [(ngModel)]="formData.name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" [(ngModel)]="formData.address" name="address" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="province">Province</label>
+          <input id="province" [(ngModel)]="formData.province" name="province" required />
+        </div>
+        <div class="form-group half">
+          <label for="country">Country</label>
+          <input id="country" [(ngModel)]="formData.country" name="country" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="email">Email</label>
+          <input id="email" type="email" [(ngModel)]="formData.email" name="email" required />
+        </div>
+        <div class="form-group half">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" [(ngModel)]="formData.phone" name="phone" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Food Allergies</label>
+        <label><input type="radio" name="foodAllergies" [(ngModel)]="formData.foodAllergies" [value]="'No'" /> No</label>
+        <label><input type="radio" name="foodAllergies" [(ngModel)]="formData.foodAllergies" [value]="'Yes'" /> Yes</label>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="Tshirt">Tshirt Size</label>
+          <input id="Tshirt" [(ngModel)]="formData.Tshirt" name="Tshirt" required />
+        </div>
+        <div class="form-group half">
+          <label for="HoodieSize">Hoodie Size</label>
+          <input id="HoodieSize" [(ngModel)]="formData.HoodieSize" name="HoodieSize" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea id="comments" [(ngModel)]="formData.comments" name="comments"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Send</button>
+        <button type="button" (click)="closeForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CountdownTimerComponent } from '../countdown-timer/countdown-timer.component'; // ajusta la ruta si es necesario
+
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   templateUrl: './footer.component.html',  // Path to footer.component.html
   styleUrls: ['./footer.component.css'],  // Path to footer.component.css
-  imports: [CommonModule]
+  imports: [CommonModule, CountdownTimerComponent]
 })
 export class FooterComponent {
   // Cards Information

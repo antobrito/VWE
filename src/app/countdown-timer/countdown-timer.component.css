@@ -1,0 +1,35 @@
+.count-down-timer {
+    box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 10px;
+  }
+  
+  .count-down-timer > p {
+    margin: 5px 0 15px 0;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .description, .times {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - 8px));
+    grid-column-gap: 10px;
+    width: 100%;
+  }
+  
+  .description > p {
+    font: normal 14px sans-serif;
+  }
+  
+  .times p {
+    letter-spacing: -5px;
+    font: normal 50px courier, sans-serif;
+  }
+  
