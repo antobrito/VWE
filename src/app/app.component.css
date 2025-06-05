@@ -12,3 +12,25 @@ body {
     font-family: "Audiowide", sans-serif;
   }
 
+
+/* esto es para la modal inciial  src/app/app.component.css */
+
+.container {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.open-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.open-btn:hover {
+  background-color: #218838;
+}
+

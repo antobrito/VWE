@@ -34,6 +34,12 @@
 }
 
 
+ p {
+    font-size: 1rem;
+    color: #f3ebeb;
+    margin: 15px 0;
+  }
+
 /* Animation for moving text */
 @keyframes scroll-left {
   from {

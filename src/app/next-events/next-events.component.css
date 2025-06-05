@@ -1,0 +1,349 @@
+/* --- Estilos base: Mobile First --- */
+
+/* Línea horizontal redondeada */
+hr.rounded {
+  border: none;
+  height: 4px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 2px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Fecha del evento resaltada */
+.event-date {
+  color: red;
+  font-weight: bold;
+}
+
+/* Botón de registro */
+.register-btn {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+/* Sección principal del evento */
+.event-section {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 20px 10px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Título general */
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Contenedor de eventos */
+.event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Tarjeta individual de evento */
+.event-card {
+  background: #fff;
+  color: #000;
+  padding: 16px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-in-out;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.event-card h2 {
+  margin-top: 0;
+}
+
+.event-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.event-card button:hover,
+.event-card button:focus {
+  background-color: #0056b3;
+  outline: none;
+}
+
+/* --- FORMULARIO FLOTANTE CON SCROLL INTERNO --- */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  z-index: 999;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-scrollable-content {
+  background: #111;
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #00bfff #222;
+}
+
+.form-scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+.form-scrollable-content::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 12px;
+}
+.form-scrollable-content::-webkit-scrollbar-thumb {
+  background-color: #00bfff;
+  border-radius: 12px;
+  border: 2px solid #222;
+}
+
+.form-title {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.event-name {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.85rem;
+  outline-offset: 2px;
+  outline-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #00bfff;
+  outline-color: #00bfff;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #0056b3;
+  outline: none;
+}
+
+.cancel-btn {
+  background-color: #555;
+  color: white;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus {
+  background-color: #777;
+  outline: none;
+}
+
+/* Fila para Tshirt y Hoodie */
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1 1 50%;
+  min-width: 140px;
+}
+
+/* NUEVO: Fila para Size (ej: Small, Medium) */
+.size-row {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.size-row .form-group select {
+  width: 11ch;
+  padding: 5px;
+}
+
+
+.size-inputs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.size-inputs .form-group {
+  flex: 1 1 45%; /* ancho base del 45% */
+  max-width: 48%; /* para evitar que sobrepasen juntos el 100% */
+  box-sizing: border-box;
+}
+
+.size-inputs .form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+
+/* --- Pantallas más grandes --- */
+@media (min-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .event-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .event-card {
+    width: 390px;
+    max-width: 100%;
+  }
+
+  .event-card button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .event-card button {
+    font-size: 1.1rem;
+    padding: 10px 16px;
+  }
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Bloqueo de scroll del body cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
+}
