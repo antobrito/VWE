@@ -2,25 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-banner-gen',
+  selector: 'app-banner-gen',         // Selector del componente
   standalone: true,
-  imports: [CommonModule], // Importaciones necesarias para componentes básicos
-  templateUrl: './banner-gen.component.html',
-  styleUrl: './banner-gen.component.css'
+  imports: [CommonModule],            // Módulos necesarios
+  templateUrl: './banner-gen.component.html',  // Ruta al HTML
+  styleUrl: './banner-gen.component.css'       // Ruta al CSS
 })
 export class BannerGenComponent {
 
-  longText: string; 
-  reserve: string;
-  
-  constructor() {
-    const message = "Don't miss this unique Mount Shasta event! 3-in-1: Telekinesis Activation, Mindsight Training, and UFO Seminar with Skywatches. Aug 9–17, 2025. Reserve now!";
-    const filler = ' - '.repeat(1); // Espacios en blanco para crear distancia
-   
-    this.longText = (message + filler).repeat(1); // Repite el mensaje 10 veces para que sea largo
-    // this.reserve = 'Details very soon!   VWE'
-    this.reserve = 'Details in the "Upcoming Event" section.'
-  }
+  // ✅ Texto que aparecerá en el banner y se repetirá de forma continua
+  message: string = "🌟 Don't miss this unique Mount Shasta event! 3-in-1: Telekinesis Activation, Mindsight Training, and UFO Seminar with Skywatches. Aug 9–17, 2025. Reserve now! Details in the 'Upcoming Event' section. ";
 }
-
-

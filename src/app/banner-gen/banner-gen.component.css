@@ -1,47 +1,40 @@
-
-  /* Container for the banner */
+/* ✅ Estilo del contenedor principal del banner */
 .banner-container {
-    width: 100%;
-     background-color: #4CAF50; /* You can change the background color */
-     overflow: hidden;
-     position: relative;
-     padding: 10px 0; /* Add padding to adjust vertical spacing */
-     background-color: rgb(7, 7, 7);
-     margin-bottom: 10px;;
-   }
-   
-   /* Styling for the moving text */
-   .banner-text {
-     font-size: 18px;
-     font-weight: bold;
-     color: rgb(218, 37, 37);
-     text-align: center;
-     white-space: nowrap;
-   
-     animation: scroll-left 20s linear infinite; /* Este con trola la velocidad */
-   }
-   
-   /* Style for "Please reserve your seat..." text */
-   .reservation-text {
-     margin-left: 10px; /* Add space between the two parts */
-   }
-   
-   /* Add space between icons and text */
-   .banner-text i {
-     margin: 0 1px; /* Adjust the space between icons and text */
-   }
-   
-   
-   /* Animation for moving text */
-   @keyframes scroll-left {
-     from {
-       transform: translateX(100%);
-     }
-     to {
-       transform: translateX(-100%);
-     }
-   }
-   
-   
-   
-   /**********************/
+  width: 100%;                    /* Ocupa todo el ancho disponible */
+  overflow: hidden;              /* Oculta lo que se desborda fuera del contenedor */
+  background-color: #000;        /* Fondo negro */
+  padding: 10px 0;               /* Espacio vertical interior */
+}
+
+/* ✅ Contenedor que se mueve horizontalmente */
+.banner-track {
+  display: flex;                 /* Permite que los textos estén uno al lado del otro */
+  width: max-content;           /* Ajusta su tamaño al contenido interno */
+  animation: scroll-loop 30s linear infinite; /* Aplica animación continua de desplazamiento */
+}
+
+/* ✅ Texto individual dentro del banner (duplicado) */
+.banner-text {
+  white-space: nowrap;          /* Evita saltos de línea */
+  font-size: 18px;              /* Tamaño del texto */
+  font-weight: bold;            /* Texto en negrita */
+  color: rgb(218, 37, 37);      /* Color rojo vibrante */
+  padding-right: 50px;          /* Espacio entre la primera y la segunda copia del texto */
+}
+
+/* ✅ Animación que desplaza el contenido del banner-track de derecha a izquierda */
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0%);        /* Comienza desde la posición original */
+  }
+  100% {
+    transform: translateX(-50%);      /* Se desplaza hasta la mitad del ancho (una copia completa) */
+  }
+}
+
+/* ✅ Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+  .banner-text {
+    font-size: 14px;                  /* Reduce el tamaño del texto para móviles */
+  }
+}

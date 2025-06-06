@@ -438,17 +438,27 @@ h1, h2, h3 {
 
 /* how to book */
 
-.blinking-text {
-  background-color: black; /* Black background */
-  color: white; /* White text for contrast */
-  padding: 10px; /* Add some padding for better visibility */
-  animation: blink-animation 3s steps(100, start) infinite;
-}
-
-@keyframes blink-animation {
-  50% {
-    opacity: 0;
+ .blinking-text {
+    animation: blink 1.5s linear infinite;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-}
 
+  .highlight-box {
+    border: 2px solid #eeedea;
+    border-radius: 12px;
+    padding: 16px 24px;
+    background-color: #070707;
+    display: inline-block;
+    box-shadow: 0 0 12px rgba(255, 193, 7, 0.4);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #cd8f32;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 

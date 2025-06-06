@@ -1,18 +1,15 @@
-<!-- src/app/blindfold-practice/blindfold-practice.component.html -->
 <hr class="rounded" />
 <div class="container">
   <div class="content">
     <h1 class="title">{{ pageTitle }}</h1>
-    <div class="images">
-      <img *ngFor="let image of imagePath" [src]="image" alt="Blindfolded Practice" class="blindfold-img" />
-    </div>
-    <div class="benefits">
-      <ul>
-        <li *ngFor="let benefit of benefits">
-          <h2>{{ benefit.title }}</h2>
-          <p>{{ benefit.description }}</p>
-        </li>
-      </ul>
+
+    <!-- Cards container -->
+    <div class="benefits-cards">
+      <div class="card" *ngFor="let benefit of benefits">
+        <img [src]="benefit.image" [alt]="benefit.title" class="card-icon" />
+        <h2>{{ benefit.title }}</h2>
+        <p>{{ benefit.description }}</p>
+      </div>
     </div>
   </div>
 </div>
