@@ -1,97 +1,100 @@
-/* src/app/blindfold-practice/blindfold-practice.component.css */
+:host {
+  display: block;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
 }
 
-.body{
-   background-color: blue;
-
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  color:white;
- 
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 80%;
-  margin: 0 auto;
-  
 }
 
 .title {
-
-  margin-bottom: 20px;
   text-align: center;
   font-weight: bold;
-}
-
-.images {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  gap: 20px;
-}
-
-.blindfold-img {
-  width: 50%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 8px;
-}
-
-.benefits {
-  width: 100%;
-}
-
-.benefits ul {
-  list-style-type: none;
-}
-
-.benefits li {
+  font-size: 2.5rem;
   margin-bottom: 30px;
 }
 
-.benefits h2 {
-  font-size: 1.8em;
+.benefits-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 45%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card img.card-icon {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 1.4rem;
   margin-bottom: 10px;
 }
 
-.benefits p {
-  
+.card p {
+  font-size: 1rem;
   line-height: 1.5;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .title {
-    font-size: 2em;
-  }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(252, 231, 231, 0.3);
+}
 
-  .blindfold-img {
+@media (max-width: 768px) {
+  .card {
     max-width: 100%;
   }
 
-  .images {
-    flex-direction: column;
+  .title {
+    font-size: 2rem;
   }
 
-  .benefits h2 {
-    font-size: 1.5em;
+  .card h2 {
+    font-size: 1.2rem;
   }
 
-  .benefits p {
-    font-size: 1em;
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .card img.card-icon {
+    max-width: 100%;
+    height: auto;
   }
 }

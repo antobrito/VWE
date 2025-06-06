@@ -1,5 +1,36 @@
 
-/* my-component.component.css */
+ .blinking-text {
+    animation: blink 1.5s linear infinite;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .highlight-box {
+    border: 2px solid #eeedea;
+    border-radius: 12px;
+    padding: 16px 24px;
+    background-color: #070707;
+    display: inline-block;
+    box-shadow: 0 0 12px rgba(255, 193, 7, 0.4);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #cd8f32;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+
+  /* evitar mucho espacio en el h3 entre reglon */
+h3 {
+  line-height: 1.2; /* Reduce el espacio entre líneas */
+  margin-top: 0;    /* Elimina el margen superior */
+  margin-bottom: 0; /* Elimina el margen inferior */
+  padding: 0;       /* Opcional: elimina relleno si hay */
+}
 
 /* Container for the banner */
 .banner-container {
@@ -288,4 +319,7 @@ color: rgb(243, 239, 239);
     text-decoration: underline;
   }
   
+
+
+
 
