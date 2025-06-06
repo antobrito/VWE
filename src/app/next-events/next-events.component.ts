@@ -19,22 +19,25 @@ export class NextEventsComponent implements OnInit {
     {
       image: './assets/img/mshasta.png',
       date: new Date(2025, 7, 9), // 28 de mayo de 2025
+       message: 'Sun Aug 17, 2025',
       event_name: 'An Epic Journey Beyond the Mind and Stars. Mount Shasta, CA, USA',
       location: 'Mount Shasta, CA, USA',
       summary:
-        'We present three seminars in one extraordinary experience: Telekinesis, Mindsight, and UFO. Activate your telekinesis and awaken your ability to see without eyes.Explore UFO phenomena and witness the unseen during skywatches at Mt. Shasta.',
+        'We present three seminars in one extraordinary experience: Telekinesis, Mindsight, and UFO. Activate your telekinesis and awaken your ability to see without eyes. Explore UFO phenomena and witness the unseen during skywatches at Mt. Shasta.',
     },
     {
       image: './assets/img/orlando 2025.png',
-      date: new Date(2025, 10, 21), // 25 de abril de 2025
+      date: new Date(2025, 10, 15), // 25 de abril de 2025
+       message: 'Sun Nov 23, 2025',
       event_name: 'Awakening Mindsight and Mental Energy. Orlando, FL, USA',
       location: 'Orlando, FL, USA',
       summary:
-        'Designed to awaken and develop two powerful human abilities: mindsight—deep inner vision and mental perception—and mental energy, the capacity to influence the environment through focused intention and mind control, such as telekinesis',
+        'Designed to awaken and develop two powerful human abilities: mindsight—deep inner vision and mental perception—and mental energy, the capacity to influence the environment through focused intention, mind control, and telekinesis.',
     },
     {
       image: 'https://via.placeholder.com/300x200',
       date: new Date(2025, 1, 10), // 10 de mayo de 2025
+       message: 'Sun Aug 17, 2025',
       event_name: 'Festival de Música',
       location: 'Parque Central',
       summary:
@@ -43,6 +46,7 @@ export class NextEventsComponent implements OnInit {
     {
       image: 'https://via.placeholder.com/300x200',
       date: new Date(2025, 1, 25), // Duplicado de conferencia (lo eliminaremos)
+       message: 'Sun Aug 17, 2025',
       event_name: 'Conferencia de Tecnología',
       location: 'Auditorio Nacional',
       summary: 'Descubre las últimas tendencias tecnológicas.',

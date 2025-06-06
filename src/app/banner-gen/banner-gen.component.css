@@ -18,7 +18,7 @@
      text-align: center;
      white-space: nowrap;
    
-     animation: scroll-left 15s linear infinite; /* Este con trola la velocidad */
+     animation: scroll-left 20s linear infinite; /* Este con trola la velocidad */
    }
    
    /* Style for "Please reserve your seat..." text */

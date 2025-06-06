@@ -11,11 +11,11 @@
       <img [src]="event.image" alt="Imagen del evento" />
       <h2>{{ event.event_name }}</h2>
       <p><strong>Date:</strong> 
-        <span class="event-date">📅 {{ event.date | date:'fullDate' }}</span>
+      <span class="event-date">📅 {{ event.date | date:'EEE MMM d, y' }} – {{ event.message }}</span>
       </p>
       <p><strong>Place:</strong> {{ event.location }}</p>
       <p><strong>Summary:</strong> {{ event.summary }}</p>
-      <p><strong>Days left:</strong> {{ getDaysLeft(event.date) }} días</p>
+      <p><strong>Days left:</strong> {{ getDaysLeft(event.date) }} days</p>
       <button class="register-btn" (click)="openForm(event)">Register Here</button>
     </div>
   </div>
