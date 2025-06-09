@@ -92,16 +92,36 @@
 
 
 
-        <div class="form-group">
-          <label>Food Allergies</label>
-            <select id="foodAllergies" [(ngModel)]="formData.foodAllergies" name="foodAllergies" required>
-              <option value="" disabled selected>Select Type</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
+   <!-- Food Allergies select -->
+<div class="form-group">
+  <label>Food Allergies</label>
+  <select
+    [(ngModel)]="formData.foodAllergies"
+    name="foodAllergies"
+    required
+    (ngModelChange)="onFoodAllergiesChange($event)"
+  >
+    <option value="" disabled>Select Type</option>
+    <option value="No">No</option>
+    <option value="Yes">Yes</option>
+  </select>
+</div>
 
-   
-        </div>
+<!-- Campo para describir alergias, solo visible si foodAllergies es 'Yes' -->
+<div class="form-group" *ngIf="formData.foodAllergies === 'Yes'">
+  <label for="allergyDetails">Please specify Food allergies</label>
+  <input 
+    id="allergyDetails" 
+    type="text" 
+    [(ngModel)]="formData.allergyDetails" 
+    name="allergyDetails"
+    required
+    #allergyDetailsInput="ngModel"
+  />
+  <div class="error" *ngIf="allergyDetailsInput.invalid && allergyDetailsInput.touched">
+    This field is required.
+  </div>
+</div>
           
         </div>
 

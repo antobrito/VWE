@@ -71,7 +71,18 @@ export class NextEventsComponent implements OnInit {
     comments: '',
     Tshirt: '', // ← ¡Agregado aquí!
     HoodieSize: '', // ← ¡Agrega esta línea!
+    allergyDetails:'',
   };
+
+
+onFoodAllergiesChange(value: string) {
+  this.formData.foodAllergies = value;
+  if (value === 'No') {
+    this.formData.allergyDetails = '';
+  }
+
+}
+
   // Método que se ejecuta al inicializar el componente
   ngOnInit() {
     const today = new Date();
@@ -128,11 +139,20 @@ export class NextEventsComponent implements OnInit {
       Tshirt: 'XS',
       HoodieSize: 'XS', // ← ¡Agrega esta línea!
       TypeSize: '',
+      allergyDetails:''
     };
   }
 
+
   submitForm(event: Event) {
     event.preventDefault();
+
+
+      // Si tiene alergias pero no llenó los detalles, no permitir enviar
+  if (this.formData.foodAllergies === 'Yes' && (!this.formData.allergyDetails || this.formData.allergyDetails.trim() === '')) {
+    alert('Please provide details for your food allergies.');
+    return; // Detiene el envío
+  }
 
     emailjs
       .sendForm(
