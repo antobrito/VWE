@@ -1,4 +1,13 @@
 
+ /* Título general */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+ 
  .blinking-text {
     animation: blink 1.5s linear infinite;
     text-align: center;

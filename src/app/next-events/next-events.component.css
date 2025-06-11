@@ -4,7 +4,7 @@
 hr.rounded {
   border: none;
   height: 4px;
-  background-color: rgba(128, 128, 128, 0.3);
+  background-color: rgba(71, 69, 69, 0.3);
   border-radius: 2px;
   width: 100%;
   margin: 0;
@@ -33,14 +33,16 @@ hr.rounded {
   font-family: 'Arial', sans-serif;
 }
 
-/* Título general */
+
+ /* Título general */
 .title {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #fff;
   font-weight: bold;
 }
+ 
 
 /* Contenedor de eventos */
 .event-container {
