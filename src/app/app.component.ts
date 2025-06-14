@@ -23,7 +23,8 @@ import { DemonstratorsComponent } from './demonstrators/demonstrators.component'
 import { EventTabComponent} from './event-tab/event-tab.component';
 import { BannerGenComponent } from './banner-gen/banner-gen.component';
 import { TestimonialComponent } from "./testimonial/testimonial.component";
-import { NextEventsComponent } from './next-events/next-events.component'; // Asegurate de usar el path correcto
+import { NextEventsComponent } from './next-events/next-events.component'; 
+import {ContactComponent} from './contact/contact.component'   // Asegurate de usar el path correcto
 
 
 
@@ -33,7 +34,7 @@ import { NextEventsComponent } from './next-events/next-events.component'; // As
   imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
     WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,DemonstratorsComponent,
     SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent,
-    NextEventsComponent],
+    NextEventsComponent,ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

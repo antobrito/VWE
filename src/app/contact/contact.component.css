@@ -1,0 +1,238 @@
+/* Contenedor general para las 3 columnas */
+.main-layout {
+  display: flex;               /* Usar flexbox para columnas */
+  justify-content: center;     /* Centrar horizontalmente */
+  align-items: stretch;        /* Que todas las columnas tengan misma altura */
+  gap: 10px;                   /* Separación entre columnas */
+  padding: 10px;               /* Espacio alrededor */
+  background-color: #0d0d0d;  /* Fondo oscuro */
+}
+
+/* Columnas laterales izquierda y derecha */
+.side-column {
+  flex: 0 1 400px;             /* Ancho base 400px para las columnas laterales */
+  min-width: 300px;            /* Ancho mínimo para que no se achiquen demasiado */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Separar las dos cajas verticalmente */
+  gap: 10px;                   /* Separación entre las cajas */
+}
+
+/* Cajas dentro de las columnas laterales */
+.side-box {
+  background: rgb(7, 7, 7);        /* Fondo oscuro */
+  border: 2px solid #007BFF;       /* Borde azul neón */
+  border-radius: 10px;
+  padding: 2rem 1.5rem;            /* Padding para dar espacio */
+  color: #fff;                     /* Texto blanco */
+  font-weight: bold;
+  flex: 1;                        /* Que cada caja tome la mitad de la altura total */
+  
+  display: flex;                  /* Usamos flex para centrar contenido */
+  flex-direction: column;
+  justify-content: center;        /* Centrar verticalmente */
+  align-items: center;            /* Centrar horizontalmente */
+  text-align: center;             /* Centrar texto */
+
+  /* Efecto neón para borde */
+  box-shadow: 0 0 8px #007BFF;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Al pasar mouse la luz neón se intensifica */
+.side-box:hover {
+  box-shadow: 0 0 20px #007BFF;
+}
+
+/* Estilos para el enlace dentro de cada caja */
+.box-link {
+  color: white;
+  text-decoration: none;
+  display: flex;                 /* Flex para icono y texto */
+  flex-direction: column;
+  align-items: center;           /* Centrar icono y texto horizontalmente */
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Iconos con tamaño grande y color naranja */
+.box-link i {
+  font-size: 4rem;               /* Iconos muy grandes */
+  color: orange;                 /* Color naranja brillante */
+  margin-bottom: 15px;           /* Espacio abajo del icono */
+}
+
+/* Títulos dentro de las cajas */
+.box-link h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+/* Texto dentro de las cajas */
+.box-link p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Columna central que contiene el formulario */
+.form-column {
+  flex: 1 1 400px;               /* Que ocupe el máximo posible, mínimo 400px */
+  max-width: 400px;              /* No mayor a 400px */
+  display: flex;
+  justify-content: center;       /* Centrar el contenido */
+  align-items: center;
+}
+
+/* Tarjeta del formulario */
+.card {
+  background: rgb(7, 7, 7);
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Inputs y textarea */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Botón principal del formulario */
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensajes de error */
+.error {
+  color: #d8000c;
+  margin-top: 1rem;
+}
+
+/* Mensajes de éxito */
+.success {
+  color: #007B00;
+  margin-top: 1rem;
+}
+
+/* Contenedor para los botones Follow Us */
+.follow-us-buttons {
+  display: flex;              /* Flex para los botones */
+  gap: 10px;                  /* Espacio entre botones */
+  justify-content: center;    /* Centrar horizontalmente */
+  flex-wrap: wrap;            /* Que se ajusten en varias filas si hace falta */
+}
+
+/* Botones estilo Facebook y YouTube */
+.btn-facebook,
+.btn-youtube {
+  display: flex;
+  align-items: center;
+  gap: 6px;                  /* Espacio entre icono y texto */
+  padding: 6px 12px;         /* Padding pequeño para que no sean grandes */
+  font-size: 0.9rem;         /* Texto pequeño */
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Estilo botón Facebook */
+.btn-facebook {
+  background-color: #3b5998;   /* Azul Facebook */
+  border: 1.5px solid #3b5998;
+  box-shadow: 0 0 6px #3b5998;
+}
+
+.btn-facebook:hover {
+  box-shadow: 0 0 12px #3b5998;
+}
+
+/* Estilo botón YouTube */
+.btn-youtube {
+  background-color: #ff0000;   /* Rojo YouTube */
+  border: 1.5px solid #ff0000;
+  box-shadow: 0 0 6px #ff0000;
+}
+
+.btn-youtube:hover {
+  box-shadow: 0 0 12px #ff0000;
+}
+
+/* Iconos dentro de los botones */
+.btn-facebook i,
+.btn-youtube i {
+  font-size: 1.2rem;
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;      /* Apilar columnas verticalmente */
+    align-items: center;
+  }
+
+  .side-column {
+    flex: 1 1 100%;
+    min-width: auto;
+    flex-direction: row;          /* En móvil las cajas laterales van en fila */
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .side-box {
+    flex: 1 1 45%;
+    height: auto;                /* Altura automática */
+  }
+
+  .form-column {
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Ajustes de botones Follow Us para móvil */
+  .follow-us-buttons {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .btn-facebook,
+  .btn-youtube {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    box-shadow: 0 0 4px currentColor;
+  }
+
+  .btn-facebook i,
+  .btn-youtube i {
+    font-size: 1rem;
+  }
+}

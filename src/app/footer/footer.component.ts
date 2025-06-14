@@ -31,6 +31,12 @@ export class FooterComponent {
       icon: 'far fa-envelope-open',
       text: 'robfreeman@look.ca',
       link: 'mailto:robfreeman@look.ca' // Mailto link
+    },
+        {
+      title: 'Mail Us',
+      icon: 'far fa-envelope-open',
+      text: 'robfreeman@look.ca',
+      link: 'mailto:robfreeman@look.ca' // Mailto link
     }
   ];
 
