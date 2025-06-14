@@ -1,10 +1,45 @@
-.music-player {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 5px;
-  }
-  
-  
+/* Full-width fixed music player card */
+.music-player-card {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Blinking banner text */
+.blinking-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  animation: blink 1s infinite;
+  margin-bottom: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Control buttons styling */
+.player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.player-controls .btn {
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.player-controls .btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
