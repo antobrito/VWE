@@ -1,84 +1,92 @@
 <div class="container-fluid bg-black text-white py-5">
-    <!-- Separador 3D con sombra -->
-    <div class="custom-separator-3d"></div>
-  
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <h1 class="title-with-line">What <b>our participants</b> are saying</h1>
-        </div>
-    </div>
-  
-    <!-- Carousel -->
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li *ngFor="let testimonial of testimonials; let i = index"
-                [attr.data-bs-target]="'#testimonialCarousel'"
-                [attr.data-bs-slide-to]="i"
-                [class.active]="i === 0"></li>
-        </ol>
-  
-        <!-- Carousel Items -->
-        <div class="carousel-inner">
-            <div *ngFor="let testimonial of testimonials; let i = index"
-                class="carousel-item"
-                [class.active]="i === 0">
-                <div class="row justify-content-center text-center">
-                    <div *ngFor="let item of testimonial.items" class="col-md-6">
-                        <div class="media testimonial-card d-flex align-items-center">
-                            <img [src]="item.image" class="testimonial-img me-3" alt="Customer Image" />
-                            <div class="testimonial-content text-start">
-                                <p class="overview"><b>{{ item.name }}</b>, {{ item.role }}</p>
-                                <!-- Mostrar los primeros 100 caracteres -->
-                            
-  
-                                <!-- Div con scroll solo en dispositivos móviles/tabletas -->
-                                <div class="scrollable-text">
-                                    <p>{{ item.text }}</p>
-                                  </div>
-                                
-                                <button *ngIf="item.extraInfo"
-                                    type="button"
-                                    class="btn btn-secondary mt-1 mb-4"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#letterModal"
-                                    (click)="openModal(item)">
-                                    Read More
-                                </button>
-                            </div>
-                        </div>
-  
-                        <!-- Línea separadora solo en Mobile -->
-                        <hr class="d-md-none separator-mobile">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-    <!-- Separador 3D con sombra -->
-    <div class="custom-separator-3d"></div>
-  
-    <!-- Letter Modal -->
-    <div class="modal fade "  id="letterModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-white">
-                <div class="modal-header d-flex justify-content-between align-items-center">
-                    <h2 class="modal-title elegant-title">{{ selectedItem?.name }}</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center p-3">
-                    <img [src]="selectedItem?.image" class="testimonial-modal-img mb-3" alt="Customer Image">
-                    <h1 class="text-warning">{{ selectedItem?.role }}</h1>
-                    <div class="scrollable-text bg-black p-3 rounded">
-                        <p>{{ selectedItem?.longComment }}</p>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-center border-0">
-                    <img src="assets/img/png_trns_blindfoldy.png" class="company-logo" alt="Company Logo">
-                </div>
-            </div>
-        </div>
+  <!-- Separador decorativo arriba -->
+  <div class="custom-separator-3d"></div>
+
+  <!-- Título centrado -->
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1 class="title-with-line">What <b>our participants</b> are saying</h1>
     </div>
   </div>
-  
+
+  <!-- Carousel Bootstrap -->
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicadores del carousel -->
+    <ol class="carousel-indicators">
+      <li *ngFor="let testimonial of testimonials; let i = index"
+          [attr.data-bs-target]="'#testimonialCarousel'"
+          [attr.data-bs-slide-to]="i"
+          [class.active]="i === 0"></li>
+    </ol>
+
+    <!-- Contenedor de slides -->
+    <div class="carousel-inner">
+      <!-- Cada slide contiene varios testimonios (aquí 2) -->
+      <div *ngFor="let testimonial of testimonials; let i = index"
+           class="carousel-item"
+           [class.active]="i === 0">
+
+        <!-- Row que contiene los testimonios de este slide -->
+        <div class="row justify-content-center text-center">
+          <!-- Cada testimonio ocupa 6 columnas en desktop, 12 en móvil -->
+          <div *ngFor="let item of testimonial.items; let j = index" 
+               class="col-md-6 col-12"
+               [ngClass]="{'d-none d-md-block': j > 0}">
+            <div class="media testimonial-card d-flex align-items-center">
+              <!-- Imagen del participante -->
+              <img [src]="item.image" class="testimonial-img me-3" alt="Customer Image" />
+              
+              <!-- Contenido testimonial -->
+              <div class="testimonial-content text-start">
+                <p class="overview"><b>{{ item.name }}</b>, {{ item.role }}</p>
+                
+                <!-- Texto con scroll si es necesario -->
+                <div class="scrollable-text">
+                  <p>{{ item.text }}</p>
+                </div>
+
+                <!-- Botón para mostrar más info en modal -->
+                <button *ngIf="item.extraInfo"
+                        type="button"
+                        class="btn btn-secondary mt-1 mb-4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#letterModal"
+                        (click)="openModal(item)">
+                  Read More
+                </button>
+              </div>
+            </div>
+
+            <!-- Línea separadora visible solo en móvil -->
+            <hr class="d-md-none separator-mobile">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Separador decorativo abajo -->
+  <div class="custom-separator-3d"></div>
+
+  <!-- Modal para mostrar el comentario largo -->
+  <div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <h2 class="modal-title elegant-title">{{ selectedItem?.name }}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-3">
+          <img [src]="selectedItem?.image" class="testimonial-modal-img mb-3" alt="Customer Image">
+          <h1 class="text-warning">{{ selectedItem?.role }}</h1>
+          <div class="scrollable-text bg-black p-3 rounded">
+            <p>{{ selectedItem?.longComment }}</p>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center border-0">
+          <img src="assets/img/png_trns_blindfoldy.png" class="company-logo" alt="Company Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
