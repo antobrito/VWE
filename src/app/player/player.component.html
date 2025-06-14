@@ -1,10 +1,16 @@
-<div class="container-fluid text-center nomargin text-white bg-black music-player">
-  <div class="row">
-   
-      <audio id="audio" autoplay controls   class="container bg-black">
-        <source src="assets/music/WVE.mp3" type="audio/mp3"/>
-        Your browser does not support the audio element.
-      </audio>
-
+<!-- Music player container with banner and controls -->
+<div class="music-player-card">
+  
+  <!-- Blinking banner text -->
+  <div class="blinking-text">
+    Vision Without Eyes - Official Song
   </div>
+
+  <!-- Player control buttons -->
+  <div class="player-controls">
+    <button class="btn btn-outline-light btn-sm" (click)="play()" title="Play">▶</button>
+    <button class="btn btn-outline-light btn-sm" (click)="pause()" [disabled]="!isPlaying" title="Pause">⏸</button>
+    <button class="btn btn-outline-light btn-sm" (click)="stop()" [disabled]="!isPlaying" title="Stop">⏹</button>
+  </div>
+
 </div>
