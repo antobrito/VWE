@@ -1,4 +1,3 @@
-
 body {
     background-color: black;
     
@@ -6,48 +5,121 @@ body {
     padding: 0; /* Optional: Remove default padding */
 }
 
+.booked-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: rgb(244, 0, 0);
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Contenedor general para cada cabina */
+.cabin {
+  position: relative; /* Para posicionar el texto "BOOKED" encima */
+  display: inline-block; /* Que se comporte como bloque en línea */
+  margin: 10px; /* Separación externa entre cabinas */
+  padding: 15px; /* Espacio interno alrededor del contenido */
+  border-radius: 12px; /* Bordes redondeados */
+  background-color: #222; /* Fondo oscuro por defecto */
+  color: #eee; /* Color de texto claro */
+  width: 300px; /* Ancho fijo para todas las cabinas */
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.6); /* Sombra con color dorado suave */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar fondo */
+  text-align: center; /* Texto centrado */
+  font-family: Arial, sans-serif; /* Fuente clara y legible */
+  overflow: hidden; /* Para que el overlay respete bordes redondeados */
+}
+
+/* Estilo cuando la cabina está reservada (booked) */
+.cabin.booked {
+  background-color: #444; /* Fondo más claro para diferenciar */
+  color: #999; /* Texto gris tenue para indicar deshabilitado */
+  pointer-events: none; /* Desactiva todos los eventos (clics, etc.) */
+  filter: grayscale(80%); /* Aplica escala de grises para "desactivar" visualmente */
+}
+
+/* Texto "BOOKED" que aparece encima de la cabina reservada */
+.cabin.booked::before {
+  content: "BOOKED"; /* Texto que se muestra */
+  position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+  top: 0; /* Empieza en la parte superior */
+  left: 0; /* Empieza en la izquierda */
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100%; /* Ocupa toda la altura */
+  background-color: rgba(232, 150, 27, 0.85); /* Fondo naranja semitransparente */
+  color: black; /* Texto negro para contraste */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 2rem; /* Tamaño de letra grande */
+  letter-spacing: 3px; /* Espaciado entre letras */
+  display: flex; /* Usar flex para centrar el texto */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  border-radius: 12px; /* Bordes redondeados */
+  z-index: 10; /* Para estar encima */
+  box-shadow: 0 0 15px rgba(232, 150, 27, 0.9); /* Sombra luminosa */
+  pointer-events: none; /* Para no bloquear eventos */
+}
+
+/* Estilos para enlaces dentro de la cabina (no reservada) */
+.cabin a {
+  color: #e5c259; /* Color dorado para el enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Fuente semi-negrita */
+}
+
+/* Estilos para enlaces dentro de la cabina reservada */
+.cabin.booked a {
+  color: #999; /* Color gris tenue para el enlace */
+  cursor: not-allowed; /* Cursor de prohibido */
+  text-decoration: line-through; /* Texto tachado para indicar deshabilitado */
+}
+
 h1, h2 {
     text-align: center;
     color: #eff2f6;
-  }
-  h2 {
+}
+h2 {
     font-size: 1.5em;
-  }
-  h3 {
+}
+h3 {
     color: #f2f3f5;
     font-size: 1.2em;
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: disc; /* Adds bullet points */
     padding-left: 20px; /* Adds some space before the list items */
     text-align: left; /* Aligns the list items to the left */
-  }
-  
-  .link {
+}
+
+.link {
     color: #2980b9;
     text-decoration: none;
-  }
-  /********************************************/
-  
-  .whatsapp
-  {
+}
+/********************************************/
+
+.whatsapp {
     width: 20%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .whatsapp:hover {
+}
+
+.whatsapp:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-  
+
     /* When the animation is finished, start again */
     animation-iteration-count: infinite;
-  }
-  
-  @keyframes shake {
+}
+
+@keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -59,22 +131,18 @@ h1, h2 {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-  
-  
-  
-  hr.rounded {
+}
+
+hr.rounded {
     border-top: 10px solid #bbb;
     border-radius: 10px;
-   
-  }
-  
-  
-  .blink {
+}
+
+.blink {
     animation: blink 5s steps(10, end) infinite;
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     0% {
       opacity: 1;
     }
@@ -84,228 +152,190 @@ h1, h2 {
     100% {
       opacity: 1;
     }
-  }
-  
-  .nomargin
-  {
+}
+
+.nomargin {
   margin-top: 0px;
-  padding-top: 0px;;
-  
-  }
-  
-  .container-fluid p {
-      width: 100%;
-      text-align: justify;
-      
-      
-      
-  }
-  
-  
-  
-  .accordion
-  {
-      width: 100%;
-      
-  background:rgb(232, 150, 27);
-      /* background: transparent; */
-  
-  
-  
-  }
-  
-  .accordion-item
-  {
-  
-  background:rgb(232, 150, 27);
-  border:none;
-  
-  box-shadow: 2px 2px 8px black, -2px -2px 8px black ;
-  color: rgb(243, 239, 239);
-  
-  }
-  .accordion-body{
-      background: rgb(12, 12, 12);
-      /* justifica el texto del acordeon  */
-      text-align: justify;
-  }
-  
-  .accordion-buttom
-  {
-    
-      font-family: "Poppins", sans-serif;
-      font-size: 0.1rem;
-      background-color:black !important;
-      /* background: transparent; */
-      padding: 0px !important;
-  
-  
-    
-  }
-  
-  #containerAccor  {
-      display:flex;
-      flex-direction:row;
-      
-     
-    }
-    
-    .accordion-button::after{
-      background-image: none;
-      content:"\f0d7";
-      font-family: fontawesome;
-      font-size:x-large;
-      width: auto;
-      height: auto;
-      
-  /* background:rgb(232, 150, 27); */
-  }
-  
-  .accordion-button:not(.collapsed){
+  padding-top: 0px;
+}
+
+.container-fluid p {
+    width: 100%;
+    text-align: justify;
+}
+
+.accordion {
+    width: 100%;
+    background: rgb(232, 150, 27);
+    /* background: transparent; */
+}
+
+.accordion-item {
+    background: rgb(232, 150, 27);
+    border: none;
+    box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+    color: rgb(243, 239, 239);
+}
+
+.accordion-body {
+    background: rgb(12, 12, 12);
+    /* justifica el texto del acordeon  */
+    text-align: justify;
+}
+
+.accordion-buttom {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.1rem;
+    background-color: black !important;
+    /* background: transparent; */
+    padding: 0px !important;
+}
+
+#containerAccor  {
+    display: flex;
+    flex-direction: row;
+}
+
+.accordion-button::after {
+    background-image: none;
+    content: "\f0d7";
+    font-family: fontawesome;
+    font-size: x-large;
+    width: auto;
+    height: auto;
+    /* background:rgb(232, 150, 27); */
+}
+
+.accordion-button:not(.collapsed) {
     background: rgba(0,0,0,0.1);
     color: black;
     box-shadow: none;
-  }
-  
-  .accordion-button:not(.collapsed)::after{
+}
+
+.accordion-button:not(.collapsed)::after {
     background-image: none;
     background: rgba(0,0,0,0.1);
-    
-  }
-  
-  
-  
-    #left-column {
-      width: 30%;
-      height: auto;
-      background-color: blue;
-      
-    }
-    
-    #right-column {
-      background-color: red;
-      width: 70%;
-    }
-  
-    
-  
-    .imagen
-    {
-      border:none;
-      box-shadow: 0 0 10px 35px rgba(113, 111, 111, 0.1);
-      /* box-shadow: 2px 2px 8px rgb(15, 69, 29), -2px -2px 8px rgb(231, 223, 223) ;  */
-  
-    }
-   
-  
-    a:link {
-      color: rgb(234, 150, 102);
-      background-color: transparent;
-      text-decoration: none;
-    }
-    
-    a:visited {
-      color: rgb(234, 150, 102);
-      background-color: transparent;
-      text-decoration: none;
-    }
-    
-    a:hover {
-      color: rgb(214, 219, 80);
-      background-color: transparent;
-      text-decoration: underline;
-    }
-    
-    a:active {
-      color: yellow;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-    
+}
 
+#left-column {
+    width: 30%;
+    height: auto;
+    background-color: blue;
+}
 
-    .container {
-      max-width: 800px;
-    
-      margin: auto;
-    
-      font-family: Arial, sans-serif;
-    }
-    .announcement {
-      
-      padding: 15px;
-      margin: 5px 0;
-      border-left: 5px solid rgb(232, 150, 27);
-      border-radius: 5px;
-    }
-    h2 {
-      color: rgb(232, 150, 27);
-    }
+#right-column {
+    background-color: red;
+    width: 70%;
+}
 
+.imagen {
+    border: none;
+    box-shadow: 0 0 10px 35px rgba(113, 111, 111, 0.1);
+    /* box-shadow: 2px 2px 8px rgb(15, 69, 29), -2px -2px 8px rgb(231, 223, 223) ;  */
+}
 
-    .accommodation-info {
+a:link {
+    color: rgb(234, 150, 102);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(234, 150, 102);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(214, 219, 80);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.announcement {
+    padding: 15px;
+    margin: 5px 0;
+    border-left: 5px solid rgb(232, 150, 27);
+    border-radius: 5px;
+}
+
+h2 {
+    color: rgb(232, 150, 27);
+}
+
+.accommodation-info {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #0b5027;
     border-radius: 10px;
     max-width: 800px;
     margin: 0 auto;
-  }
+}
 
-  .title {
+.title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 15px;
-  }
+}
 
-  .location-header {
+.location-header {
     font-size: 1.2rem;
     font-weight: bold;
-  }
+}
 
-  .accommodation-info p, .accommodation-info ul {
+.accommodation-info p, .accommodation-info ul {
     font-size: 1rem;
-  }
+}
 
-  .apartment-features ul {
+.apartment-features ul {
     list-style-type: none;
     padding-left: 0;
-  }
+}
 
-  .apartment-features li {
+.apartment-features li {
     margin-bottom: 10px;
-  }
+}
 
-  .icon {
+.icon {
     margin-right: 10px;
-  }
+}
 
-  .accommodation-options .option {
+.accommodation-options .option {
     margin-bottom: 15px;
-  }
+}
 
-  .price {
+.price {
     font-size: 1.2rem;
     font-weight: bold;
     color: #008000;
-  }
+}
 
-  .extra-night {
+.extra-night {
     font-size: 1rem;
     color: #ff8c00;
-  }
+}
 
-  .note {
+.note {
     font-style: italic;
     color: #712323;
     text-align: center;
     margin-top: 20px;
-  }
+}
 
-
-
-  /* accommodation-info */
-  .accommodation-info {
+/* accommodation-info */
+.accommodation-info {
     font-family: 'Arial', sans-serif;
     padding: 30px;
     background-color: #211f1f;
@@ -314,43 +344,43 @@ h1, h2 {
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 2rem;
     color: #dcdcdc;
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
-  
-  .divider {
+}
+
+.divider {
     width: 60%;
     height: 4px;
     background: linear-gradient(to right,  rgb(232, 150, 27), #e9e9ea);
     margin: 20px auto;
     border-radius: 5px;
-  }
-  
-  .location-header {
+}
+
+.location-header {
     font-size: 1.3rem;
     font-weight: bold;
     color: rgb(232, 150, 27);
-  }
-  
-  p {
+}
+
+p {
     font-size: 1rem;
     color: #f3ebeb;
     margin: 5px 0;
-  }
-  
-  .apartment-features ul {
+}
+
+.apartment-features ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
     display: inline-block;
-  }
-  
-  .apartment-features li {
+}
+
+.apartment-features li {
     margin: 8px 0;
     font-size: 1rem;
     background: #161616;
@@ -358,49 +388,49 @@ h1, h2 {
     border-radius: 10px;
     display: flex;
     align-items: center;
-  }
-  
-  .icon {
+}
+
+.icon {
     margin-right: 10px;
     font-size: 1.2rem;
-  }
-  
-  .stay-duration {
+}
+
+.stay-duration {
     padding: 15px;
     background: #131212;
     border-radius: 10px;
-  }
-  
-  .accommodation-options {
+}
+
+.accommodation-options {
     text-align: center;
-  }
-  
-  .option-card {
+}
+
+.option-card {
     background: #0f0f0f;
     padding: 20px;
     margin: 10px auto;
     border-radius: 12px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-  }
-  
-  .option-card h4 {
+}
+
+.option-card h4 {
     font-size: 1.2rem;
     color: rgb(232, 150, 27);
-  }
-  
-  .price {
+}
+
+.price {
     font-size: 1.3rem;
     font-weight: bold;
     color: #e5c259;
-  }
-  
-  .extra-night {
+}
+
+.extra-night {
     font-size: 1rem;
     color: #ff8c00;
-  }
-  
-  .note2 {
+}
+
+.note2 {
     font-style: italic;
     color: #1c0f61;
     padding: 15px;
@@ -408,13 +438,11 @@ h1, h2 {
     border-left: 5px solid rgb(232, 150, 27);
     border-radius: 10px;
     margin-top: 20px;
-  }
-  
+}
 
+/* COST */
 
- /* COST */
-
- .container-fluid {
+.container-fluid {
   width: 100%;
 }
 
@@ -435,9 +463,7 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-
-
- /* Título general */
+/* Título general */
 .title2 {
   text-align: center;
   font-size: 2rem;
@@ -445,18 +471,17 @@ h1, h2, h3 {
   color: #fff;
   font-weight: bold;
 }
- 
 
 /* how to book */
 
- .blinking-text {
+.blinking-text {
     animation: blink 1.5s linear infinite;
     text-align: center;
     margin-top: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+}
 
-  .highlight-box {
+.highlight-box {
     border: 2px solid #eeedea;
     border-radius: 12px;
     padding: 16px 24px;
@@ -466,10 +491,9 @@ h1, h2, h3 {
     font-size: 1.25rem;
     font-weight: bold;
     color: #cd8f32;
-  }
+}
 
-  @keyframes blink {
+@keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-  }
-
+}

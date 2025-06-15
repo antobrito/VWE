@@ -107,7 +107,7 @@
                 aria-controls="flush-collapseTwo"
                 (click)="onTabClick('flush-collapseTwo')"
               >
-                <i class="fa-solid fa-bed px-2"></i> Accomodation
+                <i class="fa-solid fa-bed px-2"></i> Accommodation
               </button>
             </h2>
             <div
@@ -150,6 +150,7 @@
                       responsible for covering their own lodging costs. Once all
                       cabins have been booked, participants will need to arrange
                       their own accommodations off-site.
+                      
                     </p>
                   </div>
 
@@ -211,98 +212,37 @@
                   <div class="card accommodation-options bg-dark">
                     <h3>💰 Accommodation Options & Costs</h3>
 
+                    <p>Please note that only a limited number of cabins are still available at the resort.
+  If you wish to stay onsite where the seminar will take place and avoid searching
+  for accommodations outside the area, we encourage you to contact us directly to
+  secure your reservation.
+</p>
+<p>
+  These cabins have been reserved exclusively for seminar participants and may be
+  shared with other attendees to reduce costs. Once registered in teh seminar, a group chat will
+  be created to facilitate communication among those interested in sharing cabins.
+<p>
+  The entire resort will be reserved exclusively for our group during the seminar,
+  ensuring a private and dedicated environment where participants can comfortably
+  enjoy all facilities and activities without outside interruptions.
+</p>
+<p>
+  Don’t miss the opportunity to stay at the same resort and fully benefit from the
+  seminar experience!</p>
                     <!-- Shared 2-Bedroom Apartment -->
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #1: 2 guests - 1 king bed - 1 bath
-                      </h4>
-                      <p class="price">$295 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin1"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #1 here</a
-                      >
-                    </div>
+<!-- Contenedor padre que centra los cards -->
+<div class="cards-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <div *ngFor="let cabin of cabins" class="option-card" [class.booked]="cabin.booked" style="position: relative; border: 1px solid #ccc; padding: 10px; margin: 10px; width: 300px;">
+    <h4>🔹 {{ cabin.name }}</h4>
+    <p class="price">${{ cabin.price }} USD per night</p>
 
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #2: 2 guests - 1 king bed - 1 bath
-                      </h4>
-                      <p class="price">$295 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin2"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #2 here</a
-                      >
-                    </div>
+    <a *ngIf="!cabin.booked" href="{{ cabin.url }}" rel="noopener noreferrer" target="_blank">Check cabin here</a>
 
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #3: 3 guests - 1 bedroom - 1 queen bed
-                        and 1 twin bed - 1 bath
-                      </h4>
-                      <p class="price">$365 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin3"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #3 here</a
-                      >
-                    </div>
-
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #4: 4 guests - 1 bedroom - 2 queen beds
-                        - 1 bath
-                      </h4>
-                      <p class="price">$425 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin4"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #4 here</a
-                      >
-                    </div>
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #5: 2 guests - 1 king bed - 1 bath
-                      </h4>
-                      <p class="price">$295 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin5"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #5 here</a
-                      >
-                    </div>
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #7: 7 guests - 2 bedroom - 4 bed - 1
-                        bath - 2 floors
-                      </h4>
-                      <p class="price">$595 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin7"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Check cabin #7 here</a
-                      >
-                    </div>
-
-                    <div class="option-card">
-                      <h4>
-                        🔹 Studio Cabin #8: 2 guests - 1 king bed - 1 bath
-                      </h4>
-                      <p class="price">$295 USD per night</p>
-                      <a
-                        href="https://www.shastaviewlodge.com/cabin8"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >Checkx cabin #8 here</a
-                      >
-                    </div>
+    <div *ngIf="cabin.booked" class="booked-overlay">
+      Booked
+    </div>
+  </div>
+</div>
                   </div>
 
                   <div class="divider"></div>
@@ -567,13 +507,7 @@
                           Events section and submit the required information.
                         </li>
                         <li>
-                          Or, send an email to
-
-                          <a
-                            href="mailto:robfreeman@look.ca"
-                            rel="noopener noreferrer"
-                            >robfreeman&#64;look.ca</a
-                          >
+                        
                           with the following details:
                         </li>
                       </ol>
