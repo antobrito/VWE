@@ -1,14 +1,67 @@
 import { Component, Inject, PLATFORM_ID, AfterViewInit, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-event-tab',
   standalone: true,
-  imports: [],
+   imports: [CommonModule], // 👈 Agregar aquí for the ngfor
   templateUrl: './event-tab.component.html',
   styleUrl: './event-tab.component.css'
 })
 export class EventTabComponent implements AfterViewInit {
+
+  cabins = [
+    {
+      id: 1,
+      name: 'Studio Cabin #1: 2 guests - 1 king bed - 1 bath',
+      price: 295,
+      url: 'https://www.shastaviewlodge.com/cabin1',
+      booked: true
+    },
+    {
+      id: 2,
+      name: 'Studio Cabin #2: 2 guests - 1 king bed - 1 bath Avaliable',
+      price: 295,
+      url: 'https://www.shastaviewlodge.com/cabin2',
+      booked: false
+    },
+    {
+      id: 3,
+      name: 'Studio Cabin #3: 3 guests - 1 bedroom - 1 queen bed and 1 twin bed - 1 bath Avaliable',
+      price: 365,
+      url: 'https://www.shastaviewlodge.com/cabin3 Avaliable',
+      booked: false
+    },
+    {
+      id: 4,
+      name: 'Studio Cabin #4: 4 guests - 1 bedroom - 2 queen beds - 1 bath Avaliable',
+      price: 425,
+      url: 'https://www.shastaviewlodge.com/cabin4',
+      booked: false
+    },
+    {
+      id: 5,
+      name: 'Studio Cabin #5: 2 guests - 1 king bed - 1 bath Avaliable',
+      price: 295,
+      url: 'https://www.shastaviewlodge.com/cabin5',
+      booked: false
+    },
+    {
+      id: 7,
+      name: 'Studio Cabin #7: 7 guests - 2 bedroom - 4 bed - 1 bath - 2 floors Avaliable',
+      price: 595,
+      url: 'https://www.shastaviewlodge.com/cabin7',
+      booked: false
+    },
+    {
+      id: 8,
+      name: 'Studio Cabin #8: 2 guests - 1 king bed - 1 bath Avaliable',
+      price: 295,
+      url: 'https://www.shastaviewlodge.com/cabin8',
+      booked: false
+    }
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
