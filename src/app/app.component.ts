@@ -32,9 +32,9 @@ import {ContactComponent} from './contact/contact.component'   // Asegurate de u
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
-    WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent,DemonstratorsComponent,
+    WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent, DemonstratorsComponent,
     SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent,
-    NextEventsComponent,ContactComponent],
+    NextEventsComponent, ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
