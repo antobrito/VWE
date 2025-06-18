@@ -1,0 +1,19 @@
+/* Contenedor para organizar las tarjetas en fila o columna según el ancho */
+.seminar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo individual de cada tarjeta */
+.seminar-card {
+  width: 320px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.seminar-card:hover {
+  transform: scale(1.02);
+}

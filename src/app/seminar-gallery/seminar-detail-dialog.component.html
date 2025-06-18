@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.location }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- Imagen principal -->
+  <img mat-card-image [src]="data.image" alt="Seminar image" />
+
+  <mat-card-content>
+    <!-- Texto descriptivo y comentario -->
+    <p>{{ data.description }}</p>
+    <p><i>{{ data.comment }}</i></p>
+
+    <!-- Lista de videos -->
+    <div class="video-grid">
+      <video *ngFor="let video of data.videos" [src]="video" controls></video>
+    </div>
+  </mat-card-content>
+</mat-card>

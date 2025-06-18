@@ -25,7 +25,7 @@ import { BannerGenComponent } from './banner-gen/banner-gen.component';
 import { TestimonialComponent } from "./testimonial/testimonial.component";
 import { NextEventsComponent } from './next-events/next-events.component'; 
 import {ContactComponent} from './contact/contact.component'   // Asegurate de usar el path correcto
-
+import {SeminarGalleryComponent} from './seminar-gallery/seminar-gallery.component'
 
 
 @Component({
@@ -34,7 +34,7 @@ import {ContactComponent} from './contact/contact.component'   // Asegurate de u
   imports: [RouterOutlet, MenubarComponent, HomeComponent, VideosComponent, TeamComponent,
     WelcomeComponent, EventoComponent, FooterComponent, ClasesComponent, DividerComponent, PlayerComponent, DemonstratorsComponent,
     SomeClassesComponent, BenefitsComponent, DemonstratorsComponent, EventTabComponent, BannerGenComponent, TestimonialComponent,
-    NextEventsComponent, ContactComponent],
+    NextEventsComponent, ContactComponent,SeminarGalleryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

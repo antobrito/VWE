@@ -1,0 +1,81 @@
+/* Contenedor principal del modal */
+.dialog-card {
+  max-height: 90vh;       /* Máximo 90% de la altura de la pantalla */
+  overflow-y: auto;       /* Scroll vertical si se excede la altura */
+  width: 95vw;            /* Ancho adaptable para móviles */
+  max-width: 900px;       /* Ancho máximo para laptops/PC */
+  margin: 0 auto;         /* Centrado horizontal */
+  padding: 16px;          /* Espacio interno */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  border-radius: 8px;     /* Bordes redondeados */
+  background-color: white; /* Fondo blanco */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabecera con título y botón cerrar */
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Título del seminario */
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Botón cerrar en la cabecera */
+button[mat-icon-button] {
+  cursor: pointer;
+}
+
+/* Contenedor principal del contenido que puede hacer scroll */
+.content {
+  flex: 1 1 auto;       /* Ocupa el espacio restante */
+  overflow-y: auto;     /* Scroll interno si el contenido es muy alto */
+  padding-right: 8px;   /* Para evitar que el scroll tape contenido */
+}
+
+/* Imagen principal del seminario */
+.main-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Texto descriptivo */
+.description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Contenedor para los videos */
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Cada video pequeño */
+.video-thumb {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 4px;
+}
+
+/* Pie de modal con acciones (botones) */
+mat-card-actions {
+  flex-shrink: 0;           /* No se reduzca en scroll */
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end; /* Botones a la derecha */
+}
