@@ -45,7 +45,7 @@ export class EventTabComponent implements AfterViewInit {
       name: 'Studio Cabin #5: 2 guests - 1 king bed - 1 bath Avaliable',
       price: 295,
       url: 'https://www.shastaviewlodge.com/cabin5',
-      booked: false
+      booked: true
     },
     {
       id: 7,

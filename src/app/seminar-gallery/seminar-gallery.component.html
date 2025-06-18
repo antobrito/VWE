@@ -1,0 +1,18 @@
+<!-- Galería de seminarios en tarjetas -->
+<div class="seminar-container">
+  <mat-card *ngFor="let seminar of seminars" class="seminar-card" (click)="openSeminarDetail(seminar)">
+    <mat-card-header>
+      <mat-card-title>{{ seminar.title }}</mat-card-title>
+      <mat-card-subtitle>{{ seminar.location }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- Imagen central del seminario -->
+    <img mat-card-image [src]="seminar.image" alt="Seminar image" />
+
+    <!-- Breve descripción y comentario -->
+    <mat-card-content>
+      <p>{{ seminar.description }}</p>
+      <p><i>{{ seminar.comment }}</i></p>
+    </mat-card-content>
+  </mat-card>
+</div>
