@@ -33,8 +33,7 @@ hr.rounded {
   font-family: 'Arial', sans-serif;
 }
 
-
- /* Título general */
+/* Título general */
 .title {
   text-align: center;
   font-size: 2rem;
@@ -42,7 +41,6 @@ hr.rounded {
   color: #fff;
   font-weight: bold;
 }
- 
 
 /* Contenedor de eventos */
 .event-container {
@@ -127,7 +125,7 @@ hr.rounded {
   border-radius: 12px;
   width: 100%;
   max-width: 420px;
-  max-height: 90vh;
+  max-height: 85vh; /* MODIFICADO: menos alto para no tapar botones */
   overflow-y: auto;
   box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
   display: flex;
@@ -253,19 +251,14 @@ hr.rounded {
   outline: none;
 }
 
-/* Fila para Tshirt y Hoodie */
+/* Fila para inputs en línea (ej: Street + City, Prov/State + Country) */
 .form-row {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-bottom: 16px;
 }
 
-.form-row .form-group {
-  flex: 1 1 50%;
-  min-width: 140px;
-}
-
-/* NUEVO: Fila para Size (ej: Small, Medium) */
 .size-row {
   display: flex;
   gap: 7px;
@@ -277,7 +270,6 @@ hr.rounded {
   padding: 5px;
 }
 
-
 .size-inputs {
   display: flex;
   gap: 20px;
@@ -285,8 +277,8 @@ hr.rounded {
 }
 
 .size-inputs .form-group {
-  flex: 1 1 45%; /* ancho base del 45% */
-  max-width: 48%; /* para evitar que sobrepasen juntos el 100% */
+  flex: 1 1 45%;
+  max-width: 48%;
   box-sizing: border-box;
 }
 
@@ -297,8 +289,6 @@ hr.rounded {
   box-sizing: border-box;
 }
 
-
-/* --- Pantallas más grandes --- */
 @media (min-width: 600px) {
   .title {
     font-size: 2.2rem;
@@ -333,7 +323,6 @@ hr.rounded {
   }
 }
 
-
 @keyframes fall {
   0% {
     transform: translateY(-10px) rotate(0deg);
@@ -345,7 +334,6 @@ hr.rounded {
   }
 }
 
-/* Bloqueo de scroll del body cuando el modal está abierto */
 body.modal-open {
   overflow: hidden;
 }

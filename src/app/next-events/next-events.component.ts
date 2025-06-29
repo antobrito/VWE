@@ -1,181 +1,165 @@
-// Importamos los decoradores y módulos necesarios desde Angular core
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // 👈 Importa FormsModule para usar [(ngModel)]
-import { Component, OnInit } from '@angular/core'; // 👈 Importamos Component y OnInit
+import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import emailjs from 'emailjs-com';
 
 @Component({
-  selector: 'app-next-events', // El selector para usar el componente en otras vistas
-  standalone: true, // Se define como componente standalone
-  imports: [CommonModule, FormsModule], // Importamos los módulos necesarios
-  templateUrl: './next-events.component.html', // Archivo de plantilla
-  styleUrls: ['./next-events.component.css'], // Archivo de estilos
+  selector: 'app-next-events',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  templateUrl: './next-events.component.html',
+  styleUrls: ['./next-events.component.css']
 })
 export class NextEventsComponent implements OnInit {
-  // Componente que implementa OnInit
 
-  // Lista original de eventos (puede venir de una API en el futuro)
+  // Eventos hardcodeados
   events = [
     {
       image: './assets/img/mshasta.png',
-      date: new Date(2025, 7, 9), // 28 de mayo de 2025
-       message: 'Sun Aug 17, 2025',
+      date: new Date(2025, 7, 9),
+      message: 'Sun Aug 17, 2025',
       event_name: 'An Epic Journey Beyond the Mind and Stars. Mount Shasta, CA, USA',
       location: 'Mount Shasta, CA, USA',
-      summary:
-        'We present three seminars in one extraordinary experience: Telekinesis, Mindsight, and UFO. Activate your telekinesis and awaken your ability to see without eyes. Explore UFO phenomena and witness the unseen during skywatches at Mt. Shasta.',
+      summary: 'We present three seminars in one extraordinary experience: Telekinesis, Mindsight, and UFO.'
     },
     {
       image: './assets/img/orlando 2025.png',
-      date: new Date(2025, 10, 15), // 25 de abril de 2025
-       message: 'Sun Nov 23, 2025',
+      date: new Date(2025, 10, 15),
+      message: 'Sun Nov 23, 2025',
       event_name: 'Awakening Mindsight and Mental Energy. Orlando, FL, USA',
       location: 'Orlando, FL, USA',
-      summary:
-        'Designed to awaken and develop two powerful human abilities: mindsight—deep inner vision and mental perception—and mental energy, the capacity to influence the environment through focused intention, mind control, and telekinesis.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200',
-      date: new Date(2025, 1, 10), // 10 de mayo de 2025
-       message: 'Sun Aug 17, 2025',
-      event_name: 'Festival de Música',
-      location: 'Parque Central',
-      summary:
-        'Una celebración musical con artistas locales e internacionales.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200',
-      date: new Date(2025, 1, 25), // Duplicado de conferencia (lo eliminaremos)
-       message: 'Sun Aug 17, 2025',
-      event_name: 'Conferencia de Tecnología',
-      location: 'Auditorio Nacional',
-      summary: 'Descubre las últimas tendencias tecnológicas.',
-    },
+      summary: 'Designed to awaken and develop two powerful human abilities: mindsight and mental energy.'
+    }
   ];
 
-  upcomingEvents: any[] = []; // Aquí se almacenarán solo los eventos futuros y ordenados
-  showForm = false; // Controla visibilidad del formulario
-  selectedEvent: any = null; // Evento seleccionado para registrarse
+  upcomingEvents: any[] = [];
+  showForm = false;
+  selectedEvent: any = null;
 
-  // Modelo del formulario
   formData = {
     event_name: '',
     name: '',
-    address: '',
+    streetCity: '',
     province: '',
     country: '',
     TypeSize: '',
     email: '',
     phone: '',
-    foodAllergies: 'No', // Valor por defecto
+    foodAllergies: 'No',
     comments: '',
-    Tshirt: '', // ← ¡Agregado aquí!
-    HoodieSize: '', // ← ¡Agrega esta línea!
-    allergyDetails:'',
+    Tshirt: '',
+    HoodieSize: '',
+    allergyDetails: ''
   };
 
+  constructor() {}
 
-onFoodAllergiesChange(value: string) {
-  this.formData.foodAllergies = value;
-  if (value === 'No') {
-    this.formData.allergyDetails = '';
-  }
-
-}
-
-  // Método que se ejecuta al inicializar el componente
   ngOnInit() {
     const today = new Date();
-
-    // Filtra solo eventos cuya fecha es en el futuro
-    const futureEvents = this.events.filter((e) => new Date(e.date) > today);
-
-    // Elimina eventos duplicados (por nombre y fecha) y los ordena por fecha
-    const uniqueSortedEvents = futureEvents
-      .filter(
-        (event, index, self) =>
-          index ===
-          self.findIndex(
-            (e) =>
-              e.event_name === event.event_name &&
-              e.date.toDateString() === event.date.toDateString()
-          )
-      )
+    this.upcomingEvents = this.events
+      .filter(e => new Date(e.date) > today)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-
-    // Asigna a la lista final de eventos
-    this.upcomingEvents = uniqueSortedEvents;
   }
 
-  // Calcula cuántos días faltan para un evento
   getDaysLeft(date: Date): number {
     const now = new Date();
-    const eventDate = new Date(date);
-    const diff = eventDate.getTime() - now.getTime();
+    const diff = new Date(date).getTime() - now.getTime();
     return Math.ceil(diff / (1000 * 60 * 60 * 24));
   }
 
-  // Abre el formulario para el evento seleccionado
   openForm(event: any) {
     this.selectedEvent = event;
-    this.formData.event_name = event.event_name; // <-- ¡Esto es clave
-    //              Si no haces esto, el campo hidden no se llenará, aunque esté en el DOM.!
+    this.formData.event_name = event.event_name;
     this.showForm = true;
   }
 
-  // Cierra el formulario y limpia los datos
   closeForm() {
     this.showForm = false;
     this.formData = {
       event_name: '',
       name: '',
-      address: '',
+      streetCity: '',
       province: '',
       country: '',
+      TypeSize: '',
       email: '',
       phone: '',
       foodAllergies: 'No',
       comments: '',
-      Tshirt: 'XS',
-      HoodieSize: 'XS', // ← ¡Agrega esta línea!
-      TypeSize: '',
-      allergyDetails:''
+      Tshirt: '',
+      HoodieSize: '',
+      allergyDetails: ''
     };
   }
 
+  onFoodAllergiesChange(value: string) {
+    this.formData.foodAllergies = value;
+    if (value === 'No') {
+      this.formData.allergyDetails = '';
+    }
+  }
 
   submitForm(event: Event) {
     event.preventDefault();
 
+    // Validación manual
+    if (!this.formData.name.trim()) {
+      alert('Name is required.');
+      return;
+    }
+    if (!this.formData.streetCity.trim()) {
+      alert('Street and City are required.');
+      return;
+    }
+    if (!this.formData.province.trim()) {
+      alert('Province/State is required.');
+      return;
+    }
+ if (!this.formData.phone.trim()) {
+      alert('Phone is required.');
+      return;
+    }
 
-      // Si tiene alergias pero no llenó los detalles, no permitir enviar
-  if (this.formData.foodAllergies === 'Yes' && (!this.formData.allergyDetails || this.formData.allergyDetails.trim() === '')) {
-    alert('Please provide details for your food allergies.');
-    return; // Detiene el envío
+    if (!this.formData.country.trim()) {
+      alert('Country is required.');
+      return;
+    }
+    if (!this.formData.Tshirt) {
+      alert('Tshirt size is required.');
+      return;
+    }
+
+      if (!this.formData.HoodieSize) {
+      alert('Hoodie size is required.');
+      return;
+    }
+    if (this.formData.foodAllergies === 'Yes' && !this.formData.allergyDetails.trim()) {
+      alert('Please provide details for your food allergies + reactions.');
+      return;
+    }
+
+    // Enviar con emailjs
+    emailjs.sendForm(
+      'service_17rvjoc',
+      'template_69n0l2q',
+      event.target as HTMLFormElement,
+      'HchgGW9DNC9989hVy'
+    ).then(
+      result => {
+        console.log('Form submitted successfully', result.text);
+        alert('Form submitted successfully.Please check your spam or junk folder if you don’t see our email (vwe.canada@gmail.com).To avoid missing future emails, please mark this email as Not Spam.');
+        this.closeForm();
+      },
+      error => {
+        console.error('Form submission error', error.text);
+        alert('There was an error submitting the form.');
+      }
+    );
   }
 
-    emailjs
-      .sendForm(
-        'service_17rvjoc',
-        'template_69n0l2q',
-        event.target as HTMLFormElement,
-        'HchgGW9DNC9989hVy' // remplaza por tu verdadera public key
-      )
-      .then(
-        (result) => {
-          console.log('The form has been submitted successfully.', result.text);
-          alert('The form has been submitted successfully.');
-          this.closeForm();
-        },
-        (error) => {
-          console.error(
-            'There was an error submitting the form. Please review all required fields.',
-            error.text
-          );
-          alert(
-            'There was an error submitting the form. Please review all required fields.'
-          );
-        }
-      );
-  }
 }

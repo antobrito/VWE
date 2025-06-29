@@ -1,81 +1,69 @@
-/* Contenedor principal del modal */
-.dialog-card {
-  max-height: 90vh;       /* Máximo 90% de la altura de la pantalla */
-  overflow-y: auto;       /* Scroll vertical si se excede la altura */
-  width: 95vw;            /* Ancho adaptable para móviles */
-  max-width: 900px;       /* Ancho máximo para laptops/PC */
-  margin: 0 auto;         /* Centrado horizontal */
-  padding: 16px;          /* Espacio interno */
-  box-sizing: border-box; /* Incluye padding en el ancho total */
-  border-radius: 8px;     /* Bordes redondeados */
-  background-color: white; /* Fondo blanco */
-  display: flex;
-  flex-direction: column;
+:host {
+  display: block;
+  width: 100%;
+  max-height: 100vh;       /* Limita la altura al alto de la pantalla */
+  overflow-y: auto;        /* Activa scroll vertical si el contenido es largo */
+  background-color: #121212;
+  color: white;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-/* Cabecera con título y botón cerrar */
+.dialog-card {
+  background: #1e1e1e;
+  padding: 16px;
+  border-radius: 8px;
+}
+
 .dialog-header {
-  display: flex;
+  display: flex;                /* Flex para alinear título y botón */
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
 }
 
-/* Título del seminario */
-.dialog-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #222;
-}
-
-/* Botón cerrar en la cabecera */
-button[mat-icon-button] {
-  cursor: pointer;
-}
-
-/* Contenedor principal del contenido que puede hacer scroll */
-.content {
-  flex: 1 1 auto;       /* Ocupa el espacio restante */
-  overflow-y: auto;     /* Scroll interno si el contenido es muy alto */
-  padding-right: 8px;   /* Para evitar que el scroll tape contenido */
-}
-
-/* Imagen principal del seminario */
 .main-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  display: block;               /* Hace que el img sea un bloque y permita margin auto */
+  max-width: 100%;              /* Que no pase el ancho disponible */
+  max-height: 300px;            /* Limita la altura para que no sea muy grande */
+  margin: 0 auto 16px auto;     /* Centra horizontalmente y da margen inferior */
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;          /* Escala bien la imagen sin deformarla */
 }
 
-/* Texto descriptivo */
 .description {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
-/* Contenedor para los videos */
 .videos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
+  display: flex;                /* Flex para videos */
+  flex-wrap: wrap;              /* Permite que se acomoden en varias líneas si falta espacio */
+  gap: 12px;                    /* Espacio entre videos */
+  justify-content: center;      /* Centra los videos */
+  margin-top: 16px;
 }
 
-/* Cada video pequeño */
+.video-container {
+  flex: 1 1 100%;               /* Por defecto en mobile: un video por línea */
+}
+
 .video-thumb {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 4px;
+  width: 100%;                  /* Que el video llene el contenedor */
+  max-height: 240px;            /* Altura máxima del video */
+  border-radius: 8px;
+  background: black;
 }
 
-/* Pie de modal con acciones (botones) */
-mat-card-actions {
-  flex-shrink: 0;           /* No se reduzca en scroll */
-  margin-top: 12px;
-  display: flex;
-  justify-content: flex-end; /* Botones a la derecha */
+/* 📌 En desktop: los videos en fila horizontal (3 en una línea) */
+@media (min-width: 768px) {
+  .videos {
+    flex-wrap: nowrap;          /* No permite que bajen de línea */
+  }
+
+  .video-container {
+    flex: 0 0 calc(33.33% - 8px); /* Ocupa un tercio menos el gap */
+  }
+
+  .video-thumb {
+    max-height: 180px;          /* Menor altura para desktop */
+  }
 }

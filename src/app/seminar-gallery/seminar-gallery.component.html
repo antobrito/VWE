@@ -1,18 +1,29 @@
-<!-- Galería de seminarios en tarjetas -->
-<div class="seminar-container">
-  <mat-card *ngFor="let seminar of seminars" class="seminar-card" (click)="openSeminarDetail(seminar)">
-    <mat-card-header>
-      <mat-card-title>{{ seminar.title }}</mat-card-title>
-      <mat-card-subtitle>{{ seminar.location }}</mat-card-subtitle>
-    </mat-card-header>
+<div class="seminar-title-wrapper">
+  <h2 class="gallery-title">Legacy Seminars</h2>
+</div>
 
-    <!-- Imagen central del seminario -->
-    <img mat-card-image [src]="seminar.image" alt="Seminar image" />
+<div class="carousel-wrapper">
+  <button *ngIf="showArrows" class="arrow left" (click)="scrollLeft()">◀</button>
 
-    <!-- Breve descripción y comentario -->
-    <mat-card-content>
-      <p>{{ seminar.description }}</p>
-      <p><i>{{ seminar.comment }}</i></p>
-    </mat-card-content>
-  </mat-card>
+  <div class="carousel-viewport">
+    <div class="seminar-carousel" #carousel>
+      <div class="seminar-card-wrapper" *ngFor="let seminar of seminars">
+        <div class="seminar-card" (click)="openSeminarDetail(seminar)">
+          <img [src]="seminar.image" alt="{{ seminar.title }}" class="seminar-img" />
+          <div class="seminar-info">
+            <h3>{{ seminar.title }}</h3>
+            <p class="date">{{ seminar.date | date: 'longDate' }}</p>
+            <p class="short-description">{{ seminar.description | slice:0:80 }}...</p>
+          </div>
+          <div class="view-more">
+            <button mat-button color="accent" (click)="$event.stopPropagation(); openSeminarDetail(seminar)">
+              View More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button *ngIf="showArrows" class="arrow right" (click)="scrollRight()">▶</button>
 </div>
