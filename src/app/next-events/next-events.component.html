@@ -1,26 +1,27 @@
-<!-- Contenedor principal con fondo claro -->
 <hr class="rounded" />
 <div class="event-section">
-
-  <!-- Título principal -->
   <h1 class="title">Current/Upcoming Events</h1>
 
-  <!-- Contenedor de las cards -->
   <div class="event-container">
     <div *ngFor="let event of upcomingEvents" class="event-card">
       <img [src]="event.image" alt="Imagen del evento" />
       <h2>{{ event.event_name }}</h2>
-      <p><strong>Date:</strong> 
-      <span class="event-date">📅 {{ event.date | date:'EEE MMM d, y' }} – {{ event.message }}</span>
+      <p>
+        <strong>Date:</strong>
+        <span class="event-date"
+          >📅 {{ event.date | date : "EEE MMM d, y" }} –
+          {{ event.message }}</span
+        >
       </p>
       <p><strong>Place:</strong> {{ event.location }}</p>
       <p><strong>Summary:</strong> {{ event.summary }}</p>
       <p><strong>Days left:</strong> {{ getDaysLeft(event.date) }} days</p>
-      <button class="register-btn" (click)="openForm(event)">Register Here</button>
+      <button class="register-btn" (click)="openForm(event)">
+        Register Here
+      </button>
     </div>
   </div>
 
-  <!-- Formulario flotante -->
   <div class="form-popup" *ngIf="showForm">
     <div class="form-scrollable-content">
       <h3 class="form-title">
@@ -29,45 +30,102 @@
       </h3>
 
       <form #formRef="ngForm" (ngSubmit)="submitForm($event)">
-        <input type="hidden" [(ngModel)]="formData.event_name" name="event_name" />
+        <input
+          type="hidden"
+          [(ngModel)]="formData.event_name"
+          name="event_name"
+        />
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" type="text" [(ngModel)]="formData.name" name="name" required />
+          <input
+            id="name"
+            type="text"
+            [(ngModel)]="formData.name"
+            name="name"
+            placeholder="Name"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label for="address">Street, City, Prov/State, Country</label>
-          <input id="address" type="text" [(ngModel)]="formData.address" name="address" required />
+          <input
+            id="streetCity"
+            type="text"
+            [(ngModel)]="formData.streetCity"
+            name="streetCity"
+            placeholder="Street and City"
+            required
+          />
         </div>
-<div class="size-inputs">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input id="email" type="email" [(ngModel)]="formData.email" name="email" required />
-  </div>
 
-  <div class="form-group">
-    <label for="phone">Phone</label>
-    <input id="phone" type="tel" [(ngModel)]="formData.phone" name="phone" required />
-  </div>
-</div>
+        <div class="size-inputs">
+          <div class="form-group">
+            <label for="province">Prov./State</label>
+            <input
+              id="province"
+              type="text"
+              [(ngModel)]="formData.province"
+              name="province"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input
+              id="country"
+              type="text"
+              [(ngModel)]="formData.country"
+              name="country"
+              required
+            />
+          </div>
+        </div>
 
+        <div class="size-inputs">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              required
+            />
+          </div>
 
-        <!-- Contenedor flex exclusivo para los dos campos de tallas -->
-         
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              type="tel"
+              [(ngModel)]="formData.phone"
+              name="phone"
+              required
+            />
+          </div>
+        </div>
+
         <div class="size-row">
-                    <div class="form-group">
+          <div class="form-group">
             <label for="TypeSize">Size Type</label>
-            <select id="TypeSize" [(ngModel)]="formData.TypeSize" name="TypeSize" required>
-       
+            <select
+              id="TypeSize"
+              [(ngModel)]="formData.TypeSize"
+              name="TypeSize"
+              required
+            >
               <option value="F">Female</option>
               <option value="M">Male</option>
             </select>
           </div>
           <div class="form-group">
             <label for="Tshirt">Tshirt Size</label>
-            <select id="Tshirt" [(ngModel)]="formData.Tshirt" name="Tshirt" required>
-          
+            <select
+              id="Tshirt"
+              [(ngModel)]="formData.Tshirt"
+              name="Tshirt"
+              required
+            >
               <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
@@ -76,11 +134,14 @@
               <option value="XXL">XXL</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="HoodieSize">Hoodie Size</label>
-            <select id="HoodieSize" [(ngModel)]="formData.HoodieSize" name="HoodieSize" required>
-              <option value="" disabled selected>Select size</option>
+            <select
+              id="HoodieSize"
+              [(ngModel)]="formData.HoodieSize"
+              name="HoodieSize"
+              required
+            >
               <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
@@ -89,54 +150,57 @@
               <option value="XXL">XXL</option>
             </select>
           </div>
+        </div>
 
+        <div class="form-group">
+          <label>Food Allergies</label>
+          <select
+            [(ngModel)]="formData.foodAllergies"
+            name="foodAllergies"
+            required
+            (ngModelChange)="onFoodAllergiesChange($event)"
+          >
+            <option value="" disabled>Select Type</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
 
-
-   <!-- Food Allergies select -->
-<div class="form-group">
-  <label>Food Allergies</label>
-  <select
-    [(ngModel)]="formData.foodAllergies"
-    name="foodAllergies"
-    required
-    (ngModelChange)="onFoodAllergiesChange($event)"
-  >
-    <option value="" disabled>Select Type</option>
-    <option value="No">No</option>
-    <option value="Yes">Yes</option>
-  </select>
-</div>
-
-<!-- Campo para describir alergias, solo visible si foodAllergies es 'Yes' -->
-<div class="form-group" *ngIf="formData.foodAllergies === 'Yes'">
-  <label for="allergyDetails">Please specify Food allergies</label>
-  <input 
-    id="allergyDetails" 
-    type="text" 
-    [(ngModel)]="formData.allergyDetails" 
-    name="allergyDetails"
-    required
-    #allergyDetailsInput="ngModel"
-  />
-  <div class="error" *ngIf="allergyDetailsInput.invalid && allergyDetailsInput.touched">
-    This field is required.
-  </div>
-</div>
-          
+        <div class="form-group" *ngIf="formData.foodAllergies === 'Yes'">
+          <label for="allergyDetails">List food allergies + reactions.</label>
+          <input
+            id="allergyDetails"
+            type="text"
+            [(ngModel)]="formData.allergyDetails"
+            name="allergyDetails"
+            required
+            #allergyDetailsInput="ngModel"
+          />
+          <div
+            class="error"
+            *ngIf="allergyDetailsInput.invalid && allergyDetailsInput.touched"
+          >
+            This field is required.
+          </div>
         </div>
 
         <div class="form-group">
           <label for="comments">Comments</label>
-          <textarea id="comments" [(ngModel)]="formData.comments" name="comments"></textarea>
+          <textarea
+            id="comments"
+            [(ngModel)]="formData.comments"
+            name="comments"
+          ></textarea>
         </div>
 
         <div class="form-actions">
           <button type="submit" class="submit-btn">Send</button>
-          <button type="button" class="cancel-btn" (click)="closeForm()">Cancel</button>
+          <button type="button" class="cancel-btn" (click)="closeForm()">
+            Cancel
+          </button>
         </div>
       </form>
     </div>
   </div>
-
 </div>
 <hr class="rounded" />

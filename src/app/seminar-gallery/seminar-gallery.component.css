@@ -1,19 +1,186 @@
-/* Contenedor para organizar las tarjetas en fila o columna según el ancho */
-.seminar-container {
+/* === seminar-gallery.component.css COMPLETO Y CORREGIDO === */
+
+/* Contenedor principal del componente */
+:host {
+  display: block;
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+/* Wrapper del título */
+.seminar-title-wrapper {
+  padding: 40px 16px 24px;
+  text-align: center;
+}
+
+/* Título principal */
+.gallery-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+/* === Carrusel y flechas === */
+
+/* Contenedor principal del carrusel y flechas */
+.carousel-wrapper {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  padding: 0 60px; /* Espacio para que flechas no tapen cards */
+  box-sizing: border-box;
+  gap: 16px;
 }
 
-/* Estilo individual de cada tarjeta */
-.seminar-card {
-  width: 320px;
+/* Flechas laterales */
+.arrow {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  user-select: none;
 }
 
+.arrow.left {
+  margin-right: 1px;
+}
+
+.arrow.right {
+  margin-left: 1px;
+}
+
+/* Viewport con scroll oculto */
+.carousel-viewport {
+  overflow-x: hidden;
+  overflow-y: visible; /* ✅ importante para permitir hover */
+  flex: 1 1 auto;
+}
+
+/* Carrusel horizontal de seminarios */
+.seminar-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible; /* ✅ necesario para que hover no se corte */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding-bottom: 10px;
+  justify-content: center; /* se modifica dinámicamente */
+}
+
+/* Ocultar scroll en navegadores */
+.seminar-carousel::-webkit-scrollbar {
+  display: none;
+}
+.seminar-carousel {
+  scrollbar-width: none;
+}
+
+/* Wrapper de cada tarjeta */
+.seminar-card-wrapper {
+  flex: 0 0 auto;
+  overflow: visible;         /* ✅ para permitir que hover se muestre completo */
+  position: relative;
+  z-index: 0;
+}
+
+/* Tarjeta individual */
+.seminar-card {
+  width: 320px;               /* 🔁 tamaño un poco más grande */
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  color: white;
+  padding: 12px;
+  border: 2px solid #e9ac4a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover con aumento y z-index para que sobresalga */
 .seminar-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(233, 172, 74, 0.7);
+  z-index: 10;
+}
+
+/* Imagen dentro de la tarjeta */
+.seminar-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* Info del seminario */
+.seminar-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.seminar-info .date {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.short-description {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 6px;
+}
+
+/* Botón "View More" */
+.view-more {
+  margin-top: 12px;
+  text-align: right;
+}
+
+/* === Ajustes responsivos para tablets y móviles === */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .carousel-wrapper {
+    padding: 0 40px; /* Ajusta padding lateral */
+  }
+
+  .seminar-card {
+    width: 280px; /* Tarjetas un poco más pequeñas para tablets */
+    padding: 10px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+  .carousel-wrapper {
+    padding: 0 40px; /* Padding lateral para evitar tapar flechas */
+  }
+
+  /* Cards mucho más estrechos para móviles */
+  .seminar-card {
+    width: 235px; /* Más estrecho para mejor ajuste */
+    padding: 8px;
+  }
+
+  /* Imagen se ajusta para no cortarse */
+  .seminar-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Evitar recorte de imagen */
+  }
 }

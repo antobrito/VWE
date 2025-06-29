@@ -1,13 +1,17 @@
-// Componente principal que muestra una galería de seminarios como tarjetas
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  HostListener
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { SeminarDetailDialogComponent } from './seminar-detail-dialog.component';
 
-// Interfaz que define la estructura de cada seminario
 export interface Seminar {
   title: string;
   location: string;
@@ -15,6 +19,7 @@ export interface Seminar {
   description: string;
   image: string;
   videos: string[];
+  date: Date;
 }
 
 @Component({
@@ -23,40 +28,179 @@ export interface Seminar {
   imports: [
     CommonModule,
     MatCardModule,
-    MatGridListModule,
     MatDialogModule,
     MatButtonModule,
-    SeminarDetailDialogComponent ,// Se importa el diálogo para ver detalles
+    MatIconModule,
+    SeminarDetailDialogComponent
   ],
   templateUrl: './seminar-gallery.component.html',
   styleUrls: ['./seminar-gallery.component.css']
 })
-export class SeminarGalleryComponent {
-  // Arreglo con los datos de los seminarios
+export class SeminarGalleryComponent implements AfterViewInit {
+  @ViewChild('carousel', { static: false }) carousel!: ElementRef<HTMLDivElement>;
+  showArrows = false;
+
   seminars: Seminar[] = [
     {
-      title: 'Seminar Orlando 3035',
+      title: 'Orlando Seminar 2023',
       location: 'Orlando, FL',
-      comment: 'An amazing experience with students.',
-      description: 'This seminar focused on leadership and teamwork...',
-      image: 'assets/seminars/orlando-main.jpg',
+      comment: 'Un seminario inolvidable en Florida.',
+      description: 'Exploramos liderazgo, trabajo en equipo y motivación.',
+      image: 'assets/img/londonON1.JPG',
       videos: [
         'assets/seminars/orlando-vid1.mp4',
         'assets/seminars/orlando-vid2.mp4',
         'assets/seminars/orlando-vid3.mp4'
-      ]
+      ],
+      date: new Date('2023-10-15')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/img/londonON1.JPG',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/img/londonON1.JPG',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/img/londonON1.JPG',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/img/londonON1.JPG',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/seminars/toronto.jpg',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/seminars/toronto.jpg',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/seminars/toronto.jpg',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
+    },
+    {
+      title: 'Toronto Youth Summit',
+      location: 'Toronto, CA',
+      comment: 'Con jóvenes líderes canadienses.',
+      description: 'Inspiración, compromiso social y empoderamiento juvenil.',
+      image: 'assets/seminars/toronto.jpg',
+      videos: [
+        'assets/seminars/toronto-vid1.mp4',
+        'assets/seminars/toronto-vid2.mp4',
+        'assets/seminars/toronto-vid3.mp4'
+      ],
+      date: new Date('2024-03-05')
     }
   ];
 
   constructor(private dialog: MatDialog) {}
 
-  // Abre el diálogo con los detalles del seminario
-    openSeminarDetail(seminar: any) {
+  ngAfterViewInit() {
+    this.checkScrollNeeded();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScrollNeeded();
+  }
+
+  checkScrollNeeded() {
+    if (!this.carousel) return;
+
+    const container = this.carousel.nativeElement;
+    const totalScrollWidth = container.scrollWidth;
+    const visibleWidth = container.clientWidth;
+
+    this.showArrows = totalScrollWidth > visibleWidth + 16;
+    container.style.justifyContent = this.showArrows ? 'flex-start' : 'center';
+  }
+
+  openSeminarDetail(seminar: Seminar) {
     this.dialog.open(SeminarDetailDialogComponent, {
-      width: '95vw', // opcional para que sea responsive
-      maxWidth: '900px', // si cambio aqui debo ir al css
-      data: seminar,
+      width: '95vw',
+      maxWidth: '900px',
+      data: seminar
     });
   }
 
+  scrollLeft() {
+    if (!this.carousel) return;
+    const card = this.carousel.nativeElement.querySelector('.seminar-card-wrapper');
+    const cardWidth = card ? card.clientWidth + 16 : 320;
+    this.carousel.nativeElement.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  }
+
+  scrollRight() {
+    if (!this.carousel) return;
+    const card = this.carousel.nativeElement.querySelector('.seminar-card-wrapper');
+    const cardWidth = card ? card.clientWidth + 16 : 320;
+    this.carousel.nativeElement.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  }
 }

@@ -1,20 +1,23 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ data.title }}</mat-card-title>
-    <mat-card-subtitle>{{ data.location }}</mat-card-subtitle>
-  </mat-card-header>
+<mat-card class="dialog-card">
+  <!-- Encabezado de la modal con el título y botón de cerrar -->
+  <div class="dialog-header">
+    <h2>{{ data.title }}</h2>
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 
-  <!-- Imagen principal -->
-  <img mat-card-image [src]="data.image" alt="Seminar image" />
+  <!-- Imagen principal del seminario -->
+  <img [src]="data.image" alt="Seminar image" class="main-image" />
 
-  <mat-card-content>
-    <!-- Texto descriptivo y comentario -->
-    <p>{{ data.description }}</p>
-    <p><i>{{ data.comment }}</i></p>
+  <!-- Descripción y comentario -->
+  <div class="description">{{ data.description }}</div>
+  <div><i>{{ data.comment }}</i></div>
 
-    <!-- Lista de videos -->
-    <div class="video-grid">
-      <video *ngFor="let video of data.videos" [src]="video" controls></video>
+  <!-- Lista de videos -->
+  <div class="videos">
+    <div *ngFor="let video of data.videos" class="video-container">
+      <video [src]="video" class="video-thumb" controls></video>
     </div>
-  </mat-card-content>
+  </div>
 </mat-card>
