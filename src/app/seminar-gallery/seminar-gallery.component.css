@@ -168,7 +168,7 @@
   }
 
   .seminar-card {
-    width: 58vw; /* Card ancho relativo al viewport */
+    width: 52vw; /* Card ancho relativo al viewport */
     padding: 8px; /* Menos padding */
   }
 
