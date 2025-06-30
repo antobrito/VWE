@@ -1,6 +1,82 @@
 /* --- Estilos base: Mobile First --- */
 
-/* Línea horizontal redondeada */
+/* --- FORMULARIO FLOTANTE CON SCROLL INTERNO --- */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  z-index: 999;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+
+  /* Evita que el zoom cambie el tamaño del popup en mobile por autofill */
+  -webkit-text-size-adjust: 100%;  /* <-- Agregado para prevenir zoom */
+  text-size-adjust: 100%;           /* <-- Agregado para prevenir zoom */
+}
+
+.form-scrollable-content {
+  background: #111;
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 85vh; /* menos alto para no tapar botones */
+  overflow-y: auto;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #00bfff #222;
+
+  /* Evita que autofill cambie el tamaño del contenido */
+  font-size: 16px;  /* <-- Agregado para evitar zoom y crecimiento por autofill */
+}
+
+.form-scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+.form-scrollable-content::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 12px;
+}
+.form-scrollable-content::-webkit-scrollbar-thumb {
+  background-color: #00bfff;
+  border-radius: 12px;
+  border: 2px solid #222;
+}
+
+/* Autofill fixes para inputs dentro del formulario */
+.form-scrollable-content input:-webkit-autofill,
+.form-scrollable-content textarea:-webkit-autofill,
+.form-scrollable-content select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #222 inset !important;  /* Mantener fondo oscuro */
+  -webkit-text-fill-color: #fff !important;       /* Texto blanco */
+  font-size: 16px !important;                      /* Evitar zoom autofill */
+}
+
+/* Ajustes para inputs y textarea */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 16px;   /* Asegura tamaño consistente y evita zoom */
+  outline-offset: 2px;
+  outline-color: transparent;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;  /* Para que padding no aumente tamaño */
+}/* Línea horizontal redondeada */
 hr.rounded {
   border: none;
   height: 4px;
