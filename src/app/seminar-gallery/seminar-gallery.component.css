@@ -1,186 +1,171 @@
-/* === seminar-gallery.component.css COMPLETO Y CORREGIDO === */
-
-/* Contenedor principal del componente */
 :host {
-  display: block;
-  width: 100%;
-  background-color: #121212;
-  color: white;
-  padding-bottom: 60px;
-  box-sizing: border-box;
+  display: block;               /* Hace que el host ocupe bloque completo */
+  width: 100%;                  /* Ancho completo */
+  background-color: #121212;     /* Color de fondo oscuro */
+  color: white;                 /* Color de texto blanco */
+  padding-bottom: 60px;          /* Padding inferior */
+  box-sizing: border-box;        /* Incluye border y padding en el tamaño */
 }
 
-/* Wrapper del título */
 .seminar-title-wrapper {
-  padding: 40px 16px 24px;
-  text-align: center;
+  padding: 40px 16px 24px;       /* Padding superior y lateral */
+  text-align: center;           /* Centrado */
 }
 
-/* Título principal */
 .gallery-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0 auto;
+  font-size: 2.2rem;            /* Tamaño del título */
+  font-weight: bold;            /* Negrita */
+  color: #ffffff;               /* Color blanco */
+  margin: 0 auto;               /* Centrado horizontal */
 }
 
-/* === Carrusel y flechas === */
-
-/* Contenedor principal del carrusel y flechas */
 .carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 60px; /* Espacio para que flechas no tapen cards */
-  box-sizing: border-box;
-  gap: 16px;
+  position: relative;           /* Posición relativa para flechas */
+  display: flex;                /* Flex para alinear elementos */
+  align-items: center;          /* Alinea verticalmente */
+  justify-content: center;      /* Centra horizontalmente */
+  padding: 0 60px;              /* Padding lateral para flechas */
+  box-sizing: border-box;       /* Box sizing */
+  gap: 16px;                    /* Espacio entre elementos */
 }
 
-/* Flechas laterales */
 .arrow {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 2.5rem;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  user-select: none;
+  background-color: transparent; /* Fondo transparente */
+  border: none;                  /* Sin borde */
+  color: white;                  /* Color blanco */
+  font-size: 2.5rem;             /* Tamaño grande */
+  cursor: pointer;               /* Cambia cursor */
+  width: 40px;                   /* Ancho */
+  height: 40px;                  /* Alto */
+  flex-shrink: 0;                /* No se encoge */
+  user-select: none;             /* No seleccionable */
 }
 
 .arrow.left {
-  margin-right: 1px;
+  margin-right: 1px;             /* Margen a la derecha */
 }
 
 .arrow.right {
-  margin-left: 1px;
+  margin-left: 1px;              /* Margen a la izquierda */
 }
 
-/* Viewport con scroll oculto */
 .carousel-viewport {
-  overflow-x: hidden;
-  overflow-y: visible; /* ✅ importante para permitir hover */
-  flex: 1 1 auto;
+  overflow-x: hidden;            /* Oculta scroll horizontal */
+  overflow-y: visible;           /* Permite overflow vertical */
+  flex: 1 1 auto;                /* Flexible */
 }
 
-/* Carrusel horizontal de seminarios */
 .seminar-carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: visible; /* ✅ necesario para que hover no se corte */
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  gap: 16px;
-  padding-bottom: 10px;
-  justify-content: center; /* se modifica dinámicamente */
+  display: flex;                 /* Flex horizontal */
+  flex-wrap: nowrap;             /* No hace wrap */
+  overflow-x: auto;              /* Scroll horizontal */
+  overflow-y: visible;           /* Overflow vertical visible */
+  scroll-snap-type: x mandatory; /* Snap horizontal */
+  scroll-behavior: smooth;       /* Scroll suave */
+  -webkit-overflow-scrolling: touch; /* Mejor scroll en iOS */
+  gap: 16px;                     /* Espacio entre cards */
+  padding-bottom: 10px;          /* Padding inferior */
+  justify-content: center;       /* Centrado (se cambia dinámicamente) */
 }
 
-/* Ocultar scroll en navegadores */
 .seminar-carousel::-webkit-scrollbar {
-  display: none;
+  display: none;                 /* Oculta scrollbar en Chrome/Safari */
 }
+
 .seminar-carousel {
-  scrollbar-width: none;
+  scrollbar-width: none;         /* Oculta scrollbar en Firefox */
 }
 
-/* Wrapper de cada tarjeta */
 .seminar-card-wrapper {
-  flex: 0 0 auto;
-  overflow: visible;         /* ✅ para permitir que hover se muestre completo */
-  position: relative;
-  z-index: 0;
+  flex: 0 0 auto;                /* No se expande/encoge */
+  overflow: visible;             /* Permite overflow visible */
+  position: relative;            /* Relativo para z-index */
+  z-index: 0;                    /* Z-index base */
 }
 
-/* Tarjeta individual */
 .seminar-card {
-  width: 320px;               /* 🔁 tamaño un poco más grande */
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  color: white;
-  padding: 12px;
-  border: 2px solid #e9ac4a;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-  position: relative;
-  z-index: 1;
+  width: 320px;                  /* Ancho del card */
+  background-color: #1e1e1e;     /* Fondo oscuro */
+  border-radius: 12px;           /* Borde redondeado */
+  color: white;                  /* Texto blanco */
+  padding: 12px;                 /* Padding */
+  border: 2px solid #e9ac4a;     /* Borde dorado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra */
+  cursor: pointer;               /* Cursor pointer */
+  box-sizing: border-box;        /* Box sizing */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; /* Transición */
+  position: relative;            /* Posición relativa */
+  z-index: 1;                    /* Z-index */
 }
 
-/* Hover con aumento y z-index para que sobresalga */
 .seminar-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(233, 172, 74, 0.7);
-  z-index: 10;
+  transform: scale(1.03);        /* Aumenta tamaño al hover */
+  box-shadow: 0 6px 16px rgba(233, 172, 74, 0.7); /* Sombra más intensa */
+  z-index: 10;                   /* Trae al frente */
 }
 
-/* Imagen dentro de la tarjeta */
 .seminar-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 12px;
+  width: 100%;                   /* Imagen ancho completo */
+  height: auto;                  /* Altura automática */
+  border-radius: 8px;            /* Borde redondeado */
+  object-fit: cover;             /* Ajuste de imagen */
+  margin-bottom: 12px;           /* Margen inferior */
 }
 
-/* Info del seminario */
 .seminar-info h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
+  margin: 0;                     /* Sin margen */
+  font-size: 1.2rem;             /* Tamaño fuente */
+  font-weight: bold;             /* Negrita */
+}
+
+.seminar-info .seminar-name {
+  font-size: 1rem;               /* Tamaño del nombre del seminario */
+  color: #e9ac4a;                /* Color dorado */
+  margin: 2px 0;                 /* Margen vertical */
 }
 
 .seminar-info .date {
-  font-size: 0.9rem;
-  color: #bbb;
+  font-size: 0.9rem;             /* Tamaño de fecha */
+  color: #bbb;                   /* Color gris claro */
 }
 
 .short-description {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-top: 6px;
+  font-size: 0.95rem;            /* Tamaño fuente */
+  color: #ccc;                   /* Color gris claro */
+  margin-top: 6px;               /* Margen superior */
 }
 
-/* Botón "View More" */
 .view-more {
-  margin-top: 12px;
-  text-align: right;
+  margin-top: 12px;              /* Margen superior */
+  text-align: right;             /* Alineación derecha */
 }
-
-/* === Ajustes responsivos para tablets y móviles === */
 
 /* Tablet */
 @media (max-width: 991px) {
   .carousel-wrapper {
-    padding: 0 40px; /* Ajusta padding lateral */
+    padding: 0 40px;             /* Menor padding lateral */
   }
 
   .seminar-card {
-    width: 280px; /* Tarjetas un poco más pequeñas para tablets */
-    padding: 10px;
+    width: 280px;                /* Cards más pequeños */
+    padding: 10px;               /* Menor padding */
   }
 }
 
 /* Móvil */
 @media (max-width: 767px) {
   .carousel-wrapper {
-    padding: 0 40px; /* Padding lateral para evitar tapar flechas */
+    padding: 0 40px;             /* Padding lateral móvil */
   }
 
-  /* Cards mucho más estrechos para móviles */
   .seminar-card {
-    width: 235px; /* Más estrecho para mejor ajuste */
-    padding: 8px;
+    width: 235px;                /* Más estrechos */
+    padding: 8px;                /* Menor padding */
   }
 
-  /* Imagen se ajusta para no cortarse */
   .seminar-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Evitar recorte de imagen */
+    width: 100%;                 /* Imagen ajustada */
+    height: auto;                /* Altura auto */
+    object-fit: contain;         /* Ajuste sin recortar */
   }
 }

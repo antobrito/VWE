@@ -1,29 +1,31 @@
 <div class="seminar-title-wrapper">
-  <h2 class="gallery-title">Legacy Seminars</h2>
+  <h2 class="gallery-title">VWE Past Seminars</h2> <!-- Título principal del componente -->
 </div>
 
 <div class="carousel-wrapper">
-  <button *ngIf="showArrows" class="arrow left" (click)="scrollLeft()">◀</button>
+  <button *ngIf="showArrows" class="arrow left" (click)="scrollLeft()">◀</button> <!-- Flecha izquierda -->
 
   <div class="carousel-viewport">
     <div class="seminar-carousel" #carousel>
-      <div class="seminar-card-wrapper" *ngFor="let seminar of seminars">
-        <div class="seminar-card" (click)="openSeminarDetail(seminar)">
-          <img [src]="seminar.image" alt="{{ seminar.title }}" class="seminar-img" />
+      <div class="seminar-card-wrapper" *ngFor="let seminar of seminars"> <!-- Recorre seminarios -->
+        <div class="seminar-card" (click)="openSeminarDetail(seminar)"> <!-- Card de seminario -->
+          <img [src]="seminar.image" alt="{{ seminar.title }}" class="seminar-img" /> <!-- Imagen -->
           <div class="seminar-info">
-            <h3>{{ seminar.title }}</h3>
-            <p class="date">{{ seminar.date | date: 'longDate' }}</p>
-            <p class="short-description">{{ seminar.description | slice:0:80 }}...</p>
+            <h3>{{ seminar.title }}</h3> <!-- Título -->
+            <p class="seminar-name">{{ seminar.seminarName }}</p> <!-- Nombre del seminario -->
+            <p class="location">{{ seminar.location }}</p> <!-- Ubicación -->
+            <p class="">
+               <strong> {{ seminar.startDate | date: 'longDate' }} - {{ seminar.endDate | date: 'longDate' }} <!-- Fechas -->
+            </strong>   </p>
+            <p class="short-description">{{ seminar.description | slice:0:80 }}...</p> <!-- Descripción corta -->
           </div>
           <div class="view-more">
-            <button mat-button color="accent" (click)="$event.stopPropagation(); openSeminarDetail(seminar)">
-              View More
-            </button>
+            <button mat-button color="accent" (click)="$event.stopPropagation(); openSeminarDetail(seminar)">View More</button> <!-- Botón -->
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <button *ngIf="showArrows" class="arrow right" (click)="scrollRight()">▶</button>
+  <button *ngIf="showArrows" class="arrow right" (click)="scrollRight()">▶</button> <!-- Flecha derecha -->
 </div>
