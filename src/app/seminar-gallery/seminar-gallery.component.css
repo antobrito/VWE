@@ -28,7 +28,7 @@
   display: flex; /* Usa flexbox */
   align-items: center; /* Centra verticalmente */
   justify-content: center; /* Centra horizontalmente */
-  padding: 0 60px; /* Espacio lateral para flechas */
+  padding: 0 10 px; /* Espacio lateral para flechas */
   box-sizing: border-box; /* Incluye padding/borde en tamaño */
   gap: 16px; /* Espacio entre elementos hijos */
 }
@@ -47,11 +47,11 @@
 }
 
 .arrow.left {
-  margin-right: 1px; /* Margen derecho mínimo */
+  margin-right: 0px; /* Margen derecho mínimo */
 }
 
 .arrow.right {
-  margin-left: 1px; /* Margen izquierdo mínimo */
+  margin-left: 0px; /* Margen izquierdo mínimo */
 }
 
 /* Viewport del carrusel */
@@ -164,11 +164,11 @@
 /* Mobile */
 @media (max-width: 767px) {
   .carousel-wrapper {
-    padding: 0 20px; /* Menor padding lateral */
+    padding: 0 0px; /* Menor padding lateral */
   }
 
   .seminar-card {
-    width: 52vw; /* Card ancho relativo al viewport */
+    width: 62vw; /* Card ancho relativo al viewport */
     padding: 8px; /* Menos padding */
   }
 
@@ -177,4 +177,16 @@
     height: auto; /* Altura automática */
     object-fit: contain; /* Ajuste sin recorte */
   }
+  .arrow {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  color: white; /* Color blanco */
+  font-size: 1.5rem; /* Tamaño grande del ícono */
+  cursor: pointer; /* Cursor de mano al pasar */
+  width: 30px; /* Ancho fijo */
+  height: 40px; /* Alto fijo */
+  flex-shrink: 0; /* No se reduce el tamaño */
+  user-select: none; /* No se puede seleccionar el ícono */
+ 
+}
 }
