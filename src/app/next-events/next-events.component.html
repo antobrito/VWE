@@ -1,44 +1,67 @@
+<!-- Línea decorativa -->
 <hr class="rounded" />
+
 <div class="event-section">
+  <!-- Título principal de la sección de eventos -->
   <h1 class="title">Current/Upcoming Events</h1>
 
   <div class="event-container">
+    <!-- Recorre la lista de eventos próximos y crea una tarjeta por cada uno -->
     <div *ngFor="let event of upcomingEvents" class="event-card">
+      
+      <!-- Imagen del evento -->
       <img [src]="event.image" alt="Imagen del evento" />
+
+      <!-- Nombre del evento -->
       <h2>{{ event.event_name }}</h2>
+
+      <!-- Fecha del evento con un mensaje adicional -->
       <p>
         <strong>Date:</strong>
-        <span class="event-date"
-          >📅 {{ event.date | date : "EEE MMM d, y" }} –
-          {{ event.message }}</span
-        >
+        <span class="event-date">
+          📅 {{ event.date | date: "EEE MMM d, y" }} – {{ event.message }}
+        </span>
       </p>
+
+      <!-- Lugar del evento -->
       <p><strong>Place:</strong> {{ event.location }}</p>
+
+      <!-- Resumen del evento -->
       <p><strong>Summary:</strong> {{ event.summary }}</p>
+
+      <!-- Días restantes para el evento -->
       <p><strong>Days left:</strong> {{ getDaysLeft(event.date) }} days</p>
+
+      <!-- Botón para abrir el formulario de registro -->
       <button class="register-btn" (click)="openForm(event)">
         Register Here
       </button>
     </div>
   </div>
 
+  <!-- Formulario emergente: solo se muestra si showForm = true -->
   <div class="form-popup" *ngIf="showForm">
     <div class="form-scrollable-content">
+      
+      <!-- Título del formulario con el nombre del evento seleccionado -->
       <h3 class="form-title">
         Registration for the seminar:
         <span class="event-name">{{ selectedEvent?.event_name }}</span>
       </h3>
 
+      <!-- Formulario de registro -->
       <form #formRef="ngForm" (ngSubmit)="submitForm($event)">
+        
+        <!-- Campo oculto: almacena el nombre del evento en el formData -->
         <input
           type="hidden"
           [(ngModel)]="formData.event_name"
           name="event_name"
         />
 
+        <!-- Campo: Nombre del participante -->
         <div class="form-group">
           <input
-            id="name"
             type="text"
             [(ngModel)]="formData.name"
             name="name"
@@ -47,9 +70,9 @@
           />
         </div>
 
+        <!-- Campo: Calle y ciudad -->
         <div class="form-group">
           <input
-            id="streetCity"
             type="text"
             [(ngModel)]="formData.streetCity"
             name="streetCity"
@@ -58,11 +81,11 @@
           />
         </div>
 
+        <!-- Grupo: Provincia y país -->
         <div class="size-inputs">
           <div class="form-group">
-            <label for="province">Prov/State</label>
+            <label>Prov/State</label>
             <input
-              id="province"
               type="text"
               [(ngModel)]="formData.province"
               name="province"
@@ -70,9 +93,8 @@
             />
           </div>
           <div class="form-group">
-            <label for="country">Country</label>
+            <label>Country</label>
             <input
-              id="country"
               type="text"
               [(ngModel)]="formData.country"
               name="country"
@@ -81,11 +103,11 @@
           </div>
         </div>
 
+        <!-- Grupo: Email y teléfono -->
         <div class="size-inputs">
           <div class="form-group">
-            <label for="email">Email</label>
+            <label>Email</label>
             <input
-              id="email"
               type="email"
               [(ngModel)]="formData.email"
               name="email"
@@ -94,9 +116,8 @@
           </div>
 
           <div class="form-group">
-            <label for="phone">Phone</label>
+            <label>Phone</label>
             <input
-              id="phone"
               type="tel"
               [(ngModel)]="formData.phone"
               name="phone"
@@ -105,11 +126,11 @@
           </div>
         </div>
 
+        <!-- Grupo: Tipo de talla y tallas -->
         <div class="size-row">
           <div class="form-group">
-            <label for="TypeSize">Size Type</label>
+            <label>Size Type</label>
             <select
-              id="TypeSize"
               [(ngModel)]="formData.TypeSize"
               name="TypeSize"
               required
@@ -119,9 +140,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="Tshirt">T-shirt Size</label>
+            <label>T-shirt Size</label>
             <select
-              id="Tshirt"
               [(ngModel)]="formData.Tshirt"
               name="Tshirt"
               required
@@ -135,9 +155,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="HoodieSize">Hoodie Size</label>
+            <label>Hoodie Size</label>
             <select
-              id="HoodieSize"
               [(ngModel)]="formData.HoodieSize"
               name="HoodieSize"
               required
@@ -152,6 +171,7 @@
           </div>
         </div>
 
+        <!-- Campo: Alergias alimentarias -->
         <div class="form-group">
           <label>Food Allergies</label>
           <select
@@ -166,41 +186,38 @@
           </select>
         </div>
 
+        <!-- Campo: Detalles de alergias (solo si selecciona "Yes") -->
         <div class="form-group" *ngIf="formData.foodAllergies === 'Yes'">
-          <label for="allergyDetails">List food allergies + reactions.</label>
+          <label>List food allergies + reactions.</label>
           <input
-            id="allergyDetails"
             type="text"
             [(ngModel)]="formData.allergyDetails"
             name="allergyDetails"
             required
-            #allergyDetailsInput="ngModel"
           />
-          <div
-            class="error"
-            *ngIf="allergyDetailsInput.invalid && allergyDetailsInput.touched"
-          >
-            This field is required.
-          </div>
         </div>
 
+        <!-- Campo: Comentarios adicionales -->
         <div class="form-group">
-          <label for="comments">Comments</label>
+          <label>Comments</label>
           <textarea
-            id="comments"
             [(ngModel)]="formData.comments"
             name="comments"
           ></textarea>
         </div>
 
+        <!-- Botones de acción: enviar o cancelar -->
         <div class="form-actions">
           <button type="submit" class="submit-btn">Send</button>
           <button type="button" class="cancel-btn" (click)="closeForm()">
             Cancel
           </button>
         </div>
+
       </form>
     </div>
   </div>
 </div>
+
+<!-- Línea decorativa final -->
 <hr class="rounded" />
