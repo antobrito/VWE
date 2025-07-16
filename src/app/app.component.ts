@@ -1,7 +1,4 @@
 import { Component, signal } from '@angular/core';
-
-
-
 import { RouterOutlet } from '@angular/router';
 import { MenubarComponent } from './menubar/menubar.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +24,8 @@ import { NextEventsComponent } from './next-events/next-events.component';
 import {ContactComponent} from './contact/contact.component'   // Asegurate de usar el path correcto
 import {SeminarGalleryComponent} from './seminar-gallery/seminar-gallery.component'
 
+import {  inject } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -39,11 +38,26 @@ import {SeminarGalleryComponent} from './seminar-gallery/seminar-gallery.compone
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'VWE';
+
+   private title = inject(Title);
+  private meta = inject(Meta);
+
+
+  //title = 'VWE';
 
  
 
-   
+   // esto es para CEO
+
+     constructor() {
+    this.title.setTitle('Vision Without Eyes – Official Site');
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Train your mental energy and awaken your mindsight. Join Rob Freeman’s official Vision Wothout Eyes telekinesis and mindsight seminars.'
+    });
+  }
+
+
  
 }
 
