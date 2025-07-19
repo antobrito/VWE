@@ -29,7 +29,7 @@ export class ContactComponent {
     {
       title: 'WhatsApp',
       icon: 'fab fa-whatsapp',
-      text: 'Chat with us !',
+      text: 'Chat with us ! Click Here to connect',
       link: 'https://wa.me/+15198516450/?text=Hi Rob Freeman. I am interested in some information about the Vision Without Eyes Seminar.'
     },
     {
