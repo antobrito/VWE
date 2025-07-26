@@ -10,7 +10,7 @@ export class DemonstratorsService {
     return [
       {
         name: 'Dalia Burgoin',
-        title: 'Guest Demonstrator',
+        title: 'Guest DeGuest Demonstrator / Trainer',
         imageUrl: 'assets/img/daly.JPG',
         description: 'We don\'t need to try and gain the ability to see without eyes, because we already have it. We need only to expand our perception and belief about our ability',
       },
@@ -22,16 +22,22 @@ export class DemonstratorsService {
       },
       {
         name: 'Daniela Gonzalez Brito',
-        title: 'Guest Demonstrator',
+        title: 'Guest Demonstrator / Trainer',
         imageUrl: 'assets/img/dany.jpeg',
         description: 'Seeing without eyes feels like navigating the world through intuition, where perception goes beyond sight and understanding comes from a deeper place within.',
       },
       // Add more demonstrators as needed
       {
         name: 'Nikki Bee Williams ',
-        title: 'Guest Demonstrator',
+        title: 'Guest Demonstrator / Trainer',
         imageUrl: 'assets/img/nikki.png',
         description: 'Seeing without eyes is a superpower— one that opens the door to even greater abilities. When we expand our perception, we unlock the limitless potential of the mind.',
+      },
+       {
+        name: 'Amanda DeFrancesco ',
+        title: 'Guest Demonstrator / Trainer',
+        imageUrl: 'assets/img/amanda.webp',
+        description: "Mindsight isn't something you acquire...it's a deep inner seeing that awakens when you remember who you truly are.",
       },
     ];
   }
