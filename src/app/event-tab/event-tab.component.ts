@@ -31,14 +31,14 @@ export class EventTabComponent implements AfterViewInit {
       name: 'Studio Cabin #3: 3 guests - 1 bedroom - 1 queen bed and 1 twin bed - 1 bath Avaliable',
       price: 295,
       url: 'https://www.shastaviewlodge.com/cabin3',
-      booked: false
+      booked: true
     },
     {
       id: 4,
       name: 'Studio Cabin #4: 4 guests - 1 bedroom - 2 queen beds - 1 bath Avaliable',
       price: 295,
       url: 'https://www.shastaviewlodge.com/cabin4',
-      booked: false
+      booked: true
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ export class EventTabComponent implements AfterViewInit {
       name: 'Studio Cabin #7: 7 guests - 2 bedroom - 4 bed - 1 bath - 2 floors Avaliable',
       price: 395,
       url: 'https://www.shastaviewlodge.com/cabin7',
-      booked: false
+      booked: true
     },
     {
       id: 8,
