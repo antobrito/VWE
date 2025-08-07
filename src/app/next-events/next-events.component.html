@@ -30,7 +30,7 @@
       <p><strong>Summary:</strong> {{ event.summary }}</p>
 
       <!-- Días restantes para el evento -->
-      <p><strong>Days left:</strong> {{ getDaysLeft(event.date) }} days</p>
+      <h2 class="event-date"><strong>Days left:</strong> {{ getDaysLeft(event.date) }} days</h2>
 
       <!-- Botón para abrir el formulario de registro -->
       <button class="register-btn" (click)="openForm(event)">
